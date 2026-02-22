@@ -140,7 +140,7 @@ t \mapsto \frac{1}{1-t}
 \quad \text{and} \quad
 t \mapsto \frac{t-1}{t}.
 $$
-	Find
+Find
 $$
 \mathbb{C}(t)^G.
 $$
@@ -150,7 +150,7 @@ $$
 t \mapsto 1 + t.
 $$
 
-	Show that $G$ is an infinite cyclic group and find
+Show that $G$ is an infinite cyclic group and find
 $$
 \mathbb{C}(t)^G.
 $$
