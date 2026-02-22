@@ -1,6 +1,6 @@
 # Borel $\sigma$-algebra
 
-Let $\Omega$ be a topological space. Then the $\sigma$-[[Measure-Theory-Notes/Measure_Theory/Lecture 2#Definition| algebra]] by open sets in $\Omega$ is called the Borel $\sigma$-algebra for $\Omega$ and is denoted by $\mathcal{B}_{\Omega}$.
+Let $\Omega$ be a topological space. Then the $\sigma$-[[Measure-Theory-Notes/Measure_Theory/Lecture 2#Definition| algebra generated]] by open sets in $\Omega$ is called the Borel $\sigma$-algebra for $\Omega$ and is denoted by $\mathcal{B}_{\Omega}$.
 
 # $G_\delta$-sets
 

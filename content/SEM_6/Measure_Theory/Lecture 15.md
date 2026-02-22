@@ -77,13 +77,13 @@ $\therefore$ Our assumption is wrong, hence $f = 0$ a.e.
 
 Suppose $\{a_n\}$ is a sequence of non-negative real numbers.
 
-$\sum_{n=1}^{\infty} a_n = \lim_{N \to \infty} \sum_{n=1}^{N} a_n$
+$$\sum_{n=1}^{\infty} a_n = \lim_{N \to \infty} \sum_{n=1}^{N} a_n$$
 
 Define $f : \mathbb{N} \to [0, \infty)$
 
-$f(n) = a_n$
+$$f(n) = a_n$$
 
-And for $k \in \mathbb{N}$, $f_k(n) = \begin{cases} a_n, & n \le k \\ 0, & \text{ow} \end{cases}$
+And for $k \in \mathbb{N}$, $$f_k(n) = \begin{cases} a_n, & n \le k \\ 0, & \text{ow} \end{cases}$$
 
 Consider the measure space $(\mathbb{N}, \mathcal{P}(\mathbb{N}), C)$ where $C$ is the counting measure:
 

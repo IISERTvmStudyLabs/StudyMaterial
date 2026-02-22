@@ -1,4 +1,6 @@
 
+---
+
 # Definition 
 Let $(\Omega, \mathcal{F}, \mu)$ be a measurable space. For a non-negative measurable function $f: \Omega \to [0, \infty]$ define
 

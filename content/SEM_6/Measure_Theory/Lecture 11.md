@@ -35,7 +35,8 @@ $$= \sum_{j=1}^{n} d_j \mu(F_j)$$
 
 ---
 
-**Proposition**: Let $f$ and $g$ be two measurable functions on $(\Omega, \mathcal{F}, \mu)$. Then
+## Proposition
+Let $f$ and $g$ be two measurable functions on $(\Omega, \mathcal{F}, \mu)$. Then
 
 i) $\int_{\Omega} (cf) \, d\mu = c \int_{\Omega} f \, d\mu, \forall c \ge 0$
 

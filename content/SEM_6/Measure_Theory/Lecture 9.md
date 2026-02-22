@@ -78,7 +78,7 @@ $$F(x) = \begin{cases} 1 &, x \geqslant 0 \\ 0 &, x < 0 \end{cases}$$
 Find the corresponding $\sigma$-algebra $\mathcal{M}_F$ & the measure $\mu_F$.
 
 ____
-# Definition
+# Definition (Complete)
  Let $\mathcal{F} \subseteq \mathcal{P}(\Omega)$ be a $\sigma$-algebra & $\mu : \mathcal{F} \to [0, \infty]$.
 
 The $\sigma$-algebra is called **complete** wrt $\mu$ (the measure space $(\Omega, \mathcal{F}, \mu)$ is complete) if for all $F \subseteq A$, $A \in \mathcal{F}$ & $\mu(A) = 0$ implies $F \in \mathcal{F}$.
