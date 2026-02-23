@@ -1,20 +1,20 @@
 ## Algorithm Properties
 
-1. Input $2O$
-2. Output $2 - 1$
+1. Input $\geq 0$ (zero or more)
+2. Output $\geq 1$ (at least one)
 3. Correct
 4. Language Independent
 5. Unambiguous
 6. Efficiency
    - **Time Complexity:** Amount of time taken
    - **Space Complexity:** Amount of memory used
-
+---
 ## Time Complexity Analysis
 
 ### Example 1: Sum of Two Numbers
 
 ```
-(1) test a, b          → Assignment Statement     (2 time units)
+(1) Read a, b          → Assignment Statement     (2 time units)
 (2) S = a + b          → Constant time 'c'         (2 time units)
                          Logic Operation
 (3) Print S            → Print operation           (1 time unit)
@@ -33,52 +33,47 @@ for i = 0 to n         → 2n time units
 **Analysis:**
 - $n$ numbers input operations
 - Loop executes $n$ times
-- Matrix operations: $n + n \rightarrow n$ (input addition)
+- Each iteration: constant time operations
 
 $$T(n) = O(n)$$
 
 ### Example 3: Matrix Addition - 2D Array
 
 ```
-for i = 0 to n              → 2n + 1
-for k = 0 to m              → 2m + 1
+for i = 0 to n              → Outer loop runs n times
+for j = 0 to m              → Inner loop runs m times
   C[i,j] = A[i,j] + B[i,j]  → Executed n × m times
 ```
 
-**Time Complexity:** $$T(n) = O(n^2)$$
+**Time Complexity:** $$T(n,m) = O(n \times m)$$
 
-**Note:** Complexity depends on matrix dimensions $n, m$, and $n + m$
+**Note:** For square matrices where $n = m$, complexity is $O(n^2)$
 
-### Recurrence Relations
-
-$$O(n) = \begin{cases} O(n) & \text{for } i = 0 \text{ to } nm \\ O(n) & \text{for } k = 0 \text{ to } m \\ C[i,j] = C[i-1,j] + A[i,j] + B[i,j] & \rightarrow 2n \end{cases}$$
-
-$$T(n) = O(n)$$
-
+---
 ## Fibonacci Algorithm
 
-**Algorithm:** For $n$ given $\rightarrow O(n)$
+**Iterative Algorithm:** Time Complexity $O(n)$
 
 ```
 Fib(n)
-  cf = 0
+  f1 = 0
   f2 = 1
   
-  for f = 2 to n
-    temp = cf + f2
-    cf = f2
+  for i = 2 to n
+    temp = f1 + f2
+    f1 = f2
     f2 = temp
+  
+  return f2
 ```
 
-**Recursion Definition:**
+**Recursive Definition:**
 
 $$
 \text{Fib}(n) = 
 \begin{cases} 
-1 & \text{if } n \& 1 \text{ (return 1)} \\ 
-0 & \text{if } n = 0 \text{ (return 0)} \\ 
-\text{Fib}(n) = \text{Fib}(n) + \text{Fib}(n-2) & \text{else} 
+0 & \text{if } n = 0 \\ 
+1 & \text{if } n = 1 \\ 
+\text{Fib}(n-1) + \text{Fib}(n-2) & \text{otherwise}
 \end{cases}
 $$
-
-where $a^2 = q + 1$

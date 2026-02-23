@@ -1,4 +1,4 @@
-## Pros Algorithm
+## Basic Algorithms
 
 ### Sum of Two Numbers
 
@@ -37,13 +37,13 @@ int main() {
 ### Matrix Sum - 2D Array
 
 **Algorithm:**
-For $n \times m$ matrix from $i = 1$ to $n$:
-1. Read $m, n, A[i][j]$
-2. Calculate sum
-
-**Space Complexity:** $$C_6 = \text{for}(i = 0 \text{ to } m-1) = \{i = 1 \text{ to } m\}$$
-
-By $n = 1$ to $m$
+1. Read $m, n$ (dimensions of matrix)
+2. Initialize $S = 0$
+3. For $i = 0$ to $n - 1$:
+   - For $j = 0$ to $m - 1$:
+     - Read $A[i][j]$
+     - $S = S + A[i][j]$
+4. Print $S$
 
 ### Recursion: Factorial
 
@@ -52,9 +52,9 @@ $$\text{Fact}(n) = \begin{cases} 1 & \text{if } n = 0 \\ n \times \text{Fact}(n-
 
 ### Algorithm Properties
 
-- **Input:** Zero or max input
-- **Output:** All last 1 output
-- **Efficiency:** Less time and space complexity for computer
+- **Input:** Zero or more inputs
+- **Output:** At least 1 output
+- **Efficiency:** Minimal time and space complexity
 
 ### Topics to Cover
 
