@@ -88,3 +88,8 @@
 ---
 #### Scanned Question Paper
 ![[Midsem, Vas 2025.pdf]]
+
+## Solutions
+
+[[Midsem-Solutions]]
+ 
