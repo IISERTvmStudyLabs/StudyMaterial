@@ -9,9 +9,15 @@ $$T(n) = T(n-1) + T(n-2) + c$$
 $$T(n) = a^n$$
 
 where:
-$$a^2 = a^1 + a^0$$
-$$a^2 - a - 1 = 0$$
-$$a = \frac{1 \pm \sqrt{5}}{2}$$
+$$
+a^2 = a^1 + a^0
+$$
+$$
+a^2 - a - 1 = 0
+$$
+$$
+a = \frac{1 \pm \sqrt{5}}{2}
+$$
 
 Therefore:
 $$T(n) = \left(\frac{1+\sqrt{5}}{2}\right)^n \text{ or } \left(\frac{1-\sqrt{5}}{2}\right)^n = O(\phi^n)$$
