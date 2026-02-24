@@ -104,7 +104,6 @@ A((26))
 A --> B((17))
 A --> C((41))
 
-%% Left subtree
 B --> D((14))
 B --> E((21))
 
@@ -123,8 +122,6 @@ E --> M((29))
 
 L --> N((20))
 
-
-%% Right subtree
 C --> O((30))
 C --> P((97))
 
@@ -134,31 +131,30 @@ O --> R((38))
 R --> S((35))
 R --> T((39))
 
+classDef black fill:#000,color:#fff
+classDef red fill:#f66,color:#000
 
-%% Black nodes
-style A fill:black,color:white
-style C fill:black,color:white
-style D fill:black,color:white
-style E fill:black,color:white
-style P fill:black,color:white
-style G fill:black,color:white
-style L fill:black,color:white
-style M fill:black,color:white
-style Q fill:black,color:white
-style R fill:black,color:white
-style H fill:black,color:white
-style I fill:black,color:white
+class A black
+class C black
+class D black
+class E black
+class P black
+class G black
+class L black
+class M black
+class Q black
+class R black
+class H black
+class I black
 
-
-%% Red nodes
-style B fill:#ff6666,color:black
-style F fill:#ff6666,color:black
-style J fill:#ff6666,color:black
-style K fill:#ff6666,color:black
-style N fill:#ff6666,color:black
-style O fill:#ff6666,color:black
-style S fill:#ff6666,color:black
-style T fill:#ff6666,color:black
+class B red
+class F red
+class J red
+class K red
+class N red
+class O red
+class S red
+class T red
 
 ```
 
@@ -247,3 +243,7 @@ a ---|7| f
    a) Construct a minimum spanning tree (MST) of this graph using **Kruskal's algorithm**. Draw the MST of the graph and find the minimum total weight. Also write the sequence of edges chosen by Kruskal's algorithm and if an edge is not included in the MST, explain why it is discarded. (Example: (x, y) added, (u, v) discarded because it creates the cycle uxxvv.) (5 Marks)
    
    b) Construct a minimum spanning tree (MST) of this graph using **Prim's algorithm** by assuming that we start with node 'a' in $G$ as the starting node and give the order in which the nodes are added to MST. Draw the MST of the graph and find the minimum total weight. (5 Marks)
+
+---
+#### Scanned Question Paper
+![[Endsem, Vas 2025.pdf]]

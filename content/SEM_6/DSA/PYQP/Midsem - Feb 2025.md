@@ -109,3 +109,7 @@
 	b) 2, 1, 3, 4
 	c) 2, 3, 4, 1
 	d) 2, 4, 3, 1
+
+---
+#### Scanned Question Paper
+![[Midsem, Vas 2025.pdf]]
