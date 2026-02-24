@@ -18,8 +18,8 @@ Quick Sort is a divide-and-conquer sorting algorithm that works by selecting a *
 
 1. Choose a pivot element (typically the last element)
 2. Partition the array so that:
-   - Elements smaller than pivot are on the left
-   - Elements greater than pivot are on the right
+   - Elements **less than or equal to** pivot are on the left
+   - Elements **greater than** pivot are on the right
 3. Recursively sort the left and right subarrays
 
 ---
