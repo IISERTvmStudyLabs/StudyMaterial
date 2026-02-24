@@ -171,26 +171,20 @@ c((c))
 e((e))
 f((f))
 
-%% Top connections
 b -->|5| e
-e -->|-2| b
+e -->|"-2"| b
 
-%% Left connections
 a -->|6| b
 a -->|7| c
 
-%% Vertical
 b -->|8| c
 e -->|7| f
 
-%% Bottom
 c -->|9| f
 
-%% Diagonals
-c -->|-3| e
-b -->|-4| f
+c -->|"-3"| e
+b -->|"-4"| f
 
-%% Reverse edge
 f -->|2| a
 
 ```
@@ -200,7 +194,6 @@ f -->|2| a
 ### Answer all questions. Each question carries 10 Marks.
 
 1. Consider the graph $G$ in figure.
-   
 ```mermaid
 graph LR
 
@@ -212,34 +205,29 @@ e((e))
 f((f))
 g((g))
 
-%% Horizontal edges
-b ---|2| e
-a ---|9| d
-d ---|3| g
-c ---|6| f
+b -->|2| e
+a -->|9| d
+d -->|3| g
+c -->|6| f
 
-%% Left connections
-a ---|8| b
-a ---|9| c
-b ---|7| c
+a -->|8| b
+a -->|9| c
+b -->|7| c
 
-%% Middle connections
-b ---|6| d
-c ---|7| d
-d ---|5| e
-d ---|4| f
+b -->|6| d
+c -->|7| d
+d -->|5| e
+d -->|4| f
 
-%% Right connections
-e ---|5| f
-e ---|6| g
-f ---|3| g
+e -->|5| f
+e -->|6| g
+f -->|3| g
 
-%% Outer arcs (approximated)
-b ---|8| g
-a ---|7| f
+b -->|8| g
+a -->|7| f
 
 ```
-   
+
    a) Construct a minimum spanning tree (MST) of this graph using **Kruskal's algorithm**. Draw the MST of the graph and find the minimum total weight. Also write the sequence of edges chosen by Kruskal's algorithm and if an edge is not included in the MST, explain why it is discarded. (Example: (x, y) added, (u, v) discarded because it creates the cycle uxxvv.) (5 Marks)
    
    b) Construct a minimum spanning tree (MST) of this graph using **Prim's algorithm** by assuming that we start with node 'a' in $G$ as the starting node and give the order in which the nodes are added to MST. Draw the MST of the graph and find the minimum total weight. (5 Marks)
