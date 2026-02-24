@@ -72,7 +72,9 @@ return -1  // Not found
 ```
 
 **Time Complexity Analysis:**
-$$T(n) = c + T(n/2)$$
+$$
+T(n) = c + T(n/2)
+$$
 
 where $c$ is constant time for comparison and mid calculation.
 
@@ -80,18 +82,32 @@ where $c$ is constant time for comparison and mid calculation.
 
 Base case: $T(1) = 1$
 
-$$T(n) = c + T(n/2)$$
-$$T(n) = c + c + T(n/4)$$
-$$T(n) = c + c + c + ... + T(n/2^i)$$
+$$
+T(n) = c + T(n/2)
+$$
+$$
+T(n) = c + c + T(n/4)
+$$
+$$
+T(n) = c + c + c + ... + T(n/2^i)
+$$
 
 When $n/2^i = 1$:
-$$n = 2^i$$
-$$\log_2 n = i$$
+$$
+n = 2^i
+$$
+$$
+\log_2 n = i
+$$
 
 Therefore:
-$$T(n) = c \cdot i + 1 = c \log n + 1$$
+$$
+T(n) = c \cdot i + 1 = c \log n + 1
+$$
 
 **Final Complexity:**
-$$\boxed{T(n) = O(\log n)}$$
+$$
+\boxed{T(n) = O(\log n)}
+$$
 
 > **Note:** Efficient but array must be sorted!
