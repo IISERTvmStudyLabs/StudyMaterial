@@ -85,31 +85,6 @@
 
 1. Mr. Ram is a chemist who receives ten medicine boxes with batch numbers 35, 33, 42, 10, 14, 19, 27, 44, 26, 31 printed on them. He always arranges the boxes manually and gets frustrated every time. He thought he would have a lot of problems in the future arranging the boxes if the number of boxes of medicine is large. He wants to make this task easier. As you are a good programmer, Mr. Ram is asking for your help. Write an optimal quick sort algorithm to arrange the boxes in increasing order of batch numbers and show each step of the algorithm in detail using the above sequence of batch numbers. Also, write the best case and worst case time complexity of the algorithm?
 
-2. Consider the following sequence of stack operations:
-
-	a) $S = \text{push}(S, 1)$
-
-	b) $S = \text{push}(S, 2)$
-
-	c) $S = \text{pop}(S)$
-
-	d) $S = \text{push}(S, 3)$
-
-	e) $S = \text{push}(S, 4)$
-
-	f) $S = \text{pop}(S)$
-
-	g) $S = \text{pop}(S)$
-
-	h) $S = \text{pop}(S)$
-
-	Which of the following is the correct order in which elements are popped?
-
-	a) 1, 2, 3, 4
-	b) 2, 1, 3, 4
-	c) 2, 3, 4, 1
-	d) 2, 4, 3, 1
-
 ---
 #### Scanned Question Paper
 ![[Midsem, Vas 2025.pdf]]
