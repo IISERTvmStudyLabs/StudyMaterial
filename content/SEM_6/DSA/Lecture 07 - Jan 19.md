@@ -37,11 +37,18 @@ b = temp
 **Iterations:** $n-1$ comparisons, $n-2$, ...
 
 **Total comparisons:**
-$$n-1 + n-2 + n-3 + \dots + 1$$
+$$
+n-1 + n-2 + n-3 + \dots + 1
+$$
 
-$$\frac{n(n-1)}{2} = \frac{n^2 - n}{2} = \frac{n^2}{2}$$
+$$
+\frac{n(n-1)}{2} = \frac{n^2 - n}{2} = \frac{n^2}{2}
+$$
 
-**Time Complexity:** $$O(n^2)$$
+**Time Complexity:**
+$$
+O(n^2)
+$$
 
 ---
 
@@ -64,6 +71,9 @@ for j = (0 to n):
 
 **Analysis:** $n-1 + n-2 + \dots + 1$
 
-**Time Complexity:** $$O(n^2)$$
+**Time Complexity:**
+$$
+O(n^2)
+$$
 
 **Best case:** $n-1$ comparison in $O(n)$

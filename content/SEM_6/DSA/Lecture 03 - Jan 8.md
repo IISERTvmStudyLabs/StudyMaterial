@@ -1,12 +1,18 @@
 ## Fibonacci Time Complexity (Continued)
 
 **Recurrence Relation:**
-$$f(n) = f(n-1) + f(n-2)$$
+$$
+f(n) = f(n-1) + f(n-2)
+$$
 
 **Time Complexity:**
-$$T(n) = T(n-1) + T(n-2) + c$$
+$$
+T(n) = T(n-1) + T(n-2) + c
+$$
 
-$$T(n) = a^n$$
+$$
+T(n) = a^n
+$$
 
 where:
 $$
@@ -20,7 +26,9 @@ a = \frac{1 \pm \sqrt{5}}{2}
 $$
 
 Therefore:
-$$T(n) = \left(\frac{1+\sqrt{5}}{2}\right)^n \text{ or } \left(\frac{1-\sqrt{5}}{2}\right)^n = O(\phi^n)$$
+$$
+T(n) = \left(\frac{1+\sqrt{5}}{2}\right)^n \text{ or } \left(\frac{1-\sqrt{5}}{2}\right)^n = O(\phi^n)
+$$
 
 where $\phi \approx 1.618$ (golden ratio)
 

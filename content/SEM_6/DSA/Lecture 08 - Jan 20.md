@@ -83,15 +83,21 @@ while (j < n2):
 
 **Recurrence Relation:**
 
-$$T(n) = 2T(n/2) + \Theta(n)$$
+$$
+T(n) = 2T(n/2) + \Theta(n)
+$$
 
-$$T(1) = \Theta(1)$$
+$$
+T(1) = \Theta(1)
+$$
 
 **Solution:**
 
 Using the Master Theorem or recursion tree method:
 
-$$T(n) = \Theta(n \log n)$$
+$$
+T(n) = \Theta(n \log n)
+$$
 
 **Best Case:** $\Theta(n \log n)$  
 **Average Case:** $\Theta(n \log n)$  

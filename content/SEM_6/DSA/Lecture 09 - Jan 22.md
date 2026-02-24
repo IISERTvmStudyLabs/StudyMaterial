@@ -61,18 +61,24 @@ for i = 2 to n:                      // Start from 2nd element
 - For each element `i`, we compare with all `i-1` previous elements
 - Total comparisons: $1 + 2 + 3 + ... + (n-1) = \frac{n(n-1)}{2}$
 
-$$T(n) = O(n^2)$$
+$$
+T(n) = O(n^2)
+$$
 
 **Best Case:** Array already sorted `[3, 8, 26, 51, 65, 91]`
 
 - For each element, only one comparison (no shifts needed)
 - Total comparisons: $n - 1$
 
-$$T(n) = O(n)$$
+$$
+T(n) = O(n)
+$$
 
 **Average Case:** Random order
 
-$$T(n) = O(n^2)$$
+$$
+T(n) = O(n^2)
+$$
 
 **Space Complexity:** $O(1)$ (in-place sorting)
 

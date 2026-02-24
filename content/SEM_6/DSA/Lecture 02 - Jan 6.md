@@ -20,7 +20,10 @@
 (3) Print S            → Print operation           (1 time unit)
 ```
 
-**Total Time:** $$T(n) = 2 + 2 + 1 = 5 \rightarrow O(1)$$
+**Total Time:**
+$$
+T(n) = 2 + 2 + 1 = 5 \rightarrow O(1)
+$$
 
 ### Example 2: Sum of n Numbers
 
@@ -35,7 +38,9 @@ for i = 0 to n         → 2n time units
 - Loop executes $n$ times
 - Each iteration: constant time operations
 
-$$T(n) = O(n)$$
+$$
+T(n) = O(n)
+$$
 
 ### Example 3: Matrix Addition - 2D Array
 
@@ -45,7 +50,10 @@ for j = 0 to m              → Inner loop runs m times
   C[i,j] = A[i,j] + B[i,j]  → Executed n × m times
 ```
 
-**Time Complexity:** $$T(n,m) = O(n \times m)$$
+**Time Complexity:**
+$$
+T(n,m) = O(n \times m)
+$$
 
 **Note:** For square matrices where $n = m$, complexity is $O(n^2)$
 

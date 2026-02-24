@@ -48,7 +48,9 @@ int main() {
 ### Recursion: Factorial
 
 **Recurrence Relation:**
-$$\text{Fact}(n) = \begin{cases} 1 & \text{if } n = 0 \\ n \times \text{Fact}(n-1) & \text{else} \end{cases}$$
+$$
+\text{Fact}(n) = \begin{cases} 1 & \text{if } n = 0 \\ n \times \text{Fact}(n-1) & \text{else} \end{cases}
+$$
 
 ### Algorithm Properties
 

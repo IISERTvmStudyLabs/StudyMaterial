@@ -142,23 +142,33 @@ if beg < end:
 
 When pivot divides array into two equal halves:
 
-$$T(n) = 2T(n/2) + \Theta(n)$$
+$$
+T(n) = 2T(n/2) + \Theta(n)
+$$
 
 Using Master Theorem:
 
-$$T(n) = \Theta(n \log n)$$
+$$
+T(n) = \Theta(n \log n)
+$$
 
 #### Average Case: Random Partitions
 
-$$T(n) = \Theta(n \log n)$$
+$$
+T(n) = \Theta(n \log n)
+$$
 
 #### Worst Case: Unbalanced Partitions
 
 When array is already sorted or reverse sorted, and we always pick the smallest/largest element as pivot:
 
-$$T(n) = T(n-1) + \Theta(n)$$
+$$
+T(n) = T(n-1) + \Theta(n)
+$$
 
-$$T(n) = \Theta(n^2)$$
+$$
+T(n) = \Theta(n^2)
+$$
 
 Example: `[1, 2, 3, 4, 5]` with last element as pivot gives partitions of size 0 and n-1.
 
