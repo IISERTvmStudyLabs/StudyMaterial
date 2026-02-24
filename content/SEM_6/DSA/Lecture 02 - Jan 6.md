@@ -24,7 +24,7 @@
 
 ### Example 2: Sum of n Numbers
 
-```
+```pseudocode
 S = 0                  → 1 time unit
 for i = 0 to n         → 2n time units
   S = S + A[i]         → 2n time units
@@ -39,7 +39,7 @@ $$T(n) = O(n)$$
 
 ### Example 3: Matrix Addition - 2D Array
 
-```
+```pseudocode
 for i = 0 to n              → Outer loop runs n times
 for j = 0 to m              → Inner loop runs m times
   C[i,j] = A[i,j] + B[i,j]  → Executed n × m times
@@ -54,7 +54,7 @@ for j = 0 to m              → Inner loop runs m times
 
 **Iterative Algorithm:** Time Complexity $O(n)$
 
-```
+```pseudocode
 Fib(n)
   f1 = 0
   f2 = 1

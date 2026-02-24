@@ -2,7 +2,7 @@
 
 **Randomly given elements:**
 
-```
+```pseudocode
 for (i = 0 to n):
   min = i
   for (j = i+1 to n):
@@ -14,7 +14,7 @@ for (i = 0 to n):
 ### Example: [75, 36, 4, 9, 81, 65]
 
 **Swap function:**
-```
+```pseudocode
 S, temp = a
 a = b
 b = temp
@@ -49,7 +49,7 @@ $$\frac{n(n-1)}{2} = \frac{n^2 - n}{2} = \frac{n^2}{2}$$
 
 **Example:** [75, 36, 4, 9, 81, 65]
 
-```
+```pseudocode
 for j = (0 to n):
   for (i = 0 to n-j-1):
     if (A[i] > A[i+1]):

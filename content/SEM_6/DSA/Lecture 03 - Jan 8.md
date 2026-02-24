@@ -31,7 +31,7 @@ where $\phi \approx 1.618$ (golden ratio)
 
 **Given:** Array $A$ with $n$ elements, search for value $X$
 
-```
+```pseudocode
 for i = 0 to n-1:
     if A[i] == X:
         return i  // Found at index i
@@ -51,7 +51,7 @@ return -1  // Not found
 
 ### Binary Search Algorithm
 
-```
+```pseudocode
 low = 0
 high = n - 1
 while (low ≤ high):

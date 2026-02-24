@@ -1,67 +1,100 @@
 ## Merge Sort
 
-**Array Length = 8000**
+### Example
 
-**Example:** [70, 25, 81, 9, 84, 65]
+**Input Array:** `[70, 25, 81, 9, 84, 65]`
 
-Single element arrays always sorted
+Single element arrays are always sorted.
 
-**Step 1:** [25, 70] [81] [9, 65] [106]
+**Step 1 (Divide):** 
+- `[70]` `[25]` `[81]` `[9]` `[84]` `[65]`
 
-**Step 2:** [9, 25, 70, 81, 106]
+**Step 2 (Merge pairs):** 
+- `[25, 70]` `[9, 81]` `[65, 84]`
+
+**Step 3 (Merge):** 
+- `[9, 25, 70, 81]` `[65, 84]`
+
+**Step 4 (Final merge):** 
+- `[9, 25, 65, 70, 81, 84]`
+
+---
 
 ### Algorithm
 
-**Merge Sort (A, beg, r):**
+**MergeSort(A, beg, end):**
 
-```
-if (i < r):                    → c
-  g = (i + r)/2                → c
+```pseudocode
+if (beg < end):                    // Base case check - O(1)
+  mid = (beg + end) / 2            // Find middle - O(1)
   
-  T(n/2) merge-Sort(A, beg)
-  T(n/2) merge-Sort(A, mid)
-  merge(A, i, r, g)
+  MergeSort(A, beg, mid)           // Sort left half - T(n/2)
+  MergeSort(A, mid + 1, end)       // Sort right half - T(n/2)
+  Merge(A, beg, mid, end)          // Merge sorted halves - O(n)
 ```
+
+---
 
 ### Merge Function
 
-**Merge (A, beg, r):**
+**Merge(A, beg, mid, end):**
 
-```
-n1 = mid + 1
-n2 = r - g
+```pseudocode
+n1 = mid - beg + 1               // Length of left subarray
+n2 = end - mid                    // Length of right subarray
 
-for i = 1 to n1:               → n1
-  L[i] = A[i+1]
+// Copy data to temporary arrays L[] and R[]
+for i = 0 to n1 - 1:              // O(n1)
+  L[i] = A[beg + i]
 
-for i = 0 to n2:               → n2
-  R[i] = A[mid+1]
+for j = 0 to n2 - 1:              // O(n2)
+  R[j] = A[mid + 1 + j]
 
-i = 0, j = 0
+// Merge the temporary arrays back into A[beg..end]
+i = 0, j = 0, k = beg
 
-for k = 1 to r:                → n1
-  if L[i] < R[j]:              ⟹ Θ(n)
+while (i < n1 AND j < n2):        // O(n1 + n2)
+  if L[i] <= R[j]:
     A[k] = L[i]
-    i = i+1
+    i = i + 1
   else:
     A[k] = R[j]
-    j = j+1
+    j = j + 1
+  k = k + 1
+
+// Copy remaining elements of L[], if any
+while (i < n1):
+  A[k] = L[i]
+  i = i + 1
+  k = k + 1
+
+// Copy remaining elements of R[], if any
+while (j < n2):
+  A[k] = R[j]
+  j = j + 1
+  k = k + 1
 ```
+
+**Merge Complexity:** $\Theta(n)$ where $n = n_1 + n_2$
+
+---
 
 ### Time Complexity Analysis
 
-$$O(n, m_1 + n)$$
+**Recurrence Relation:**
 
-where $n > m_1 \cdot 2$
+$$T(n) = 2T(n/2) + \Theta(n)$$
 
-$$O(n)$$
+$$T(1) = \Theta(1)$$
 
-**Recurrence:**
+**Solution:**
 
-$$T(n) = 2T(n/2) + n$$
+Using the Master Theorem or recursion tree method:
 
-$$T(1) = 0$$
+$$T(n) = \Theta(n \log n)$$
 
-$$\Theta(n \log n)$$
+**Best Case:** $\Theta(n \log n)$  
+**Average Case:** $\Theta(n \log n)$  
+**Worst Case:** $\Theta(n \log n)$
 
-$$n \cdot \frac{\log^2}{n} \rightarrow \Theta(1)$$
+**Space Complexity:** $\Theta(n)$ (due to temporary arrays)
