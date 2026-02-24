@@ -16,7 +16,7 @@ const config: QuartzConfig = {
       provider: "plausible",
     },
     locale: "en-US",
-    baseUrl: "akwastaken.github.io/Measure-Theory-Notes",
+    baseUrl: "iisertvmstudylabs.github.io/StudyMaterial",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
