@@ -17,11 +17,13 @@ $$\int_{\Omega} f d\mu = \sup \left\{ \int_{\Omega} \phi d\mu : \phi \text{ is s
 
 **Textbook**: _Measure Theory & Integration_, G. de Barra, New Age Publication
 
-**Definitions**: If $f : \Omega \to [0, \infty]$ is measurable and $A \in \mathcal{F}$ we define
+# Definitions
+If $f : \Omega \to [0, \infty]$ is measurable and $A \in \mathcal{F}$ we define
 
 $$\int_{A} f d\mu = \int_{\Omega} f \chi_A d\mu$$
 
-**Proposition**: If $\mu(A) = 0$, then for any measurable $f : \Omega \to [0, \infty]$
+## Proposition
+If $\mu(A) = 0$, then for any measurable $f : \Omega \to [0, \infty]$
 
 $$\int_{A} f d\mu = 0$$
 
@@ -43,11 +45,9 @@ $$= \int_{\Omega} \sum_{i=1}^{k} c_i \chi_{E_i \cap A} d\mu$$
 
 $$= \sum_{i=1}^{k} c_i \mu(E_i \cap A) = 0$$
 
-**Proposition**: Let $\phi$ be a non-negative simple fn. Then, $A \mapsto \int_{A} \phi d\mu, A \in \mathcal{F}$ [is a measure].
+## Proposition
+Let $\phi$ be a non-negative simple fn. Then, $A \mapsto \int_{A} \phi d\mu, A \in \mathcal{F}$ [is a measure].
 
----
-
----
 
 Then $\nu_\phi$ is a measure on the $\sigma$-field $\mathcal{F}$.
 

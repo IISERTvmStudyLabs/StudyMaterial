@@ -17,7 +17,7 @@ $$|f_n - f| \le 2g$$
 
 **Note:-** $|f_n| + |f| \le 2g \implies |f_n - f| \le 2g$
 
-Apply Fatou's Lemma to $\{2g - |f_n - f|\}$ to get
+Apply [[Lecture 14#Fatou's Lemma|Fatou's Lemma]] to $\{2g - |f_n - f|\}$ to get
 
 $$\int_{\Omega} 2g d\mu \le \liminf \int_{\Omega} (2g - |f_n - f|) d\mu$$
 
@@ -51,10 +51,10 @@ Then,
 
 $$\sum_{n=1}^{\infty} f_n \text{ converges pointwise.}$$
 
-and we
+and 
 
 $$\int_{\Omega} \left( \sum_{n=1}^{\infty} f_n \right) d\mu = \sum_{n=1}^{\infty} \left( \int_{\Omega} f_n d\mu \right)$$
-Proof
+**Proof**
 
 Set $g = \sum_{n=1}^{\infty} |f_n|$. Then by MCT
 
@@ -98,7 +98,7 @@ Then $F$ is differentiable and
 
 $$F'(t) = \int_{\Omega} \frac{\partial}{\partial t} f(x, t) d\mu(x)$$
 
-Example: Let $f$ be integrable, $f: \mathbb{R} \to \mathbb{R}$, then
+**Example**: Let $f$ be integrable, $f: \mathbb{R} \to \mathbb{R}$, then
 
 define
 
