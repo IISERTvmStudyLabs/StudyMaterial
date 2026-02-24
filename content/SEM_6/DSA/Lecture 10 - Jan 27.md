@@ -177,7 +177,7 @@ Example: `[1, 2, 3, 4, 5]` with last element as pivot gives partitions of size 0
 ### Space Complexity
 
 **Space Complexity:** $O(\log n)$ average case (recursion stack)  
-**Worst Case Space:** $O(n^2)$ (when recursion depth is n)
+**Worst Case Space:** $O(n)$ (when recursion depth is n)
 
 ---
 
