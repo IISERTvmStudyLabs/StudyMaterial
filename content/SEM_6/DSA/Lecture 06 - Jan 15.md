@@ -30,6 +30,16 @@ $$
 T(n) = \Theta(f(n))
 $$
 
+
+---
+## Simplified
+
+If $T(n) = aT(n/b) + O(n^d)$ for constants $a > 0, b > 1, d \ge 0$, then
+
+$$
+T(n) = \begin{cases} O(n^d) & \text{if } d > \log_b a \\ O(n^d \log n) & \text{if } d = \log_b a \\ O(n^{\log_b a}) & \text{if } d < \log_b a \end{cases}
+$$
+
 ---
 ## Examples
 
