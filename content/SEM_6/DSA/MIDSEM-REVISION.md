@@ -1,5 +1,3 @@
-# DSA MIDSEM REVISION
-
 ## Master Theorem
 
 **For recurrence:** $T(n) = aT(n/b) + O(n^d)$ where $a > 0, b > 1, d \ge 0$
