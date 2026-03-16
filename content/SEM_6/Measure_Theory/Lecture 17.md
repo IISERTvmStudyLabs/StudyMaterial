@@ -1,125 +1,89 @@
-# Dominated Convergence Theorem
-
-Suppose $(\Omega, \mathcal{F}, \mu)$ is a measure space. Suppose $f_n: \Omega \to \bar{\mathbb{R}}$ is a sequence of measurable functions s.t. $f = \lim_{n \to \infty} f_n$ pointwise.
-
-If $\exists$ a non-negative integrable function $g$ st
-
-$$|f_n(\omega)| \le g(\omega), \forall n, \forall \omega \in \Omega$$
-
-Then
-
-$$\lim_{n \to \infty} \int_{\Omega} f_n d\mu = \int_{\Omega} f d\mu \text{ ; In fact, } \int_{\Omega} |f_n - f| d\mu = 0$$
-
-**Proof**
-Since $g$ is integrable, $f_n, f$ are integrable.
-
-$$|f_n - f| \le 2g$$
-
-**Note:-** $|f_n| + |f| \le 2g \implies |f_n - f| \le 2g$
-
-Apply [[Lecture 14#Fatou's Lemma|Fatou's Lemma]] to $\{2g - |f_n - f|\}$ to get
-
-$$\int_{\Omega} 2g d\mu \le \liminf \int_{\Omega} (2g - |f_n - f|) d\mu$$
-
-$$= \int_{\Omega} 2g d\mu + \liminf \left( - \int_{\Omega} |f_n - f| d\mu \right)$$
-
-$$= \int_{\Omega} 2g d\mu - \limsup \int_{\Omega} |f_n - f| d\mu$$
-Since $g$ is integrable, $\int_{\Omega} 2g d\mu < \infty$, we can subtract $\int_{\Omega} 2g d\mu$ from the both sides of the above inequality to get
-
-$$-\limsup_{n \to \infty} \int_{\Omega} |f_n - f| d\mu \ge 0$$
-
-$$\implies \limsup_{n \to \infty} \int_{\Omega} |f_n - f| d\mu \le 0$$
-
-$$\implies \limsup_{n \to \infty} \int_{\Omega} |f_n - f| d\mu = 0$$
-
-Now,
-
-$$\left| \int_{\Omega} f_n d\mu - \int_{\Omega} f d\mu \right| = \left| \int_{\Omega} (f_n - f) d\mu \right|$$
-
-$$\le \int_{\Omega} |f_n - f| d\mu$$
-
-$$\implies \int_{\Omega} f_n d\mu \to \int_{\Omega} f d\mu$$
-
----
-
-### Corollary
-If $\{f_n\}$ is a sequence of integrable fns on $\Omega$ st
-
-$$\sum_{n=1}^{\infty} \int_{\Omega} |f_n| d\mu < \infty$$
-
-Then,
-
-$$\sum_{n=1}^{\infty} f_n \text{ converges pointwise.}$$
-
-and 
-
-$$\int_{\Omega} \left( \sum_{n=1}^{\infty} f_n \right) d\mu = \sum_{n=1}^{\infty} \left( \int_{\Omega} f_n d\mu \right)$$
-**Proof**
-
-Set $g = \sum_{n=1}^{\infty} |f_n|$. Then by MCT
-
-$$\int_{\Omega} g d\mu = \sum_{n=1}^{\infty} \int_{\Omega} |f_n| d\mu < \infty$$
-
-This implies $g$ is real valued a.e. ie $\sum |f_n|$ converges a.e
-
-Thus $\sum f_n$ converges almost everywhere.
-
-Denote $f = \sum_{n=1}^{\infty} f_n$, $g_n = \sum_{j=1}^{n} f_j$. Then $g_n \to f$ a.e. and
-
-$$|g_n| \le \sum_{j=1}^{n} |f_j| \le g$$
-
-So since $g$ is integrable apply DCT to get
-
-$$\lim_{n \to \infty} \int_{\Omega} g_n = \int_{\Omega} f d\mu$$
-
-$$\implies \int_{\Omega} \left( \sum_{n=1}^{\infty} f_n \right) d\mu = \lim_{n \to \infty} \sum_{j=1}^{n} \int_{\Omega} f_j d\mu = \sum_{n=1}^{\infty} \int_{\Omega} f_n d\mu$$
-
----
-
 ## Proposition
-Suppose $f: \Omega \times [a,b] \to \mathbb{R}$, where $-\infty < a < b < \infty$
 
-and $f(\cdot, t)(x) := f(x, t)$ is integrable for each $t \in [a,b]$
+Suppose $(\Omega, \mathcal{F}, \mu)$ is a **complete measure space**. Suppose $f: \Omega \to \mathbb{\bar{R}}$ and $g: \Omega \to \mathbb{\bar{R}}$ are s.t. $f = g$ a.e. (almost everywhere). Then if $f$ is measurable, $g$ is also measurable.
 
-and let $$F(t) = \int_{\Omega} f(x, t) d\mu(x)$$
+**Proof**
 
-a) If there exist an integrable fn $g$ st
+Let $A \in \mathcal{B}_{\mathbb{\bar{R}}}$. Then $f^{-1}(A) \in \mathcal{F}$. Consider $$g^{-1}(A) = \{\omega \in \Omega : g(\omega) \in A\}$$.
 
-$$|f(x, t)| \le g(x), \forall x, \forall t$$
+Since $f = g$ a.e., there exists $E \in \mathcal{F}$ s.t. $\mu(E) = 0$, and if $F \subseteq E \implies F \in \mathcal{F}$.
 
-and $\lim_{t \to t_0} f(x, t) = f(x, t_0)$
+Consider:
 
-then $F$ is continuous.
+$$g^{-1}(A) = \{\omega \in \Omega : g(\omega) \in A\}$$
 
-b) If $\frac{\partial f}{\partial t}$ exists and $\exists$ integrable fn $h$ s.t
+$$= \left( \{\omega \in \Omega : g(\omega) \in A\} \cap E \right) \cup \left( \{\omega \in \Omega : g(\omega) \in A\} \cap E^c \right)$$
 
-$$\left| \frac{\partial f}{\partial t} (x, t) \right| \le h(x), \forall x, \forall t$$
-Then $F$ is differentiable and
+---
+Suppose $E \in \mathcal{F}$ s.t. $\mu(E) = 0$ and $g(x) = f(x) \forall x \in E^c$.
 
-$$F'(t) = \int_{\Omega} \frac{\partial}{\partial t} f(x, t) d\mu(x)$$
+$$= \left( \{ \omega \in \Omega \mid g(\omega) \in A \} \cap E \right) \cup \left( \{ \omega \in \Omega \mid f(\omega) \in A \} \cap E^c \right)$$
 
-**Example**: Let $f$ be integrable, $f: \mathbb{R} \to \mathbb{R}$, then
+$$= \left( \{ \omega \in \Omega \mid g(\omega) \in A \} \cap E \right) \cup \left( f^{-1}(A) \cap E^c \right)$$
 
-define
+Since $(\Omega, \mathcal{F}, \mu)$ is complete, $\{ \omega \in \Omega \mid g(\omega) \in A \} \cap E \in \mathcal{F}$
 
-$$g(t) = \hat{f}(t) = \int_{\mathbb{R}} f(x) \cos(tx) dx, \quad t \in \mathbb{R}$$
+and by the measure $E^c \in \mathcal{F}$
 
-Prove that $g$ is continuous.
+$$\implies g^{-1}(A) \in \mathcal{F}$$
 
-Take $\{t_n\}$ be a sequence converging to $t_0$.
+Remark:- If $(\Omega, \mathcal{F}, \mu)$ is not complete then the proposition may not hold.
 
-Let $t_0$ be any point in $\mathbb{R}$. Then Denote
+Since $(\mathbb{R}, \mathcal{B}_{\mathbb{R}}, \lambda)$ this is not complete.
 
-$$f_n(x) = f(x) \cos(t_n x), \quad x \in \mathbb{R}$$
+$\exists E \in \mathcal{B}_{\mathbb{R}}, \lambda(E) = 0$, but $\exists F \subseteq E$ s.t. $F \notin \mathcal{B}_{\mathbb{R}}$
 
-Then
+But $\mathcal{L}$ is complete & so $F \in \mathcal{L}$. Consider $f = \chi_F$. Then $f = 0$ a.e.
 
-$$f_n(x) \to f(x) \cos(t_0 x) \quad \text{and}$$
+But $f$ is not Borel measurable { Borel measurable $\to f^{-1}(F) \in \mathcal{B}_{\mathbb{R}}, F \in \mathcal{B}_{\mathbb{R}}$ }
 
-$$|f_n(x)| \le |f(x)|$$
+in $f(\{1\}) = F \notin \mathcal{B}_{\mathbb{R}}$
 
-Apply DCT,
+# Definition (Lebesgue integrable)
+Let $(\Omega, \mathcal{F}, \mu)$ be a measure space and $f: \Omega \to \mathbb{\bar{R}}$ be measurable. Then $f$ is said to be Lebesgue integrable (or just integrable) if
 
-$$\int_{\mathbb{R}} f(x) \cos(t_n x) dx \to \int_{\mathbb{R}} f(x) \cos(t_0 x) dx$$
+$$\int_{\Omega} f^+ d\mu < \infty \ \text{ \& } \int_{\Omega} f^- d\mu < \infty.$$
 
-Note: $g(t) \to 0, \text{ as } t \to \infty$
+In this case, the Lebesgue integrable of $f$ is defined as
+
+$$\int_{\Omega} f d\mu = \int_{\Omega} f^+ d\mu - \int_{\Omega} f^- d\mu.$$
+## Proposition
+If $f, g: \Omega \to \bar{\mathbb{R}}$ are integrable and $A, B \in \mathcal{F}$ are disjoint. Then $f$ is integrable on $A$, $f+g$ (when well-defined) and $|f|$ are integrable and
+
+i) $$\int_{\Omega} (cf+g) d\mu = c\int_{\Omega} f d\mu + \int_{\Omega} g d\mu, \quad c \in \mathbb{R}$$
+
+ii) $$\int_{A \cup B} f d\mu = \int_{A} f d\mu + \int_{B} f d\mu$$
+
+iii) $f$ is finite a.e.
+
+iv) $$|\int_{\Omega} f d\mu| \le \int_{\Omega} |f| d\mu$$
+
+v) If $f \ge g$ then $\int_{\Omega} f d\mu \ge \int_{\Omega} g d\mu$
+
+vi) If $f = g$ a.e. then $\int_{\Omega} f d\mu = \int_{\Omega} g d\mu$
+
+vii) If $|h| \le f$ & $f \ge 0$ then $h$ is integrable
+
+**Proof**
+iii) If $f$ is not finite a.e. then at least one of the sets
+
+$$A_1 = \{\omega \in \Omega : f(\omega) = \infty\} \text{ \& } A_2 = \{\omega \in \Omega : f(\omega) = -\infty\}$$
+
+have +ve measure if $\mu(A_1) > 0$ then
+
+$$f^+(\omega) > n \quad \forall n \quad \forall \omega \in A_1$$
+
+$$\implies f^+ > n \chi_{A_1}$$
+
+$$\implies \int_{\Omega} f^+ \ge \int_{\Omega} n \chi_{A_1} d\mu = n \mu(A_1), \forall n$$
+
+$$\implies \int_{\Omega} f^+ d\mu = \infty \quad \rightarrow \leftarrow$$
+
+vi) Given $f=g$ a.e. Then $\{\omega \mid f(\omega) \neq g(\omega)\} \subseteq E$, where $\mu(E)=0$
+
+Then by ii)
+
+$$\int_{\Omega} f d\mu = \int_{E^c} f d\mu + \int_{E} f d\mu = \int_{E^c} f d\mu + \int_{E} g d\mu = \int_{E^c} g d\mu = \int_{\Omega} g d\mu$$
+
+---
+___

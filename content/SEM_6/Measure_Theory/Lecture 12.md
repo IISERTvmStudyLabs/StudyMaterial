@@ -1,95 +1,123 @@
+
+**Remark:**
+
+1. Any simple function is measurable.
+    
+2. $f$ is simple $\implies$ range of $f$ is finite & $f$ is measurable.
+    
+
+If range $(f) = \{d_1, \dots, d_k\}$ then we take $E_i = f^{-1}(\{d_i\})$ & $f = \sum_{i=1}^{k} d_{i} \chi_{E_i}$.
+
+---
+
 # Definition 
-Let $(\Omega, \mathcal{F}, \mu)$ be a measurable space. For a non-negative measurable function $f: \Omega \to [0, \infty]$ define
+Let $(\Omega, \mathcal{F}, \mu)$ be a non-negative measure space & $f$ is a non-negative simple fn with representation $f = \sum_{i=1}^{n} c_i \chi_{E_i}$.
 
-$$\int_{\Omega} f d\mu = \sup \left\{ \int_{\Omega} \phi d\mu : 0 \le \phi \le f, \phi : \Omega \to [0, \infty) \text{ is simple} \right\}$$
+Then the integral of $f$ wrt $\mu$ is defined as
 
-**Remark**: If $\phi$ takes values $c_1, \dots, c_k$ then we denote
+$$\int_{\Omega} f \, d\mu = \sum_{i=1}^{n} c_i \mu(E_i)$$
 
-$$E_i = \phi^{-1}(\{c_i\})$$
+---
 
-$$\phi = \sum_{i=1}^{k} c_i \chi_{E_i}$$
+**Well definedness:** Suppose $f = \sum_{i=1}^{m} c_i \chi_{E_i} = \sum_{j=1}^{n} d_j \chi_{F_j}$. Then $\bigcup_{i=1}^{m} E_i = \bigcup_{j=1}^{n} F_j$.
 
-# Theorem
-Let $(\Omega, \mathcal{F})$ be a measurable space. $f: \Omega \to [0, \infty]$ be a measurable function. Then $\exists$ a sequence $\{f_n\}$ of non-negative simple functions such that
+Need to prove that $\sum_{i=1}^{m} c_i \mu(E_i) = \sum_{j=1}^{n} d_j \mu(F_j)$.
 
-1. $f_n(\omega) \to f(\omega), \forall \omega \in \Omega$
+If $E_i \cap F_j \neq \emptyset$ then $c_i = d_j$. We write $E_i = \bigcup_{j=1}^{n} (E_i \cap F_j) \implies$
+
+$$\mu(E_i) = \sum_{j=1}^{n} \mu(E_i \cap F_j)$$
+
+$$\implies \sum_{i=1}^{m} c_i \mu(E_i) = \sum_{i=1}^{m} c_i \sum_{j=1}^{n} \mu(E_i \cap F_j)$$
+
+$$= \sum_{i=1}^{m} \sum_{j=1}^{n} d_j \mu(E_i \cap F_j) = \sum_{j=1}^{n} d_j \sum_{i=1}^{m} \mu(E_i \cap F_j)$$
+
+$$= \sum_{j=1}^{n} d_j \mu(F_j)$$
+
+---
+
+## Proposition
+Let $f$ and $g$ be two measurable functions on $(\Omega, \mathcal{F}, \mu)$. Then
+
+i) $\int_{\Omega} (cf) \, d\mu = c \int_{\Omega} f \, d\mu, \forall c \ge 0$
+
+ii) $\int_{\Omega} (f + g) \, d\mu = \int_{\Omega} f \, d\mu + \int_{\Omega} g \, d\mu$
+
+iii) If $f \le g$ then $\int_{\Omega} f \, d\mu \le \int_{\Omega} g \, d\mu$
+
+---
+
+**Proof of ii)**: $f = \sum_{i=1}^{m} c_i \chi_{E_i}$, $g = \sum_{j=1}^{n} d_j \chi_{F_j}$
+
+We write, $E_i = \bigcup_{j=1}^{n} E_i \cap F_j \implies \chi_{E_i} = \sum_{j=1}^{n} \chi_{E_i \cap F_j}$
+
+**Note**: $\chi_{A \cup B} = \chi_A + \chi_B$ where $A \cap B = \emptyset$
+
+Similarly, $\chi_{F_j} = \sum_{i=1}^{m} \chi_{F_j \cap E_i}$
+
+$$
+\begin{align*}
+f 
+&= \sum_{i=1}^{m} c_i \sum_{j=1}^{n} \chi_{E_i \cap F_j}, 
+\\
+g 
+&= \sum_{j=1}^{n} d_j \sum_{i=1}^{m} \chi_{F_j \cap E_i},
+\\[1em]
+f + g
+&= \sum_{i=1}^{m} \sum_{j=1}^{n} (c_i + d_j)\,\chi_{E_i \cap F_j}
+\\
+&\implies \int_{\Omega} (f + g)\, d\mu
+= \sum_{i=1}^{m} \sum_{j=1}^{n} (c_i + d_j)\,\mu(E_i \cap F_j)
+\\
+&= \sum_{i=1}^{m} \sum_{j=1}^{n} c_i\,\mu(E_i \cap F_j)
+  + \sum_{j=1}^{n} \sum_{i=1}^{m} d_j\,\mu(E_i \cap F_j)
+\\
+&= \sum_{i=1}^{m} c_i\,\mu(E_i)
+  + \sum_{j=1}^{n} d_j\,\mu(F_j).
+\end{align*}
+$$
+
+**Note**: $\sum_j \mu(E_i \cap F_j) = \mu(E_i)$, $\sum_i \mu(E_i \cap F_j) = \mu(F_j)$
+
+---
+
+iii) $f \le g$
+
+Since $f, g$ are simple then $g - f$ is simple.
+
+With standard representation:
+
+- $g + f = \sum_{i=1}^{m} \sum_{j=1}^{n} (c_i + d_j) \chi_{E_i \cap F_j}$
     
-2. $f_n(\omega) \le f_{n+1}(\omega), \forall \omega \in \Omega$
-    
-3. If $f$ is bounded then, $f_n \to f$ uniformly.
+- $g - f = \sum_{i=1}^{m} \sum_{j=1}^{n} (d_j - c_i) \chi_{E_i \cap F_j}$
     
 
-**Proof**: i) $[0, \infty] = \bigcup_{k=0}^{n 2^n - 1} \left[ \frac{k}{2^n}, \frac{k+1}{2^n} \right) \cup [n, \infty]$
+$$\int_{\Omega} g \, d\mu = \underbrace{\int_{\Omega} (g - f) \, d\mu}_{\ge 0} + \int_{\Omega} f \, d\mu \ge \int_{\Omega} f \, d\mu$$
 
-Fix $n \in \mathbb{N}$
-
-$$\implies \Omega = f^{-1}([0, \infty]) = \bigcup_{k=0}^{n 2^n - 1} f^{-1} \left( \left[ \frac{k}{2^n}, \frac{k+1}{2^n} \right) \right) \cup f^{-1}([n, \infty])$$
-
-Define $f_n = \sum_{k=0}^{n 2^n - 1} \frac{k}{2^n} \chi_{f^{-1} \left( \left[ \frac{k}{2^n}, \frac{k+1}{2^n} \right) \right)} + n \chi_{f^{-1}([n, \infty])}$
-
-Observe that $f_n(\omega) \le f(\omega), \forall \omega \in \Omega$
-
-Fix $\omega \in \Omega$, If $f(\omega) = \infty$ then $\omega \in f^{-1}([n, \infty]) \, \forall n$. Then $f_n(\omega) = n \, \forall n$. Therefore $f_n(\omega) \to \infty = f(\omega)$ as $n \to \infty$
+Using (iii), we can write $\int_{\Omega} f \, d\mu \le \int_{\Omega} g \, d\mu$.
 
 ---
 
-
----
-
-If $f(\omega) < \infty$. Then there exist $n_0 \in \mathbb{N} \ni f(\omega) < n_0$
-
-we fix $n \ge n_0$, Then $\exists k \in \mathbb{N}$ st $0 \le k \le n 2^n - 1$
-
-$$\implies \frac{k}{2^n} \le f(\omega) < \frac{k+1}{2^n}$$
-
-$$\implies k \le 2^n f(\omega) < k + 1$$
-
-$$\implies k = \lfloor 2^n f(\omega) \rfloor$$
-
-$$\implies f_n(\omega) = \frac{\lfloor 2^n f(\omega) \rfloor}{2^n} > \frac{2^n f(\omega) - 1}{2^n}$$
-
-$$\implies f_n(\omega) > f(\omega) - \frac{1}{2^n} \implies 0 \le f(\omega) - f_n(\omega) < \frac{1}{2^n}$$
-
-$$\implies f_n(\omega) \to f(\omega) \text{ as } n \to \infty$$
-
-iii) If $f$ is bounded then $f(\omega) \le n_0$ for all $\omega \in \Omega$ for some $n_0 \in \mathbb{N}$
-
-Then
-
-$$0 \le f(\omega) - f_n(\omega) < \frac{1}{2^n} \quad \forall n \ge n_0, \forall \omega$$
-
-$$\implies \sup_{\omega \in \Omega} (f(\omega) - f_n(\omega)) \to 0 \text{ as } n \to \infty$$
-
-ii) Fix $\omega \in \Omega$. We need to prove $f_n(\omega)$ [is non-decreasing]
-
-**Case I**: Assume $f(\omega) \ge n+1$ then $f_{n+1}(\omega) = n+1$ and $n+1 > n = f_n(\omega)$.
-
-**Case II**: Assume $n \le f(\omega) < n+1$. Then $f$
-
-$$f(\omega) \in \left[ \frac{k}{2^{n+1}}, \frac{k+1}{2^{n+1}} \right) \text{ for } k \in \{n 2^{n+1}, \dots, (n+1)2^{n+1} - 1\}$$
-
----
+$$
+\int_{\Omega} f\,d\mu
+= \sup\left\{
+\int_{\Omega}\varphi\,d\mu
+\;\middle|\;
+\varphi\text{ is nonnegative, measurable, and }0\le\varphi\le f
+\right\}
+$$
 
 
----
+where $f$ is a non-negative simple fn.
 
-$$f_{n+1}(\omega) = \frac{k}{2^{n+1}}$$
+$f$ is a non-negative measurable fn,
 
-$$\frac{k}{2^{n+1}} \le f(\omega) < \frac{k+1}{2^{n+1}} \implies k = \lfloor 2^{n+1} f(\omega) \rfloor$$
+$$\sup \left\{ \int_{\Omega} \phi \, d\mu \mid 0 \le \phi \le f, \phi \text{ is simple} \right\}$$
 
-$$\implies f_{n+1}(\omega) = \frac{\lfloor 2^{n+1} f(\omega) \rfloor}{2^{n+1}} \ge \frac{2^{n+1} \cdot n}{2^{n+1}} = n = f_n(\omega)$$
+**Note:** $f^{-1}([0, 1]) \in \mathcal{F}$, $m = \inf_{\omega \in f^{-1}([0, 1])} \{ f(\omega) \}$, $m \cdot \chi_{f^{-1}([0, 1])} \le f$
 
-**Case B**: Assume $f(\omega) < n$. $\exists$ $0 \le k \le 2^n - 1$ s.t.
-
-$$f(\omega) \in \left[ \frac{k}{2^n}, \frac{k+1}{2^n} \right)$$
-
-$$\implies f_n(\omega) = \frac{k}{2^n}$$
-
-$$\omega \in \left[ \frac{k}{2^n}, \frac{k+1}{2^n} \right) = \left[ \frac{2k}{2^{n+1}}, \frac{2k+2}{2^{n+1}} \right) = \left[ \frac{2k}{2^{n+1}}, \frac{2k+1}{2^{n+1}} \right) \cup \left[ \frac{2k+1}{2^{n+1}}, \frac{2k+2}{2^{n+1}} \right)$$
-
-If $\omega \in \left[ \frac{2k}{2^{n+1}}, \frac{2k+1}{2^{n+1}} \right)$, $f_{n+1}(\omega) = \frac{2k}{2^{n+1}} = \frac{k}{2^n} = f_n(\omega)$
-
-If $\omega \in \left[ \frac{2k+1}{2^{n+1}}, \frac{2k+2}{2^{n+1}} \right)$, $\implies f_{n+1}(\omega) = \frac{2k+1}{2^{n+1}} = \frac{k}{2^n} + \frac{1}{2^{n+1}} > f_n(\omega) \quad \square$
-
----
-
+$\implies \{ f_n \}$ of simple fn $f_n \uparrow f$
+$$
+\left\{\int_{\Omega} \phi d\mu \;; \phi \text{ is simple}\right\}
+$$
+____
+____

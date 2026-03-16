@@ -1,124 +1,129 @@
-# 17-2
 
-Suppose $|f(\omega, t)| \leq g(\omega) \quad \forall \omega, \forall t$, where $g$ is integrable on $\Omega$.
+# Dominated Convergence Theorem
 
-Define
+Suppose $(\Omega, \mathcal{F}, \mu)$ is a measure space. Suppose $f_n: \Omega \to \bar{\mathbb{R}}$ is a sequence of measurable functions s.t. $f = \lim_{n \to \infty} f_n$ pointwise.
 
-$$b_n(\omega) = f(\omega, t_n)$$
+If $\exists$ a non-negative integrable function $g$ st
 
-As
-
-$$f(\omega, t) \rightarrow f(\omega, t_0) \text{ as } t \rightarrow t_0 \quad \forall \omega$$
-
-Therefore
-
-$$b_n(\omega) \rightarrow f(\omega, t_0) \quad \forall \omega, \text{ as } t \rightarrow t_0$$
-Then, $|f(\omega, t)| \leq g(\omega) \quad \forall \omega$ and $g$ is injective.
-
-Hence by DCT,
-
-$$F(t_n) = \int_{\Omega} f d\mu \rightarrow \int_{\Omega} f(\omega, t_0) d\mu = f(t_0)$$
-
-Assume
-
-$$\frac{dF(t)}{dt} = \frac{d}{dt} \int_{\Omega} f(\omega, t) d\mu(\omega)$$
-
-**Exercise:** prove this.
-
----
-
-# Theorem
-
-Let $f: [a, b] \rightarrow \mathbb{R}$ be Riemann integrable where $a, b \in \mathbb{R}$ with $a < b$. Then $f$ is Lebesgue integrable on $[a, b]$.
+$$|f_n(\omega)| \le g(\omega), \forall n, \forall \omega \in \Omega$$
 
 Then
 
-$$\int_{a}^{b} f(x) dx = \int_{[a, b]} f d\lambda$$
+$$\lim_{n \to \infty} \int_{\Omega} f_n d\mu = \int_{\Omega} f d\mu \text{ ; In fact, } \int_{\Omega} |f_n - f| d\mu = 0$$
 
-### Proof
+**Proof**
+Since $g$ is integrable, $f_n, f$ are integrable.
 
-Given a partition $P = \{a = x_0 < x_1 < \dots < x_n = b\}$
+$$|f_n - f| \le 2g$$
 
-Define
+**Note:-** $|f_n| + |f| \le 2g \implies |f_n - f| \le 2g$
 
-$$U(P, f) = \sum_{i=1}^{n} M_i (x_i - x_{i-1})$$
+Apply [[Lecture 14#Fatou's Lemma|Fatou's Lemma]] to $\{2g - |f_n - f|\}$ to get
 
-$$M_i = \sup \{ f(x) \mid x \in [x_{i-1}, x_i] \}$$
+$$\int_{\Omega} 2g d\mu \le \liminf \int_{\Omega} (2g - |f_n - f|) d\mu$$
 
-$$L(P, f) = \sum_{i=1}^{n} m_i (x_i - x_{i-1})$$
+$$= \int_{\Omega} 2g d\mu + \liminf \left( - \int_{\Omega} |f_n - f| d\mu \right)$$
 
-$$m_i = \inf \{ f(x) \mid x \in [x_{i-1}, x_i] \}$$
+$$= \int_{\Omega} 2g d\mu - \limsup \int_{\Omega} |f_n - f| d\mu$$
+Since $g$ is integrable, $\int_{\Omega} 2g d\mu < \infty$, we can subtract $\int_{\Omega} 2g d\mu$ from the both sides of the above inequality to get
 
-**NOTE**
+$$-\limsup_{n \to \infty} \int_{\Omega} |f_n - f| d\mu \ge 0$$
 
-If $P^*$ is a refinement of $P$, then
+$$\implies \limsup_{n \to \infty} \int_{\Omega} |f_n - f| d\mu \le 0$$
 
-$$L(P, f) \leq L(P^*, f) \leq U(P^*, f) \leq U(P, f)$$
+$$\implies \limsup_{n \to \infty} \int_{\Omega} |f_n - f| d\mu = 0$$
 
-**Prove this.**
-## Lemma
+Now,
 
-$f \in \mathcal{R}[a, b]$ if and only if there exists a sequence of partitions $\{P_n\}$
+$$\left| \int_{\Omega} f_n d\mu - \int_{\Omega} f d\mu \right| = \left| \int_{\Omega} (f_n - f) d\mu \right|$$
 
-$$||P|| = \sup_{1 \leq i \leq n} (x_i - x_{i-1})$$
+$$\le \int_{\Omega} |f_n - f| d\mu$$
 
-such that
+$$\implies \int_{\Omega} f_n d\mu \to \int_{\Omega} f d\mu$$
 
-1. $P_{n+1}$ is a refinement of $P_n$
-    
-2. Length of $P_n$, $||P_n|| \rightarrow 0$ as $n \rightarrow \infty$
-    
-3. $\lim_{n \rightarrow \infty} L(P_n, f) = \lim_{n \rightarrow \infty} U(P_n, f) = \int_{a}^{b} f(x) dx$
-    
+---
 
-Suppose $P_n = \{a = x_0^{(n)} < x_1^{(n)} < \dots < x_{k(n)}^{(n)} = b\}$
+### Corollary
+If $\{f_n\}$ is a sequence of integrable fns on $\Omega$ st
 
-Define
+$$\sum_{n=1}^{\infty} \int_{\Omega} |f_n| d\mu < \infty$$
 
-$$g_n = \sum_{i=1}^{k(n)} m_i^{(n)} \chi_{[x_{i-1}^{(n)}, x_i^{(n)}]}$$
+Then,
 
-$$h_n = \sum_{i=1}^{k(n)} M_i^{(n)} \chi_{[x_{i-1}^{(n)}, x_i^{(n)}]}$$
+$$\sum_{n=1}^{\infty} f_n \text{ converges pointwise.}$$
 
-Observe
+and 
 
-$$\int_{\mathbb{R}} g_n d\lambda = L(P_n, f), \quad \int_{\mathbb{R}} h_n d\lambda = U(P_n, f)$$
+$$\int_{\Omega} \left( \sum_{n=1}^{\infty} f_n \right) d\mu = \sum_{n=1}^{\infty} \left( \int_{\Omega} f_n d\mu \right)$$
+**Proof**
 
-Also,
+Set $g = \sum_{n=1}^{\infty} |f_n|$. Then by MCT
 
-$$g_n \leq f \leq h_n \text{ (Verify!), } \forall n$$
+$$\int_{\Omega} g d\mu = \sum_{n=1}^{\infty} \int_{\Omega} |f_n| d\mu < \infty$$
 
-**NOTE**
+This implies $g$ is real valued a.e. ie $\sum |f_n|$ converges a.e
 
-That $g_{n+1} \geq g_n$ and $h_{n+1} \leq h_n \text{ (Verify!), } \forall n$
+Thus $\sum f_n$ converges almost everywhere.
 
-$\Rightarrow \left\{ \int_{\mathbb{R}} g_n d\lambda \right\}$ and $\left\{ \int_{\mathbb{R}} h_n d\lambda \right\}$ are called monotonic sequences in $\mathbb{R}$.
+Denote $f = \sum_{n=1}^{\infty} f_n$, $g_n = \sum_{j=1}^{n} f_j$. Then $g_n \to f$ a.e. and
 
-By applying Fatou's Lemma to $\{h_n - g_n\}$
+$$|g_n| \le \sum_{j=1}^{n} |f_j| \le g$$
 
-**NOTE**
+So since $g$ is integrable apply DCT to get
 
-{Also show measurability}
+$$\lim_{n \to \infty} \int_{\Omega} g_n = \int_{\Omega} f d\mu$$
 
-$$\int_{\mathbb{R}} \liminf (h_n - g_n) d\lambda \leq \liminf_{n \rightarrow \infty} \int_{\mathbb{R}} (h_n - g_n) d\lambda$$
+$$\implies \int_{\Omega} \left( \sum_{n=1}^{\infty} f_n \right) d\mu = \lim_{n \to \infty} \sum_{j=1}^{n} \int_{\Omega} f_j d\mu = \sum_{n=1}^{\infty} \int_{\Omega} f_n d\mu$$
 
-$$= \liminf_{n \rightarrow \infty} \left( \int_{\mathbb{R}} h_n d\lambda - \int_{\mathbb{R}} g_n d\lambda \right)$$
+---
 
-$$= 0 \quad \{ \text{since both limit goes to } \int_{a}^{b} f dx \}$$
+## Proposition
+Suppose $f: \Omega \times [a,b] \to \mathbb{R}$, where $-\infty < a < b < \infty$
 
-$$\Rightarrow \int_{\mathbb{R}} \liminf (h_n - g_n) d\lambda = 0$$
+and $f(\cdot, t)(x) := f(x, t)$ is integrable for each $t \in [a,b]$
 
-$$\Rightarrow \liminf_{n \rightarrow \infty} (h_n - g_n) = 0$$
+and let $$F(t) = \int_{\Omega} f(x, t) d\mu(x)$$
 
-But $g_n \leq f \leq h_n \quad \forall n \Rightarrow \lim_{n \rightarrow \infty} g_n = f = \lim_{n \rightarrow \infty} h_n$
+a) If there exist an integrable fn $g$ st
 
-$$\Rightarrow f \text{ is Lebesgue measurable.}$$
+$$|f(x, t)| \le g(x), \forall x, \forall t$$
 
-Note that $h_n \leq M \chi_{[a, b]}$, where
+and $\lim_{t \to t_0} f(x, t) = f(x, t_0)$
 
-$$M = \sup \{ f(x) \mid x \in [a, b] \}$$
+then $F$ is continuous.
 
-Hence by DCT,
+b) If $\frac{\partial f}{\partial t}$ exists and $\exists$ integrable fn $h$ s.t
 
-$$\int_{[a, b]} f d\lambda = \lim_{n \rightarrow \infty} \int_{[a, b]} h_n d\lambda$$
+$$\left| \frac{\partial f}{\partial t} (x, t) \right| \le h(x), \forall x, \forall t$$
+Then $F$ is differentiable and
 
-$$= \lim_{n \rightarrow \infty} U(P_n, f) = \int_{a}^{b} f(x) dx$$
+$$F'(t) = \int_{\Omega} \frac{\partial}{\partial t} f(x, t) d\mu(x)$$
+
+**Example**: Let $f$ be integrable, $f: \mathbb{R} \to \mathbb{R}$, then
+
+define
+
+$$g(t) = \hat{f}(t) = \int_{\mathbb{R}} f(x) \cos(tx) dx, \quad t \in \mathbb{R}$$
+
+Prove that $g$ is continuous.
+
+Take $\{t_n\}$ be a sequence converging to $t_0$.
+
+Let $t_0$ be any point in $\mathbb{R}$. Then Denote
+
+$$f_n(x) = f(x) \cos(t_n x), \quad x \in \mathbb{R}$$
+
+Then
+
+$$f_n(x) \to f(x) \cos(t_0 x) \quad \text{and}$$
+
+$$|f_n(x)| \le |f(x)|$$
+
+Apply DCT,
+
+$$\int_{\mathbb{R}} f(x) \cos(t_n x) dx \to \int_{\mathbb{R}} f(x) \cos(t_0 x) dx$$
+
+Note: $g(t) \to 0, \text{ as } t \to \infty$
+____
+____
+

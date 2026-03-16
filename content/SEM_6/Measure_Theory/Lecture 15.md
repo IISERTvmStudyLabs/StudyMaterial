@@ -1,117 +1,157 @@
-**Exercise:** Assume Fatou's Lemma, & prove MCT.
-_____
-**Example:** The inequality can be strict. Consider $(\mathbb{R}, \mathcal{B}(\mathbb{R}), \lambda)$. Take two disjoint sets $A, B \in \mathcal{B}(\mathbb{R})$ such that $\lambda(A) = \lambda(B) = 1$.
 
-Consider for $n \in \mathbb{N}$,
+**Remark:-** If $f$ & $g$ are two non-negative measurable functions & $f \leq g$ then $\int_{\Omega} f d\mu \leq \int_{\Omega} g d\mu$.
 
-$$f_n = \chi_A \text{ if } n \text{ is even}$$
+# Theorem (MCT)
+Suppose $\{f_n\}$ is a non-decreasing sequence of non-negative measurable functions s.t. $f_n \uparrow f$. Then
 
-$$= \chi_B \text{ if } n \text{ is odd}$$
+$$\lim_{n \to \infty} \int_{\Omega} f_n d\mu = \int_{\Omega} f d\mu.$$
 
-Take $\omega \in \mathbb{R}$. Then $\omega \in A$ or $\omega \notin A$. If $\omega \in A$ then $f_{2n}(\omega) = 1$ and $f_{2n+1}(\omega) = 0$. If $\omega \in B$, $f_{2n+1}(\omega) = 1$ and $f_{2n}(\omega) = 0$. If $\omega \notin A \cup B$ then $f_n(\omega) = 0$.
+**Proof:-** Since $\{\int_{\Omega} f_n d\mu\}$ is also an increasing sequence of non-negative numbers, so its limit exists.
+
+Moreover, $f_n \leq f \quad \forall n$. Therefore, $\lim_{n \to \infty} \int_{\Omega} f_n d\mu \leq \int_{\Omega} f d\mu$.
+
+To prove the reverse inequality, we need to show that
+
+$$\lim_{n \to \infty} \int_{\Omega} f_n d\mu \geq \int_{\Omega} \phi d\mu$$
+
+for all simple non-negative functions $\phi \leq f$.
+
+Take a such $\phi$ & $\alpha \in (0, 1)$. Then it is enough to prove:
+
+$$\lim_{n \to \infty} \int_{\Omega} f_n d\mu \geq \alpha \int_{\Omega} \phi d\mu$$
+
+Consider, $E_n = \{\omega \in \Omega : f_n(\omega) \geq \alpha \phi(\omega)\}, n \in \mathbb{N}$.
+
+**Claim:-** $\Omega = \bigcup_{n \geq 1} E_n$. Suppose $\omega_0 \in \Omega$. If $\phi(\omega_0) = 0$ then $\omega_0 \in E_n$ $\forall n$ (because $f_n \geq 0 \forall n$).
+
+If $\phi(\omega_0) > 0$, then there exist $n_0 \in \mathbb{N}$ such that
+
+$$f_n(\omega_0) > f(\omega_0) - (1-\alpha)\phi(\omega_0) \quad \forall n \geq n_0$$
+
+$$\Rightarrow f_n(\omega_0) > \phi(\omega_0) - \phi(\omega_0) + \alpha \phi(\omega_0), \forall n \geq n_0$$
+
+$$\Rightarrow f_n(\omega_0) > \alpha \phi(\omega_0) \forall n \geq n_0$$
+
+$$\Rightarrow \omega_0 \in E_n \forall n \geq n_0 \quad \therefore \text{Claim is proved.}$$
+
+---
 
 Then
 
-$$\liminf_{n \to \infty} f_n(\omega) = \lim_{n \to \infty} \inf_{k \geq n} f_k(\omega)$$
+$$\int_{\Omega} f_n d\mu \geq \int_{E_n} f_n d\mu \geq \alpha \int_{E_n} \phi d\mu \quad \text{—— } \circledast$$
 
-$$= 0$$
+**Note:-** $E_n$ is a increasing sequence, since $f_{n+1} \geq f_n$ and $\Rightarrow E_{n+1} \supseteq E_n$.
 
-**Note:** In all cases $\inf = 0$.
+Define the measure $\nu$ on $\mathcal{F}$ by
 
-$n$ is odd, $\int_{\Omega} f_n d\lambda = \int_{\Omega} \chi_B d\lambda = \lambda(B) = 1$
+$$\nu(A) = \int_A \phi d\mu, \quad A \in \mathcal{F}$$
 
-$n$ is even, $\int_{\Omega} f_n d\lambda = \int_{\Omega} \chi_A d\lambda = \lambda(A) = 1$
+Then
 
-$\implies \lim_{n \to \infty} \int_{\Omega} f_n d\mu = 1$
+$$\nu(E_n) \uparrow \nu(\Omega)$$
 
----
-# Definition (Almost Everywhere)
+$$\therefore \int_{E_n} \phi d\mu \to \int_{\Omega} \phi d\mu \quad \text{as } n \to \infty$$
 
-Suppose $f, g : \Omega \to \mathbb{R}$ be measurable functions. $f$ is said to satisfy 'property $P$' **almost everywhere** (written as **a.e.**) w.r.t. $\mu$ if $\exists E \in \mathcal{F}$ with $\mu(E) = 0$ and $f$ satisfies the 'property $P$' $\forall x \in E^c$.
+Taking limit as $n \to \infty$ in $\circledast$, we obtain
 
-**Note:** In probability, it is **almost surely**.
+$$\lim_{n \to \infty} \int_{\Omega} f_n d\mu \geq \lim_{n \to \infty} \alpha \int_{E_n} \phi d\mu = \alpha \int_{\Omega} \phi d\mu$$
 
----
-**Example**
-Let us find $(\mathbb{R}, \mathcal{L}, \lambda)$.
-
-**Note:** Lebesgue $\sigma$-algebra is complete but Borel is not in any topological space.
-
-1. $\chi_{\{0\}}$ is continuous almost everywhere with $\lambda$.
-    
-2. Define a Dirac measure $\delta_0(A) = \begin{cases} 1 & \text{if } 0 \in A \\ 0 & \text{otherwise} \end{cases}$
-    
-**Prove that** $\delta_0$ is a measure on $(\mathbb{R}, \mathcal{P}(\mathbb{R}), \delta_0)$.
-If $\chi_{\{0\}}$ is not continuous a.e. w.r.t. $\delta_0$.
-1. $f(x) = \begin{cases} \sin(x) & , x \neq n\pi, n \in \mathbb{Z} \\ 2 & , x = n\pi \end{cases}$
-    $f$ is continuous a.e. w.r.t. $\lambda$.
-2. $\chi_{[0,1]}$ is differentiable a.e.
-3. $\chi_{\mathbb{Q} \cap [0,1]}$ is **not** a.e. continuous.
----
-# Theorem
-
-If $f$ is a non-negative measurable function, then:
-
-$$\int_{\Omega} f d\mu = 0 \iff f = 0 \text{ a.e.}$$
-
----
-**Proof**
-
-Suppose $f$ is zero a.e. then if $\phi$ is a simple function & $0 \le \phi \le f$ then $\phi = 0$ a.e. and so $\int_{\Omega} \phi d\mu = 0$.
-
-Suppose $\int_{\Omega} f d\mu = 0$. If possible, $f$ is not $0$ a.e. then:
-
-$$\{\omega \in \Omega \mid f(\omega) > 0\} = \bigcup_{n \ge 1} \underbrace{\{\omega \in \Omega \mid f(\omega) > \frac{1}{n}\}}_{E_n}$$
-
-Then since $f$ is not a.e. $0$, $\exists n_0$ s.t. $\mu(E_{n_0}) > 0$.
-
-Now, $\int_{\Omega} f d\mu \ge \int_{E_{n_0}} f d\mu \ge \int_{E_{n_0}} \frac{1}{n_0} d\mu = \frac{1}{n_0} \mu(E_{n_0}) > 0$.
-
-This is a contradiction since we assumed this is $0$.
-
-$\therefore$ Our assumption is wrong, hence $f = 0$ a.e.
+Take limit $\alpha \to 1$. $\blacksquare$
 
 ---
 
-# Infinite Sum as Lebesgue Integration
+## Proposition
+Suppose $f, g$ are two measurable functions and non-negative functions. Then
 
-Suppose $\{a_n\}$ is a sequence of non-negative real numbers.
+$$\int_{\Omega} (\alpha f + g) d\mu = \alpha \int_{\Omega} f d\mu + \int_{\Omega} g d\mu$$
 
-$$\sum_{n=1}^{\infty} a_n = \lim_{N \to \infty} \sum_{n=1}^{N} a_n$$
+### Proof
+use $\text{def}^n$ (Exercise)
 
-Define $f : \mathbb{N} \to [0, \infty)$
+Take sequence of simple non-negative measurable functions $\{\phi_n\}$ & $\{\psi_n\}$ s.t.
 
-$$f(n) = a_n$$
+$$\phi_n \uparrow f \text{ \& } \psi_n \uparrow g \text{ as } n \to \infty$$
 
-And for $k \in \mathbb{N}$, $$f_k(n) = \begin{cases} a_n, & n \le k \\ 0, & \text{ow} \end{cases}$$
+Then
 
-Consider the measure space $(\mathbb{N}, \mathcal{P}(\mathbb{N}), C)$ where $C$ is the counting measure:
-
-$C(E) = \begin{cases} \#E, & \text{if finite} \\ \infty, & \text{ow} \end{cases}$
-
-**Note that**
-
-$f_k(n_0) = a_{n_0} = f(n_0)$
-
-$\Rightarrow f_k \uparrow f$ as $k \to \infty$
-
-& $f_{k+1} \ge f_k$.
-
-Hence by **MCT** (Monotone Convergence Theorem),
-
-$$\lim_{k \to \infty} \int_{\mathbb{N}} f_k \, dC = \int_{\Omega} f \, dC$$
-
-**Note:**
-
-$f_{k+1}(n) = f_k(n)$ if $n \le k$
-
-$= a_{k+1} \ge 0 = f_k(n)$, $n = k+1$
-
-Now $f_k = a_1 \chi_{\{1\}} + a_2 \chi_{\{2\}} + \dots + a_k \chi_{\{k\}} + 0 \dots$
-
-$$\int_{\mathbb{N}} f_k \, dC = \sum_{j=1}^{k} a_j$$
-
-$$\int_{\mathbb{N}} f \, dC = \lim_{k \to \infty} \int_{\mathbb{N}} f_k \, dC = \lim_{k \to \infty} \sum_{j=1}^{k} a_j$$
+$$\alpha \phi_n + \psi_n \uparrow (\alpha f + g)$$
 
 ---
+
+But
+
+$$\int_{\Omega} (\alpha \phi_n + \psi_n) d\mu = \alpha \int_{\Omega} \phi_n d\mu + \int_{\Omega} \psi_n d\mu$$
+
+By MCT,
+
+$$\int_{\Omega} (\alpha f + g) d\mu = \alpha \int_{\Omega} f d\mu + \int_{\Omega} g d\mu$$
+
+## Corollary
+If $\{f_n\}_{n=1}^{\infty}$ is a sequence of non-negative measurable functions and
+
+$$f = \sum_{n=1}^{\infty} f_n$$
+
+Then,
+
+$$\int_{\Omega} f d\mu = \sum_{n=1}^{\infty} \int_{\Omega} f_n d\mu$$
+
+**Proof:-** Let $F_N$ be the partial sum,
+
+$$F_N = \sum_{n=1}^{N} f_n$$
+
+Then,
+
+$$\int_{\Omega} F_N = \int_{\Omega} \sum_{n=1}^{N} f_n$$
+
+$$\Rightarrow \int_{\Omega} F_N d\mu = \sum_{n=1}^{N} \int_{\Omega} f_n d\mu \quad (\text{since it is a finite sum})$$
+
+and as $N \to \infty$
+
+$$\int_{\Omega} F_N d\mu \uparrow \sum_{n=1}^{\infty} \int_{\Omega} f_n d\mu \quad \{ \text{since } F_N \uparrow \sum_{n=1}^{\infty} f_n = f \}$$
+
+$$\Rightarrow \int_{\Omega} F_N d\mu \to \int_{\Omega} f d\mu$$
+
+But
+
+$$\int_{\Omega} F_N d\mu \to \sum_{n=1}^{\infty} \int_{\Omega} f_n d\mu$$
+
+Hence,
+
+$$\int_{\Omega} f d\mu = \sum_{n=1}^{\infty} \int_{\Omega} f_n d\mu$$
+
+---
+
+# Fatou's Lemma
+Let $f_1, f_2 \dots$ be a sequence of non-negative measurable fns. Then
+
+$$\int_{\Omega} (\liminf_{n \to \infty} f_n) d\mu \leq \liminf_{n \to \infty} \int_{\Omega} f_n d\mu$$
+
+**Proof:-** Define,
+
+$$g_k = \inf_{n \geq k} f_n$$
+
+Then
+
+$$\lim_{k \to \infty} g_k = \liminf_{n \to \infty} f_n \quad \& \quad g_{k+1} \geq g_k$$
+
+$$\int_{\Omega} (\liminf_{n \to \infty} f_n) d\mu = \lim_{k \to \infty} \int_{\Omega} g_k d\mu$$
+
+But
+
+$$\int_{\Omega} g_k d\mu \leq \int_{\Omega} f_n d\mu, \forall n \geq k, n \geq k$$
+
+---
+
+ **Note:-** $g_k \leq f_k, g_k \leq f_{k+1} \dots$ $g_k \leq f_n \forall n \geq k$
+
+$$\Rightarrow g_k \leq f_n$$
+
+$$\int_{\Omega} g_k d\mu \leq \inf_{n \geq k} \int_{\Omega} f_n d\mu$$
+
+$$\lim_{k \to \infty} \int_{\Omega} g_k d\mu \leq \liminf_{n \to \infty} \int_{\Omega} f_n d\mu$$
+
+$$\Rightarrow \int_{\Omega} (\liminf_{n \to \infty} f_n) d\mu \leq \liminf_{n \to \infty} \int_{\Omega} f_n d\mu \quad (\text{by } \circledast)$$
+
+---
+____
 

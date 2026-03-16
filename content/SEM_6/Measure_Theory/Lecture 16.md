@@ -1,89 +1,117 @@
-## Proposition
+**Exercise:** Assume Fatou's Lemma, & prove MCT.
+_____
+**Example:** The inequality can be strict. Consider $(\mathbb{R}, \mathcal{B}(\mathbb{R}), \lambda)$. Take two disjoint sets $A, B \in \mathcal{B}(\mathbb{R})$ such that $\lambda(A) = \lambda(B) = 1$.
 
-Suppose $(\Omega, \mathcal{F}, \mu)$ is a **complete measure space**. Suppose $f: \Omega \to \mathbb{\bar{R}}$ and $g: \Omega \to \mathbb{\bar{R}}$ are s.t. $f = g$ a.e. (almost everywhere). Then if $f$ is measurable, $g$ is also measurable.
+Consider for $n \in \mathbb{N}$,
 
-**Proof**
+$$f_n = \chi_A \text{ if } n \text{ is even}$$
 
-Let $A \in \mathcal{B}_{\mathbb{\bar{R}}}$. Then $f^{-1}(A) \in \mathcal{F}$. Consider $$g^{-1}(A) = \{\omega \in \Omega : g(\omega) \in A\}$$.
+$$= \chi_B \text{ if } n \text{ is odd}$$
 
-Since $f = g$ a.e., there exists $E \in \mathcal{F}$ s.t. $\mu(E) = 0$, and if $F \subseteq E \implies F \in \mathcal{F}$.
+Take $\omega \in \mathbb{R}$. Then $\omega \in A$ or $\omega \notin A$. If $\omega \in A$ then $f_{2n}(\omega) = 1$ and $f_{2n+1}(\omega) = 0$. If $\omega \in B$, $f_{2n+1}(\omega) = 1$ and $f_{2n}(\omega) = 0$. If $\omega \notin A \cup B$ then $f_n(\omega) = 0$.
 
-Consider:
+Then
 
-$$g^{-1}(A) = \{\omega \in \Omega : g(\omega) \in A\}$$
+$$\liminf_{n \to \infty} f_n(\omega) = \lim_{n \to \infty} \inf_{k \geq n} f_k(\omega)$$
 
-$$= \left( \{\omega \in \Omega : g(\omega) \in A\} \cap E \right) \cup \left( \{\omega \in \Omega : g(\omega) \in A\} \cap E^c \right)$$
+$$= 0$$
+
+**Note:** In all cases $\inf = 0$.
+
+$n$ is odd, $\int_{\Omega} f_n d\lambda = \int_{\Omega} \chi_B d\lambda = \lambda(B) = 1$
+
+$n$ is even, $\int_{\Omega} f_n d\lambda = \int_{\Omega} \chi_A d\lambda = \lambda(A) = 1$
+
+$\implies \lim_{n \to \infty} \int_{\Omega} f_n d\mu = 1$
 
 ---
-Suppose $E \in \mathcal{F}$ s.t. $\mu(E) = 0$ and $g(x) = f(x) \forall x \in E^c$.
+# Definition (Almost Everywhere)
 
-$$= \left( \{ \omega \in \Omega \mid g(\omega) \in A \} \cap E \right) \cup \left( \{ \omega \in \Omega \mid f(\omega) \in A \} \cap E^c \right)$$
+Suppose $f, g : \Omega \to \mathbb{R}$ be measurable functions. $f$ is said to satisfy 'property $P$' **almost everywhere** (written as **a.e.**) w.r.t. $\mu$ if $\exists E \in \mathcal{F}$ with $\mu(E) = 0$ and $f$ satisfies the 'property $P$' $\forall x \in E^c$.
 
-$$= \left( \{ \omega \in \Omega \mid g(\omega) \in A \} \cap E \right) \cup \left( f^{-1}(A) \cap E^c \right)$$
+**Note:** In probability, it is **almost surely**.
 
-Since $(\Omega, \mathcal{F}, \mu)$ is complete, $\{ \omega \in \Omega \mid g(\omega) \in A \} \cap E \in \mathcal{F}$
+---
+**Example**
+Let us find $(\mathbb{R}, \mathcal{L}, \lambda)$.
 
-and by the measure $E^c \in \mathcal{F}$
+**Note:** Lebesgue $\sigma$-algebra is complete but Borel is not in any topological space.
 
-$$\implies g^{-1}(A) \in \mathcal{F}$$
+1. $\chi_{\{0\}}$ is continuous almost everywhere with $\lambda$.
+    
+2. Define a Dirac measure $\delta_0(A) = \begin{cases} 1 & \text{if } 0 \in A \\ 0 & \text{otherwise} \end{cases}$
+    
+**Prove that** $\delta_0$ is a measure on $(\mathbb{R}, \mathcal{P}(\mathbb{R}), \delta_0)$.
+If $\chi_{\{0\}}$ is not continuous a.e. w.r.t. $\delta_0$.
+1. $f(x) = \begin{cases} \sin(x) & , x \neq n\pi, n \in \mathbb{Z} \\ 2 & , x = n\pi \end{cases}$
+    $f$ is continuous a.e. w.r.t. $\lambda$.
+2. $\chi_{[0,1]}$ is differentiable a.e.
+3. $\chi_{\mathbb{Q} \cap [0,1]}$ is **not** a.e. continuous.
+---
+# Theorem
 
-Remark:- If $(\Omega, \mathcal{F}, \mu)$ is not complete then the proposition may not hold.
+If $f$ is a non-negative measurable function, then:
 
-Since $(\mathbb{R}, \mathcal{B}_{\mathbb{R}}, \lambda)$ this is not complete.
+$$\int_{\Omega} f d\mu = 0 \iff f = 0 \text{ a.e.}$$
 
-$\exists E \in \mathcal{B}_{\mathbb{R}}, \lambda(E) = 0$, but $\exists F \subseteq E$ s.t. $F \notin \mathcal{B}_{\mathbb{R}}$
-
-But $\mathcal{L}$ is complete & so $F \in \mathcal{L}$. Consider $f = \chi_F$. Then $f = 0$ a.e.
-
-But $f$ is not Borel measurable { Borel measurable $\to f^{-1}(F) \in \mathcal{B}_{\mathbb{R}}, F \in \mathcal{B}_{\mathbb{R}}$ }
-
-in $f(\{1\}) = F \notin \mathcal{B}_{\mathbb{R}}$
-
-# Definition (Lebesgue integrable)
-Let $(\Omega, \mathcal{F}, \mu)$ be a measure space and $f: \Omega \to \mathbb{\bar{R}}$ be measurable. Then $f$ is said to be Lebesgue integrable (or just integrable) if
-
-$$\int_{\Omega} f^+ d\mu < \infty \ \text{ \& } \int_{\Omega} f^- d\mu < \infty.$$
-
-In this case, the Lebesgue integrable of $f$ is defined as
-
-$$\int_{\Omega} f d\mu = \int_{\Omega} f^+ d\mu - \int_{\Omega} f^- d\mu.$$
-## Proposition
-If $f, g: \Omega \to \bar{\mathbb{R}}$ are integrable and $A, B \in \mathcal{F}$ are disjoint. Then $f$ is integrable on $A$, $f+g$ (when well-defined) and $|f|$ are integrable and
-
-i) $$\int_{\Omega} (cf+g) d\mu = c\int_{\Omega} f d\mu + \int_{\Omega} g d\mu, \quad c \in \mathbb{R}$$
-
-ii) $$\int_{A \cup B} f d\mu = \int_{A} f d\mu + \int_{B} f d\mu$$
-
-iii) $f$ is finite a.e.
-
-iv) $$|\int_{\Omega} f d\mu| \le \int_{\Omega} |f| d\mu$$
-
-v) If $f \ge g$ then $\int_{\Omega} f d\mu \ge \int_{\Omega} g d\mu$
-
-vi) If $f = g$ a.e. then $\int_{\Omega} f d\mu = \int_{\Omega} g d\mu$
-
-vii) If $|h| \le f$ & $f \ge 0$ then $h$ is integrable
-
+---
 **Proof**
-iii) If $f$ is not finite a.e. then at least one of the sets
 
-$$A_1 = \{\omega \in \Omega : f(\omega) = \infty\} \text{ \& } A_2 = \{\omega \in \Omega : f(\omega) = -\infty\}$$
+Suppose $f$ is zero a.e. then if $\phi$ is a simple function & $0 \le \phi \le f$ then $\phi = 0$ a.e. and so $\int_{\Omega} \phi d\mu = 0$.
 
-have +ve measure if $\mu(A_1) > 0$ then
+Suppose $\int_{\Omega} f d\mu = 0$. If possible, $f$ is not $0$ a.e. then:
 
-$$f^+(\omega) > n \quad \forall n \quad \forall \omega \in A_1$$
+$$\{\omega \in \Omega \mid f(\omega) > 0\} = \bigcup_{n \ge 1} \underbrace{\{\omega \in \Omega \mid f(\omega) > \frac{1}{n}\}}_{E_n}$$
 
-$$\implies f^+ > n \chi_{A_1}$$
+Then since $f$ is not a.e. $0$, $\exists n_0$ s.t. $\mu(E_{n_0}) > 0$.
 
-$$\implies \int_{\Omega} f^+ \ge \int_{\Omega} n \chi_{A_1} d\mu = n \mu(A_1), \forall n$$
+Now, $\int_{\Omega} f d\mu \ge \int_{E_{n_0}} f d\mu \ge \int_{E_{n_0}} \frac{1}{n_0} d\mu = \frac{1}{n_0} \mu(E_{n_0}) > 0$.
 
-$$\implies \int_{\Omega} f^+ d\mu = \infty \quad \rightarrow \leftarrow$$
+This is a contradiction since we assumed this is $0$.
 
-vi) Given $f=g$ a.e. Then $\{\omega \mid f(\omega) \neq g(\omega)\} \subseteq E$, where $\mu(E)=0$
-
-Then by ii)
-
-$$\int_{\Omega} f d\mu = \int_{E^c} f d\mu + \int_{E} f d\mu = \int_{E^c} f d\mu + \int_{E} g d\mu = \int_{E^c} g d\mu = \int_{\Omega} g d\mu$$
+$\therefore$ Our assumption is wrong, hence $f = 0$ a.e.
 
 ---
 
+# Infinite Sum as Lebesgue Integration
+
+Suppose $\{a_n\}$ is a sequence of non-negative real numbers.
+
+$$\sum_{n=1}^{\infty} a_n = \lim_{N \to \infty} \sum_{n=1}^{N} a_n$$
+
+Define $f : \mathbb{N} \to [0, \infty)$
+
+$$f(n) = a_n$$
+
+And for $k \in \mathbb{N}$, $$f_k(n) = \begin{cases} a_n, & n \le k \\ 0, & \text{ow} \end{cases}$$
+
+Consider the measure space $(\mathbb{N}, \mathcal{P}(\mathbb{N}), C)$ where $C$ is the counting measure:
+
+$C(E) = \begin{cases} \#E, & \text{if finite} \\ \infty, & \text{ow} \end{cases}$
+
+**Note that**
+
+$f_k(n_0) = a_{n_0} = f(n_0)$
+
+$\Rightarrow f_k \uparrow f$ as $k \to \infty$
+
+& $f_{k+1} \ge f_k$.
+
+Hence by **MCT** (Monotone Convergence Theorem),
+
+$$\lim_{k \to \infty} \int_{\mathbb{N}} f_k \, dC = \int_{\Omega} f \, dC$$
+
+**Note:**
+
+$f_{k+1}(n) = f_k(n)$ if $n \le k$
+
+$= a_{k+1} \ge 0 = f_k(n)$, $n = k+1$
+
+Now $f_k = a_1 \chi_{\{1\}} + a_2 \chi_{\{2\}} + \dots + a_k \chi_{\{k\}} + 0 \dots$
+
+$$\int_{\mathbb{N}} f_k \, dC = \sum_{j=1}^{k} a_j$$
+
+$$\int_{\mathbb{N}} f \, dC = \lim_{k \to \infty} \int_{\mathbb{N}} f_k \, dC = \lim_{k \to \infty} \sum_{j=1}^{k} a_j$$
+
+---
+____
