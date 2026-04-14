@@ -1,3 +1,3 @@
-This digital collection exists thanks to the generosity and notes of **Jahnavi**.
+This digital collection exists thanks to the generosity and notes of a close friend.
 
 Thank you for sharing your work and making this possible.
