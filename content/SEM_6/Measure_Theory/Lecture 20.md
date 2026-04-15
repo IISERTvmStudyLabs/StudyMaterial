@@ -1,5 +1,7 @@
+# Post-Midsem Portion
 
-# Definition
+---
+## Definition
 
 [[Measure_Theory/Lecture 05#Carathéodory extension theorem|Carathedory]] — Suppose $\nu : \mathcal{A} \to [0, \infty]$ is a premeasure where $\mathcal{A}$ is an algebra over $\Omega$.
 
