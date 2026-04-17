@@ -514,3 +514,233 @@ $$
 
 Thus every $f \in L^p([0,1])$ can be approximated arbitrarily well in $L^p$ by elements of the countable set $\mathcal{S}$. Therefore $L^p([0,1],\lambda)$ is separable.
 
+___
+
+## Question 15
+
+Fix $p \in [1,\infty)$. For $f : \mathbb{R} \to \mathbb{C}$ and $x \in \mathbb{R}$, define
+
+$$
+	au_x f(y) = f(y-x), \qquad y \in \mathbb{R}.
+$$
+
+### (a)
+
+Fix $f \in C_c(\mathbb{R})$. Prove that the map $F : \mathbb{R} \to L^p(\mathbb{R},\lambda)$, defined by
+
+$$
+F(x) = \tau_x f,
+$$
+
+is uniformly continuous.
+
+### (b)
+
+Fix $f \in L^p(\mathbb{R},\lambda)$. Prove that the map $F : \mathbb{R} \to L^p(\mathbb{R},\lambda)$, defined by
+
+$$
+F(x) = \tau_x f,
+$$
+
+is uniformly continuous.
+
+## Solution
+
+### Part (a)
+
+It is enough to show continuity at $0$, because
+
+$$
+\|F(x)-F(y)\|_p = \|\tau_x f - \tau_y f\|_p = \|\tau_{x-y}f - f\|_p.
+$$
+
+Let $K = \operatorname{supp}(f)$. Since $f \in C_c(\mathbb{R})$, the set $K$ is compact, so $K \subset [-R,R]$ for some $R>0$. Also, $f$ is uniformly continuous on $\mathbb{R}$.
+
+Fix $\varepsilon > 0$. Choose $\delta > 0$ such that
+
+$$
+|h|<\delta \implies |f(t-h)-f(t)| < \frac{\varepsilon}{(2R+2)^{1/p}} \quad \text{for all } t \in \mathbb{R}.
+$$
+
+If $|h|<\min\{\delta,1\}$, then $\tau_h f - f$ is supported in $[-R-1,R+1]$, so
+
+$$
+\|\tau_h f-f\|_p^p = \int_{-R-1}^{R+1} |f(t-h)-f(t)|^p \, dt
+\le (2R+2)\left(\frac{\varepsilon}{(2R+2)^{1/p}}\right)^p = \varepsilon^p.
+$$
+
+Hence $\|\tau_h f-f\|_p < \varepsilon$ whenever $|h|$ is sufficiently small. Therefore $F$ is continuous at $0$, and consequently uniformly continuous on $\mathbb{R}$.
+
+### Part (b)
+
+Let $\varepsilon > 0$. Since $C_c(\mathbb{R})$ is dense in $L^p(\mathbb{R})$, choose $g \in C_c(\mathbb{R})$ such that
+
+$$
+\|f-g\|_p < \varepsilon/3.
+$$
+
+For any $x,y \in \mathbb{R}$,
+
+$$
+\|\tau_x f - \tau_y f\|_p
+\le \|\tau_x f - \tau_x g\|_p + \|\tau_x g - \tau_y g\|_p + \|\tau_y g - \tau_y f\|_p.
+$$
+
+Using translation invariance of the $L^p$ norm,
+
+$$
+\|\tau_x f - \tau_x g\|_p = \|f-g\|_p, \qquad \|\tau_y g - \tau_y f\|_p = \|g-f\|_p.
+$$
+
+Thus
+
+$$
+\|\tau_x f - \tau_y f\|_p \le 2\|f-g\|_p + \|\tau_{x-y}g-g\|_p.
+$$
+
+By part (a), the map $h \mapsto \tau_h g$ is uniformly continuous, so there exists $\delta > 0$ such that $|x-y|<\delta$ implies
+
+$$
+\|\tau_{x-y}g-g\|_p < \varepsilon/3.
+$$
+
+Therefore, whenever $|x-y|<\delta$,
+
+$$
+\|\tau_x f - \tau_y f\|_p < 2(\varepsilon/3) + \varepsilon/3 = \varepsilon.
+$$
+
+So $F$ is uniformly continuous.
+
+___
+
+## Question 16
+
+Suppose $(\Omega,\mathcal{F},\mu)$ is a measure space.
+
+### (a)
+
+Define the essential range of a function $f \in L^\infty(\Omega)$ to be the set $R_f$ consisting of all complex numbers $z$ such that
+
+$$
+\mu(\{\omega \in \Omega : |f(\omega)-z|<\varepsilon\}) > 0, \qquad \forall\, \varepsilon > 0.
+$$
+
+Prove that $R_f$ is compact. What is the relation between $R_f$ and $\|f\|_\infty$.
+
+### (b)
+
+For $f \in L^\infty(\Omega)$, define
+
+$$
+A_f = \left\{ \frac{1}{\mu(E)} \int_E f \, d\mu : E \in \mathcal{F},\, \mu(E)>0 \right\}.
+$$
+
+1. What relations exist between $A_f$ and $R_f$?
+2. Is $A_f$ always closed?
+3. Are there measures $\mu$ such that $A_f$ is convex for every $f \in L^\infty(\Omega,\mu)$?
+4. Are there measures $\mu$ such that $A_f$ fails to be convex for some $f \in L^\infty(\Omega,\mu)$?
+
+## Solution
+
+### Part (a)
+
+Let $M = \|f\|_\infty$.
+
+First, $R_f$ is bounded. If $|z|>M$, choose $\varepsilon = (|z|-M)/2$. Then whenever $|f(\omega)-z|<\varepsilon$, the triangle inequality gives
+
+$$
+|f(\omega)| \ge |z|-|f(\omega)-z| > M,
+$$
+
+which can happen only on a null set. Hence $z \notin R_f$. So $R_f \subset \{z \in \mathbb{C}: |z| \le M\}$.
+
+Second, $R_f$ is closed. If $z_n \in R_f$ and $z_n \to z$, then for any $\varepsilon > 0$, choose $n$ so large that $|z_n-z|<\varepsilon/2$. Since $z_n \in R_f$,
+
+$$
+\mu(\{|f-z_n|<\varepsilon/2\})>0.
+$$
+
+On this set, $|f-z| \le |f-z_n|+|z_n-z|<\varepsilon$, so
+
+$$
+\mu(\{|f-z|<\varepsilon\})>0.
+$$
+
+Thus $z \in R_f$.
+
+Since $R_f$ is closed and bounded in $\mathbb{C} \cong \mathbb{R}^2$, it is compact.
+
+For the norm, we have
+
+$$
+\sup_{z \in R_f} |z| = \|f\|_\infty.
+$$
+
+The inequality $\sup_{z\in R_f}|z| \le \|f\|_\infty$ was shown above. For the reverse inequality, let $M=\|f\|_\infty$ and $\varepsilon>0$. Then
+
+$$
+E_\varepsilon = \{\omega : |f(\omega)| > M-\varepsilon\}
+$$
+
+has positive measure. Cover the disk $\{z: |z| > M-\varepsilon\}$ by countably many balls of radius $\varepsilon$ with rational centers. Since $E_\varepsilon$ has positive measure, one of these balls, say $B(z_0,\varepsilon)$, satisfies
+
+$$
+\mu(\{\omega : f(\omega) \in B(z_0,\varepsilon)\} \cap E_\varepsilon) > 0.
+$$
+
+Hence $\mu(\{|f-z_0|<\varepsilon\})>0$, so $z_0 \in R_f$, and because points in the ball satisfy $|z_0|>M-2\varepsilon$, we get
+
+$$
+\sup_{z\in R_f}|z| \ge M-2\varepsilon.
+$$
+
+Letting $\varepsilon \to 0$ yields $\sup_{z\in R_f}|z| \ge M$. Therefore $\sup_{z\in R_f}|z| = \|f\|_\infty$.
+
+### Part (b)
+
+1. The essential range controls the averages. In fact,
+
+$$
+A_f \subseteq \operatorname{co}(R_f),
+$$
+
+where $\operatorname{co}(R_f)$ denotes the convex hull of $R_f$. Since $R_f$ is compact in $\mathbb{C} \cong \mathbb{R}^2$, its convex hull is also compact and closed.
+
+Conversely, every point of $R_f$ lies in the closure of $A_f$: if $z \in R_f$, then for every $\varepsilon > 0$ the set $E_\varepsilon = \{\omega: |f(\omega)-z|<\varepsilon\}$ has positive measure, and the average of $f$ over $E_\varepsilon$ lies within $\varepsilon$ of $z$. Hence
+
+$$
+R_f \subseteq \overline{A_f}.
+$$
+
+So the basic relation is
+
+$$
+R_f \subseteq \overline{A_f} \subseteq \operatorname{co}(R_f).
+$$
+
+2. No, $A_f$ need not be closed. For example, take $\Omega=[0,1]$ with Lebesgue measure and $f(x)=x$. Then averages over measurable sets of positive measure can realize every value in $(0,1)$, but not $0$ or $1$. Thus
+
+$$
+A_f = (0,1),
+$$
+
+which is not closed.
+
+3. Yes. If $\mu$ is a nonatomic finite measure, then for every $f \in L^\infty(\Omega,\mu)$ the set $A_f$ is convex. This follows from Lyapunov’s convexity theorem applied to the vector measure
+
+$$
+E \mapsto \left(\mu(E), \int_E f \, d\mu\right) \in \mathbb{R}^3 \cong \mathbb{R} \times \mathbb{C}.
+$$
+
+In particular, the Lebesgue measure on $[0,1]$ has this property.
+
+4. Yes. Any measure space with at least two atoms gives a counterexample. For instance, let $\Omega=\{a,b\}$ with counting measure, and define $f(a)=0$, $f(b)=1$. Then the positive-measure subsets are $\{a\}$, $\{b\}$, and $\{a,b\}$, so
+
+$$
+A_f = \left\{0, \frac12, 1\right\}.
+$$
+
+This set is not convex, since it does not contain, for example, $1/4$.
+
+
