@@ -44,11 +44,11 @@ ___
 
 ## Question 3
 
-If $f_n \to f$ in $L^p(\Omega)$ and $g_n \to g$ in $L^q(\Omega)$, prove that $f_n g_n \to fg$ in $L^1(\Omega)$.
+If $f_n \to f$ in $L^p(\Omega)$ and $g_n \to g$ in $L^{p'}(\Omega)$, where $\frac1p + \frac1{p'} = 1$, prove that $f_n g_n \to fg$ in $L^1(\Omega)$.
 
 ## Solution
 
-Assume $1 \le p,q \le \infty$ with $\frac1p + \frac1q = 1$ so that Hölder’s inequality applies. Then
+Assume $1 \le p < \infty$ and let $p'$ be the conjugate exponent so that $\frac1p + \frac1{p'} = 1$. Then
 
 $$
 f_n g_n - fg = (f_n-f)g_n + f(g_n-g).
@@ -58,10 +58,10 @@ Using Hölder’s inequality,
 
 $$
 \|f_n g_n - fg\|_1 \le \|(f_n-f)g_n\|_1 + \|f(g_n-g)\|_1
-\le \|f_n-f\|_p\,\|g_n\|_q + \|f\|_p\,\|g_n-g\|_q.
+\le \|f_n-f\|_p\,\|g_n\|_{p'} + \|f\|_p\,\|g_n-g\|_{p'}.
 $$
 
-Since $g_n \to g$ in $L^q$, the sequence $\{\|g_n\|_q\}$ is bounded, and $\|f_n-f\|_p \to 0$, $\|g_n-g\|_q \to 0$. Therefore the right-hand side tends to $0$, so
+Since $g_n \to g$ in $L^{p'}$, the sequence $\{\|g_n\|_{p'}\}$ is bounded, and $\|f_n-f\|_p \to 0$, $\|g_n-g\|_{p'} \to 0$. Therefore the right-hand side tends to $0$, so
 
 $$
 \|f_n g_n - fg\|_1 \to 0.
@@ -671,13 +671,13 @@ Thus $z \in R_f$.
 
 Since $R_f$ is closed and bounded in $\mathbb{C} \cong \mathbb{R}^2$, it is compact.
 
-For the norm, we have
+If $\mu(\Omega)=0$, then $R_f=\varnothing$ and the norm statement is vacuous. Otherwise, the relation with the essential supremum is
 
 $$
-\sup_{z \in R_f} |z| = \|f\|_\infty.
+\max_{z \in R_f} |z| = \|f\|_\infty.
 $$
 
-The inequality $\sup_{z\in R_f}|z| \le \|f\|_\infty$ was shown above. For the reverse inequality, let $M=\|f\|_\infty$ and $\varepsilon>0$. Then
+The inequality $\max_{z\in R_f}|z| \le \|f\|_\infty$ was shown above. For the reverse inequality, let $M=\|f\|_\infty$ and $\varepsilon>0$. Then
 
 $$
 E_\varepsilon = \{\omega : |f(\omega)| > M-\varepsilon\}
@@ -692,10 +692,10 @@ $$
 Hence $\mu(\{|f-z_0|<\varepsilon\})>0$, so $z_0 \in R_f$, and because points in the ball satisfy $|z_0|>M-2\varepsilon$, we get
 
 $$
-\sup_{z\in R_f}|z| \ge M-2\varepsilon.
+\max_{z\in R_f}|z| \ge M-2\varepsilon.
 $$
 
-Letting $\varepsilon \to 0$ yields $\sup_{z\in R_f}|z| \ge M$. Therefore $\sup_{z\in R_f}|z| = \|f\|_\infty$.
+Letting $\varepsilon \to 0$ yields $\max_{z\in R_f}|z| \ge M$. Therefore $\max_{z\in R_f}|z| = \|f\|_\infty$.
 
 ### Part (b)
 
