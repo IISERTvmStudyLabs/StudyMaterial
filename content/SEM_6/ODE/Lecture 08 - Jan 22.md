@@ -164,7 +164,6 @@ $$
 $$
 are LI solutions.
 
-
 ### **Proof**
 
 Consider $L(e^{rx}) = P(r) e^{rx}$.

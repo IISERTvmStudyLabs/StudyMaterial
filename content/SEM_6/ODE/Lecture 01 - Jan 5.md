@@ -23,15 +23,23 @@ $N$ denotes the number of people living in a city at a time $t$.
 Initially, $t = 0$, $N(0) = 1000$.
 
 So at a later time,
-$$N(t + \delta t) = N(t) + K(N,t) \cdot dt$$
+$$
+N(t + \delta t) = N(t) + K(N,t) \cdot \delta t
+$$
 
-$$K(N,t) = \frac{N(t+\delta t) - N(t)}{\delta t}$$
+$$
+K(N,t) = \frac{N(t+\delta t) - N(t)}{\delta t}
+$$
 
-$$K(N,t) = \lim_{\delta t \to 0} \frac{N(t+\delta t) - N(t)}{\delta t} = \frac{dN}{dt}$$
+$$
+K(N,t) = \lim_{\delta t \to 0} \frac{N(t+\delta t) - N(t)}{\delta t} = \frac{dN}{dt}
+$$
 
 Let $K(N,t) = \sigma N$, then $\frac{dN}{dt} = \sigma N$
 
-$$\therefore N = 1000 e^{\sigma t}$$
+$$
+\therefore N = 1000 e^{\sigma t}
+$$
 
 ## Classification of Differential Equations
 
@@ -55,16 +63,24 @@ $y'' + 2y' + y = 0$ (Linear)
 
 From $f(x, y, c) = 0$ (arb. const):
 
-$$y = 2x + c$$
-$$\frac{dy}{dx} = 2$$
+$$
+y = 2x + c
+$$
+$$
+\frac{dy}{dx} = 2
+$$
 
 ---
 
 From $y = mx + c$ (arb. const):
 
-$$\frac{dy}{dx} = m$$
+$$
+\frac{dy}{dx} = m
+$$
 
-$$\frac{d^2y}{dx^2} = 0$$
+$$
+\frac{d^2y}{dx^2} = 0
+$$
 
 ---
 

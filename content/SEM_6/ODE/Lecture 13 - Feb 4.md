@@ -27,6 +27,132 @@ $$
 > Note: The converse need not be true.
 > **Example**: $f(x, y) = x^2 |y|$ in $D = \{ |x| \le 1, |y| \le 1 \}$.
 
+Feb 4, Lect - 12
+
+## Theorem
+Let $f(x, y)$ be a continuous function defined over a rectangle $R = \{ (x, y) : |x - x_0| \le a, |y - y_0| \le b \}$ where $a, b > 0$. If $\frac{\partial f}{\partial y}$ exists and is continuous on $R$, then $f(x, y)$ satisfies the **Lipschitz condition** with respect to $y$ in $R$ and the Lipschitz constant $K$ is given by
+
+$$
+K = \sup_{(x, y) \in R} \left| \frac{\partial f}{\partial y} (x, y) \right|
+$$
+
+### Proof
+Since $\frac{\partial f}{\partial y}$ is continuous on a closed rectangle, it is bounded, which implies the supremum exists.
+Let,
+
+$$
+K = \sup_{(x, y) \in R} \left| \frac{\partial f}{\partial y} \right|
+$$
+
+Let $(x, y_1)$ and $(x, y_2) \in R$. Then by the **Mean Value Theorem**,
+
+$$
+f(x, y_1) - f(x, y_2) = \frac{\partial f}{\partial y} (x, \xi) (y_1 - y_2)
+$$
+
+where $\xi$ is between $y_1$ and $y_2$.
+
+$$
+\implies |f(x, y_1) - f(x, y_2)| \le \left| \frac{\partial f}{\partial y} \right| |y_1 - y_2| \le K |y_1 - y_2|
+$$
+
+**Remark:** The converse need not be true.
+**Example**: $f(x, y) = x^2 |y|$ in $D = \{ |x| \le 1, |y| \le 1 \}$.
+
+---
+
+### **Problems**
+Check whether the following functions satisfy the Lipschitz condition (L.C.) and if so, find $K$.
+
+1. $f(x, y) = y^{1/3}, \quad |x| \le 1, \quad 0 \le y \le 2$
+2. $f(x, y) = xy^2, \quad D = \{ |x| \le 1, \quad |y| \le 1 \}$
+3. $f(x, y) = (y + y^2) \frac{\cos x}{x^2}, \quad D = \{ |y| \le 1, \quad |x - 1| \le \frac{1}{2} \}$
+
+---
+
+## Gronwall Inequality
+
+## Theorem
+Let $f(x)$ and $g(x)$ be two non-negative continuous functions for $x \ge x_0$. Let $K$ be any non-negative constant. Then the inequality
+
+$$
+f(x) \le K + \int_{x_0}^x g(t) f(t) \, dt, \quad x \ge x_0
+$$
+
+implies
+
+$$
+f(x) \le K e^{\int_{x_0}^x g(t) \, dt}, \quad x \ge x_0
+$$
+
+### Proof
+Given that $f$ and $g$ are continuous and
+
+$$
+f(x) \le K + \int_{x_0}^x g(t) f(t) \, dt \quad \dots (1)
+$$
+
+Let,
+
+$$
+F(x) = K + \int_{x_0}^x g(t) f(t) \, dt
+$$
+
+Then $F(x_0) = K$. Since $f$ and $g$ are non-negative, $F(x) \ge K$. If $K > 0$, then $F(x) > 0$.
+Also,
+
+$$
+F'(x) = g(x) f(x)
+$$
+
+We have from (1),
+
+$$
+f(x) \le F(x)
+$$
+
+$$
+\implies \frac{f(x)}{F(x)} \le 1
+$$
+
+Since $g(x) \ge 0$,
+
+$$
+\frac{g(x) f(x)}{F(x)} \le g(x)
+$$
+
+$$
+\implies \frac{F'(x)}{F(x)} \le g(x)
+$$
+
+Integrating both sides from $x_0$ to $x$:
+
+$$
+\implies \int_{x_0}^x \frac{F'(t)}{F(t)} \, dt \le \int_{x_0}^x g(t) \, dt
+$$
+
+$$
+\implies \left. \ln(F(t)) \right|_{x_0}^x \le \int_{x_0}^x g(t) \, dt
+$$
+
+$$
+\ln(F(x)) - \ln(K) \le \int_{x_0}^x g(t) \, dt
+$$
+
+$$
+\implies F(x) \le K e^{\int_{x_0}^x g(t) \, dt}
+$$
+
+From (1), we have $f(x) \le F(x)$. Therefore,
+
+$$
+f(x) \le K e^{\int_{x_0}^x g(t) \, dt}
+$$
+
+Hence the result.
+$$
+\square
+$$
 
 Feb 4, Lect - 12
 
@@ -151,133 +277,9 @@ f(x) \le K e^{\int_{x_0}^x g(t) \, dt}
 $$
 
 Hence the result.
-$\square$
-
-
-Feb 4, Lect - 12
-
-## Theorem
-Let $f(x, y)$ be a continuous function defined over a rectangle $R = \{ (x, y) : |x - x_0| \le a, |y - y_0| \le b \}$ where $a, b > 0$. If $\frac{\partial f}{\partial y}$ exists and is continuous on $R$, then $f(x, y)$ satisfies the **Lipschitz condition** with respect to $y$ in $R$ and the Lipschitz constant $K$ is given by
-
 $$
-K = \sup_{(x, y) \in R} \left| \frac{\partial f}{\partial y} (x, y) \right|
+\square
 $$
-
-### Proof
-Since $\frac{\partial f}{\partial y}$ is continuous on a closed rectangle, it is bounded, which implies the supremum exists.
-Let,
-
-$$
-K = \sup_{(x, y) \in R} \left| \frac{\partial f}{\partial y} \right|
-$$
-
-Let $(x, y_1)$ and $(x, y_2) \in R$. Then by the **Mean Value Theorem**,
-
-$$
-f(x, y_1) - f(x, y_2) = \frac{\partial f}{\partial y} (x, \xi) (y_1 - y_2)
-$$
-
-where $\xi$ is between $y_1$ and $y_2$.
-
-$$
-\implies |f(x, y_1) - f(x, y_2)| \le \left| \frac{\partial f}{\partial y} \right| |y_1 - y_2| \le K |y_1 - y_2|
-$$
-
-**Remark:** The converse need not be true.
-**Example**: $f(x, y) = x^2 |y|$ in $D = \{ |x| \le 1, |y| \le 1 \}$.
-
----
-
-### **Problems**
-Check whether the following functions satisfy the Lipschitz condition (L.C.) and if so, find $K$.
-
-1. $f(x, y) = y^{1/3}, \quad |x| \le 1, \quad 0 \le y \le 2$
-2. $f(x, y) = xy^2, \quad D = \{ |x| \le 1, \quad |y| \le 1 \}$
-3. $f(x, y) = (y + y^2) \frac{\cos x}{x^2}, \quad D = \{ |y| \le 1, \quad |x - 1| \le \frac{1}{2} \}$
-
----
-
-## Gronwall Inequality
-
-## Theorem
-Let $f(x)$ and $g(x)$ be two non-negative continuous functions for $x \ge x_0$. Let $K$ be any non-negative constant. Then the inequality
-
-$$
-f(x) \le K + \int_{x_0}^x g(t) f(t) \, dt, \quad x \ge x_0
-$$
-
-implies
-
-$$
-f(x) \le K e^{\int_{x_0}^x g(t) \, dt}, \quad x \ge x_0
-$$
-
-### Proof
-Given that $f$ and $g$ are continuous and
-
-$$
-f(x) \le K + \int_{x_0}^x g(t) f(t) \, dt \quad \dots (1)
-$$
-
-Let,
-
-$$
-F(x) = K + \int_{x_0}^x g(t) f(t) \, dt
-$$
-
-Then $F(x_0) = K$. Since $f$ and $g$ are non-negative, $F(x) \ge K$. If $K > 0$, then $F(x) > 0$.
-Also,
-
-$$
-F'(x) = g(x) f(x)
-$$
-
-We have from (1),
-
-$$
-f(x) \le F(x)
-$$
-
-$$
-\implies \frac{f(x)}{F(x)} \le 1
-$$
-
-Since $g(x) \ge 0$,
-
-$$
-\frac{g(x) f(x)}{F(x)} \le g(x)
-$$
-
-$$
-\implies \frac{F'(x)}{F(x)} \le g(x)
-$$
-
-Integrating both sides from $x_0$ to $x$:
-
-$$
-\implies \int_{x_0}^x \frac{F'(t)}{F(t)} \, dt \le \int_{x_0}^x g(t) \, dt
-$$
-
-$$
-\implies \left. \ln(F(t)) \right|_{x_0}^x \le \int_{x_0}^x g(t) \, dt
-$$
-
-$$
-\ln(F(x)) - \ln(K) \le \int_{x_0}^x g(t) \, dt
-$$
-
-$$
-\implies F(x) \le K e^{\int_{x_0}^x g(t) \, dt}
-$$
-
-From (1), we have $f(x) \le F(x)$. Therefore,
-
-$$
-f(x) \le K e^{\int_{x_0}^x g(t) \, dt}
-$$
-
-Hence the result.
-$\square$
 
 ### **Corollary**
 
@@ -309,7 +311,9 @@ $$
 
 Since $\epsilon$ is arbitrary, we have $f(x) = 0$.
 
-$\square$
+$$
+\square
+$$
 
 ---
 
@@ -607,8 +611,9 @@ $$
 \end{aligned}
 $$
 
-$\square$
-
+$$
+\square
+$$
 
 $$
 \begin{aligned}
@@ -668,4 +673,6 @@ $$
 
 $\implies \phi$ is the solution of the integral equation and hence it is a solution of the IVP.
 
-$\square$
+$$
+\square
+$$

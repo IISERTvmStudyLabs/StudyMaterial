@@ -36,9 +36,11 @@ $$
 |\phi(x) - \psi(x)| \equiv 0 \implies \phi(x) = \psi(x)
 $$
 
-$\square$
+$$
+\square
+$$
 
-___
+---
 ## $\epsilon$-approximation solution
 
 **Definition**
@@ -152,7 +154,9 @@ $$
 
 for $(x, y), (x_i, y_i) \in R$.
 
-$\square$
+$$
+\square
+$$
 ____
 $$
 \begin{aligned}

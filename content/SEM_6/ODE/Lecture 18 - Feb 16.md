@@ -14,7 +14,9 @@ $$
 R = \{ (x, y) : |x| \le 1, |y| \le 1 \}
 $$
 
-$M = 2, K = 1, h = \min \{a, \frac{b}{M}\} = \frac{1}{2}$
+$$
+M = 2, K = 1, h = \min \{a, \frac{b}{M}\} = \frac{1}{2}
+$$
 
 - $|x - x_0| \le h$ : neighborhood of existence, local existence — solution exists locally.
 - $[x_0 - h, x_0 + h] \implies [-\frac{1}{2}, \frac{1}{2}] \to$ interval of existence.
@@ -33,8 +35,12 @@ y(1) = -1
 \end{cases}
 $$
 
-$R = \{ (x, y) : |x - 1| \le 1, |y + 1| \le 1 \}$
-$h = \frac{1}{4}$
+$$
+R = \{ (x, y) : |x - 1| \le 1, |y + 1| \le 1 \}
+$$
+$$
+h = \frac{1}{4}
+$$
 Interval of existence: $[\frac{3}{4}, \frac{5}{4}]$
 
 ---
@@ -155,7 +161,6 @@ $$
 \phi_0 + \sum_{i=1}^{n} (\phi_i - \phi_{i-1})
 $$
 
-
 Since $f$ is not bounded, we follow a different approach to prove that the series converges.
 
 Let $M_0 = |y_0|$ and $M_1 = \max |\phi_1(x)|$.
@@ -184,7 +189,6 @@ $$
 |\phi_0| \le M \quad \text{and} \quad |\phi_1 - \phi_0| \le M
 $$
 
-
 $$
 \begin{aligned}
 |\phi_2(x) - \phi_1(x)| &= \left| \int_{x_0}^x [f(t, \phi_1) - f(t, \phi_0)] \, dt \right| \\
@@ -193,23 +197,19 @@ $$
 \end{aligned}
 $$
 
-
 $$
 |\phi_3(x) - \phi_2(x)| = \left| \int_{x_0}^x [f(t, \phi_2) - f(t, \phi_1)] \, dt \right|
 $$
 
-
 $$
 |\phi_3(x) - \phi_2(x)| \le \frac{K^2 M (x - x_0)^2}{2}
 $$
-
 
 In general,
 
 $$
 |\phi_{n+1}(x) - \phi_n(x)| \le \frac{M K^n (x - x_0)^n}{n!}
 $$
-
 
 By applying Weierstrass method similar to Picard's theorem, we see that the same converges to $\phi(x)$.
 
@@ -223,14 +223,14 @@ $$
 \end{aligned}
 $$
 
-
 Since $\phi_n \to \phi$ uniformly, the RHS $\to 0$ as $n \to \infty$.
 
 $$
 \implies \phi(x) = y_0 + \int_{x_0}^x f(t, \phi(t)) \, dt
 $$
 
-
 Hence $\phi$ is a solution of the IVP.
 
-$\square$
+$$
+\square
+$$

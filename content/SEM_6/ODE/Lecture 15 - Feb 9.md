@@ -25,14 +25,18 @@ $$
 \end{aligned}
 $$
 
-$\square$
+$$
+\square
+$$
 
 ---
 
 ## Cauchy-Peano Theorem
 
 Let $f(x, y)$ be continuous on the rectangle
-$R = \{(x, y) : |x - x_0| \le a, |y - y_0| \le b, \ a, b > 0\}$
+$$
+R = \{(x, y) : |x - x_0| \le a, |y - y_0| \le b, \ a, b > 0\}
+$$
 
 Then $\exists$ a solution to IVP $y' = f(x, y), \ y(x_0) = y_0$ in the interval $|x - x_0| \le h = \min \left\{ a, \frac{b}{M} \right\}$
 
@@ -48,7 +52,9 @@ $$
 |y_n - y_0| \le b
 $$
 
-$\implies |y_n| \le |y_0| + b$
+$$
+\implies |y_n| \le |y_0| + b
+$$
 
 $\implies \{y_n\}$ is uniformly bounded.
 

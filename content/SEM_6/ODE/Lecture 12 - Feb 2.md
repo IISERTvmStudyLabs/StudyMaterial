@@ -129,7 +129,9 @@ $$
 \implies W(\phi_1, \dots, \phi_n)(x) = W(\phi_1, \dots, \phi_n)(x_0) e^{-\int_{x_0}^x \frac{a_1(s)}{a_0(s)} \, ds}
 $$
 
-$\square$
+$$
+\square
+$$
 
 ---
 
@@ -177,7 +179,9 @@ $$
 
 $\implies \phi$ is a solution of the integral equation (2).
 
-$\square$
+$$
+\square
+$$
 Note that $\phi(x_0) = y_0$ and $\phi'(x) = f(x, \phi(x))$.
 
 $$
@@ -198,7 +202,9 @@ where $(x, y_1)$ and $(x, y_2) \in D$.
 We also say $f \in \text{Lip}(D, K)$, where $K$ is the Lipschitz constant.
 
 ### **Example.**
-$f(x, y) = xy, \quad D = \{ (x, y) : |x| \le 1, |y| \le 1 \}$
+$$
+f(x, y) = xy, \quad D = \{ (x, y) : |x| \le 1, |y| \le 1 \}
+$$
 
 $$
 |f(x, y_1) - f(x, y_2)| = |xy_1 - xy_2| = |x| |y_1 - y_2| \le 1 \cdot |y_1 - y_2|

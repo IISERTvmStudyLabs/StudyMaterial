@@ -103,15 +103,11 @@ $$
 \end{aligned}
 $$
 
-
-
 Suppose $\phi$ is a solution of (1), then
 
 $$
 a_0 \phi^{(n)} + a_1 \phi^{(n-1)} + \dots + a_n \phi = 0
 $$
-
-
 
 $$
 \begin{aligned}
@@ -122,8 +118,6 @@ $$
 &a_n [\phi_1 v] = 0
 \end{aligned}
 $$
-
-
 
 Sorting according to $v^{(k)}$:
 
@@ -136,13 +130,9 @@ $$
 \end{aligned}
 $$
 
-
-
 $$
 \implies a_0 \phi_1 v^{(n)} + (n a_0 \phi_1' + a_1 \phi_1) v^{(n-1)} + \dots + (n a_0 \phi_1^{(n-1)} + \dots + a_{n-1} \phi_1) v' = 0
 $$
-
-
 
 $$
 \implies a_0 \phi_1 u^{(n-1)} + \dots + (n a_0 \phi_1^{(n-1)} + \dots + a_{n-1} \phi_1) u = 0,
@@ -164,19 +154,13 @@ $$
 \implies C_1 + C_2 v_2 + \dots + C_n v_n = 0 \quad \left[ \text{using } \times \frac{d}{dx} \right]
 $$
 
-
-
 $$
 \implies C_2 v_2' + \dots + C_n v_n' = 0
 $$
 
-
-
 $$
 \implies C_2 u_2 + \dots + C_n u_n = 0.
 $$
-
-
 
 $$
 \implies C_i = 0, \quad i \in [2, n] \subset \mathbb{N},
