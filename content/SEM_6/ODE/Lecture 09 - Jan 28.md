@@ -13,6 +13,7 @@ $$
 \end{aligned}
 $$
 
+
 ### **Proof**
 
 Let $\phi_1, \phi_2, \dots, \phi_n$ be any $n$ linearly independent (LI) solutions of $L(y) = 0$. We will show that there exist unique constants $C_1, C_2, \dots, C_n$ such that $\phi = C_1 \phi_1 + C_2 \phi_2 + \dots + C_n \phi_n$ is a solution of $L(y) = 0$, satisfying $\phi(x_0) = \alpha_1, \phi'(x_0) = \alpha_2, \dots, \phi^{(n-1)}(x_0) = \alpha_n$.
@@ -93,9 +94,7 @@ $$
 \end{aligned}
 $$
 
-$$
-\square
-$$
+$\square$
 
 ---
 
@@ -194,9 +193,7 @@ then the **Wronskian** $W(\phi_1, \phi_2)$ is either zero or never zero.
 
 Given that $\phi_1$ and $\phi_2$ are solutions of $L(y) = 0$.
 
-$$
-\implies
-$$
+$\implies$
 
 $$
 \phi_1'' + P \phi_1' + Q \phi_1 = 0 \quad \dots \text{(1)}
@@ -241,9 +238,7 @@ $W(x) = 0 \iff W(x_0) = 0$.
 
 Hence the lemma.
 
-$$
-\square
-$$
+$\square$
 
 ---
 

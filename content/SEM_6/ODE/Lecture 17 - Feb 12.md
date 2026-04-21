@@ -40,7 +40,7 @@ y'_2 = g(x, y_2), \quad y_2(x_0) = y_0 \quad \dots \text{ (2)}
 $$
 
 and $y_1$ and $y_2$ are solutions of (1) and (2) respectively.
----
+___
 Let,
 
 $$

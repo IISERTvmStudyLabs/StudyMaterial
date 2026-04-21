@@ -2,9 +2,7 @@
 
 ## Wronskian
 
-$$
-w(\phi_1, \phi_2, \ldots, \phi_n) = \begin{vmatrix} \phi_1 & \ldots & \phi_n \\ \phi_1' & \ldots & \phi_n' \\ \vdots & & \vdots \\ \phi_1^{(n-1)} & \ldots & \phi_n^{(n-1)} \end{vmatrix}
-$$
+$w(\phi_1, \phi_2, \ldots, \phi_n) = \begin{vmatrix} \phi_1 & \ldots & \phi_n \\ \phi_1' & \ldots & \phi_n' \\ \vdots & & \vdots \\ \phi_1^{(n-1)} & \ldots & \phi_n^{(n-1)} \end{vmatrix}$
 
 if $y'' + a''y' + a_1 y + a_0 y = 0 $
 

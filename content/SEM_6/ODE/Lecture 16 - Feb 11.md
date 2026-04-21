@@ -147,10 +147,8 @@ $$
 \end{aligned}
 $$
 
-$$
-\square
-$$
----
+$\square$
+___
 Feb 16, Lect - 15
 
 ## Generalized Gronwall's Inequality
@@ -225,7 +223,5 @@ $$
 \implies f(x) \le h(x) + \int_{x_0}^x g(t) h(t) e^{\int_t^x g(s) \, ds} \, dt
 $$
 
-$$
-\square
-$$
+$\square$
 

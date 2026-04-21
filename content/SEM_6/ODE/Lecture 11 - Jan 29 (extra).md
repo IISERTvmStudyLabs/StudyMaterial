@@ -60,9 +60,7 @@ $$
 
 Where $W = \phi_1 \phi_2' - \phi_2 \phi_1'$.
 
-$$
-\square
-$$
+$\square$
 
 ---
 
@@ -82,9 +80,7 @@ Find a particular solution of:
 Solve $y'' + y = \sec x$, $y'' + 4y = \tan 2x$.
 
 ### **Solution 1.**
-$$
-y'' - \frac{2y}{x^2} = x
-$$
+$y'' - \frac{2y}{x^2} = x$
 
 $P = 0, \quad Q = -\frac{2}{x^2}, \quad R = x$.
 
@@ -279,9 +275,7 @@ b(x) & \phi_2^{(n-1)} & \dots & \phi_n^{(n-1)}
 }{W}
 $$
 
-$$
-\square
-$$
+$\square$
 
 $$
 v_1' = \frac{b(x) W_1(x)}{W} \implies v_1 = \int \frac{W_1}{W} b(x) \, dx
