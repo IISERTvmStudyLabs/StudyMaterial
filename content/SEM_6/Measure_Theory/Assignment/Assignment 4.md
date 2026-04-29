@@ -1,5 +1,3 @@
-# Assignment 4: Measure Theory
-
 ## Question 1
 
 If $p \in [1, \infty]$ and $f_n \to f$ in $L^p(\Omega)$, prove that $\|f_n\|_p \to \|f\|_p$.
