@@ -166,3 +166,224 @@ Prove that there is a one-to-one correspondence between
 
 - the set of $K$-algebra embeddings, $K(\alpha)\longmapsto\Omega$, given by $\mathrm{Hom}_K(K(\alpha), \Omega)$
 - the set of all roots of $f(x)$ in $\Omega$, given by $\phi \longmapsto \phi(\alpha)$.
+
+---
+
+## Solutions
+
+### Question 1
+
+Let $\alpha_1$ be a root of $f(x)$ and let $K_1=K(\alpha_1)$. Then $[K_1:K]=\deg(m_{\alpha_1})\le n$.
+
+Over $K_1$, the polynomial $f$ has one root removed, so the remaining factor has degree at most $n-1$. If $L$ is the splitting field of $f$ over $K$, then $L$ is also the splitting field of a polynomial of degree at most $n-1$ over $K_1$.
+
+By induction,
+$$
+[L:K_1]\le (n-1)!.
+$$
+Therefore
+$$
+[L:K]=[L:K_1][K_1:K]\le (n-1)!\cdot n=n!.
+$$
+
+So
+$$
+\boxed{[L:K]\le n!.}
+$$
+
+### Question 2
+
+#### (i) $\overline K$ is infinite
+
+If $\overline K$ were finite, say $|\overline K|=q$, then every element $a\in\overline K$ would satisfy $a^q=a$. So the polynomial
+$$
+x^q-x-1
+$$
+would have no root in $\overline K$, because $a^q-a-1=-1\neq 0$ for every $a\in\overline K$.
+
+This contradicts algebraic closedness. Hence $\overline K$ is infinite.
+
+#### (ii) If $K$ is countable, then $\overline K$ is countable
+
+There are only countably many monic polynomials in $K[x]$ when $K$ is countable. Each such polynomial has only finitely many roots in $\overline K$. Since $\overline K$ is the union of the root sets of all monic polynomials over $K$, it is a countable union of finite sets.
+
+Therefore $\overline K$ is countable.
+
+So
+$$
+\boxed{\overline K\text{ is infinite, and if }K\text{ is countable then }\overline K\text{ is countable}.}
+$$
+
+### Question 3
+
+Consider
+$$
+x^2-t\in K(t)[x].
+$$
+If it had a root in $K(t)$, then $t$ would be a square in $K(t)$. But $x^2-t$ is irreducible over $K(t)$ by Eisenstein's criterion at the prime polynomial $t$ in $K[t][x]$.
+
+Hence $K(t)$ contains a polynomial with no root, so it is not algebraically closed.
+
+Therefore
+$$
+\boxed{K(t)\text{ is not algebraically closed}.}
+$$
+
+### Question 4
+
+Take
+$$
+K=\mathbb Q,\qquad L=\mathbb Q(t),\qquad \Omega=\overline{\mathbb Q},
+$$
+with $t$ transcendental over $\mathbb Q$, and let $\sigma:\mathbb Q\to\overline{\mathbb Q}$ be the inclusion.
+
+If $\widetilde\sigma:L\to\Omega$ extended $\sigma$, then $\widetilde\sigma(t)$ would have to be transcendental over $\mathbb Q$, because $t$ is transcendental over $\mathbb Q$. But $\Omega=\overline{\mathbb Q}$ contains only algebraic elements over $\mathbb Q$.
+
+So no extension exists.
+
+Hence a valid example is
+$$
+\boxed{\mathbb Q\subseteq\mathbb Q(t)\text{ with target }\Omega=\overline{\mathbb Q}.}
+$$
+
+### Question 5
+
+#### (i) $x^6-7$
+
+Let $\alpha=\sqrt[6]{7}$. The roots are $\alpha\zeta_6^k$ for $k=0,1,2,3,4,5$, where $\zeta_6$ is a primitive sixth root of unity. So the splitting field is
+$$
+\boxed{\mathbb Q(\sqrt[6]{7},\zeta_6)=\mathbb Q(\sqrt[6]{7},\sqrt{-3})}.
+$$
+
+#### (ii) $x^6-9$
+
+Let $\beta=\sqrt[3]{3}$. Then $\beta^6=9$, and the roots are $\beta\zeta_6^k$ for $k=0,1,2,3,4,5$.
+
+Thus the splitting field is
+$$
+\boxed{\mathbb Q(\sqrt[3]{3},\zeta_6)=\mathbb Q(\sqrt[3]{3},\sqrt{-3})}.
+$$
+
+### Question 6
+
+The handwritten statement in (i) appears to contain a typo. As written, $\mathbb Q(i\alpha)/\mathbb Q$ is not normal for a root $\alpha$ of $x^4-5$; the standard normal extension is $\mathbb Q(\alpha,i)/\mathbb Q$, the splitting field of $x^4-5$.
+
+Using the corrected standard version:
+
+Let $\alpha=\sqrt[4]{5}$. Then the roots of $x^4-5$ are
+$$
+\alpha,-\alpha,i\alpha,-i\alpha.
+$$
+So the splitting field is $\mathbb Q(\alpha,i)$, which is normal over $\mathbb Q$.
+
+For the tower
+$$
+\mathbb Q(\alpha+i\alpha)/\mathbb Q(i\alpha),
+$$
+one gets a quadratic extension, hence it is normal.
+
+But the total extension over $\mathbb Q$ is not normal, because $\mathbb Q(\alpha+i\alpha)$ does not contain all roots of the minimal polynomial of $\alpha+i\alpha$ over $\mathbb Q$; its normal closure is the larger splitting field $\mathbb Q(\alpha,i)$.
+
+### Question 7
+
+#### (i) $G$ is a subgroup of $GL_2(K)$
+
+An element of $G$ has the form
+$$
+\begin{pmatrix}a&b\\0&1\end{pmatrix},\qquad a\ne 0.
+$$
+Its inverse is
+$$
+\begin{pmatrix}a^{-1}&-a^{-1}b\\0&1\end{pmatrix},
+$$
+and the product of two such matrices is again of the same form:
+$$
+\begin{pmatrix}a&b\\0&1\end{pmatrix}
+\begin{pmatrix}c&d\\0&1\end{pmatrix}
+=
+\begin{pmatrix}ac&ad+b\\0&1\end{pmatrix}.
+$$
+So $G\le GL_2(K)$.
+
+#### (ii) The homomorphism to $\mathrm{Aut}_K(K[x])$
+
+For
+$$
+A=\begin{pmatrix}a&b\\0&1\end{pmatrix},
+$$
+define $\phi_A(x)=ax+b$ and extend uniquely to a $K$-algebra endomorphism of $K[x]$. Since $a\ne 0$, it has inverse $x\mapsto a^{-1}(x-b)$, so it is an automorphism.
+
+Moreover,
+$$
+\phi_A\circ\phi_B=\phi_{AB},
+$$
+so $A\mapsto\phi_A$ is a group homomorphism.
+
+#### (iii) The homomorphism to $\mathrm{Aut}_K(K(x))$
+
+For
+$$
+A=\begin{pmatrix}a&b\\c&d\end{pmatrix}\in GL_2(K),
+$$
+define
+$$
+\phi_A(x)=\frac{ax+b}{cx+d}.
+$$
+Because $\det(A)\ne 0$, this is an invertible fractional linear transformation, with inverse given by $A^{-1}$. Hence it extends to a $K$-automorphism of $K(x)$.
+
+Again composition matches matrix multiplication, so
+$$
+\boxed{GL_2(K)\to\mathrm{Aut}_K(K(x)),\ A\mapsto\phi_A}
+$$
+is a group homomorphism.
+
+### Question 8
+
+#### (1) The group generated by $t\mapsto \frac1{1-t}$ and $t\mapsto \frac{t-1}{t}$
+
+These two Möbius transformations permute $\{0,1,\infty\}$, and together they generate the full permutation group of that set, which is isomorphic to $S_3$.
+
+A standard invariant is
+$$
+j(t)=\frac{(t^2-t+1)^3}{t^2(t-1)^2}.
+$$
+This is fixed by both generators, and in fact
+$$
+\mathbb C(t)^G=\mathbb C(j(t)).
+$$
+So
+$$
+\boxed{\mathbb C(t)^G=\mathbb C\left(\frac{(t^2-t+1)^3}{t^2(t-1)^2}\right).}
+$$
+
+#### (2) The group generated by $t\mapsto t+1$
+
+Let $\sigma(t)=t+1$. Then $\sigma^n(t)=t+n$, so $\sigma^n=\mathrm{Id}$ only when $n=0$. Therefore the group generated by $\sigma$ is infinite cyclic:
+$$
+\boxed{G\cong\mathbb Z.}
+$$
+
+If $f(t)\in\mathbb C(t)$ satisfies $f(t+1)=f(t)$, then any pole of $f$ would give infinitely many translated poles. A rational function cannot have infinitely many poles, so $f$ must be constant.
+
+Hence
+$$
+\boxed{\mathbb C(t)^G=\mathbb C.}
+$$
+
+### Question 9
+
+Define
+$$
+\Phi:\mathrm{Hom}_K(K(\alpha),\Omega)\to\{\text{roots of }f\text{ in }\Omega\},
+\qquad
+\Phi(\phi)=\phi(\alpha).
+$$
+
+If two $K$-embeddings agree on $\alpha$, then they agree on all of $K(\alpha)$, since every element of $K(\alpha)$ is a rational function in $\alpha$ with coefficients in $K$. So $\Phi$ is injective.
+
+Conversely, if $\beta\in\Omega$ is a root of $f$, then the map $\alpha\mapsto\beta$ respects the minimal polynomial relation of $\alpha$, so it extends uniquely to a $K$-embedding $K(\alpha)\to\Omega$. Thus every root arises from an embedding, so $\Phi$ is surjective.
+
+Therefore $\Phi$ is a bijection, and we have the desired one-to-one correspondence:
+$$
+\boxed{\mathrm{Hom}_K(K(\alpha),\Omega)\;\leftrightarrow\;\{\text{roots of }f\text{ in }\Omega\},\quad \phi\mapsto\phi(\alpha).}
+$$
