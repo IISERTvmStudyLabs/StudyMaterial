@@ -33,7 +33,7 @@ This repository contains detailed notes from various mathematics courses, create
 
 ---
 
-#### [Galois Theory](SEM_6/Galois_Theory)
+#### [Galois Theory](SEM_6/Galois_Theory/)
 **19 Lectures** | Field extensions, algebraic structures, and solvability of polynomials
 
 **Topics Covered:**
@@ -46,7 +46,7 @@ This repository contains detailed notes from various mathematics courses, create
 
 ---
 
-#### [Measure Theory](SEM_6/Measure_Theory)
+#### [Measure Theory](SEM_6/Measure_Theory/)
 **18 Lectures** | Measure spaces, integration theory, and convergence theorems
 
 **Topics Covered:**
