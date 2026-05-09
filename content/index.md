@@ -20,7 +20,7 @@ This repository contains detailed notes from various mathematics courses, create
 
 ### Core Courses
 
-#### [Data Structures and Algorithms](SEM_6/DSA)
+#### [Data Structures and Algorithms](SEM_6/DSA/)
 **17 Lectures** | Sorting algorithms, linked lists, stacks, trees, and algorithmic complexity
 
 **Topics Covered:**
