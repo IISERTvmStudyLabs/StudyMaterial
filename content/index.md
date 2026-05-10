@@ -56,8 +56,28 @@ This repository contains detailed notes from various mathematics courses, create
 - Lp Spaces
 
 **Resources:** Lecture notes, assignments, question papers
+___
 
----
+#### [Ordinary Differential Equation](SEM_6/ODE/)
+**21 Lectures** | 
+
+**Topics Covered:**
+- Homogenous Differential Equation
+- Existence, Uniqueness, and Stability
+- Convergence Theorems
+- System of DE
+
+**Resources:** Lecture notes, assignments, question papers
+___
+
+#### [Topology](SEM_6/Topology/)
+**19 Lectures** | 
+
+**Topics Covered:**
+
+
+**Resources:** Lecture notes, assignments
+___
 
 ## 🗂️ Future Semesters
 
