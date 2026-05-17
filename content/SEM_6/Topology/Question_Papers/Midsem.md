@@ -626,3 +626,9 @@ So
 $$
 \boxed{\lim_{\delta\to 0^+}K_\delta=Z\setminus\overline{B}.}
 $$
+
+---
+
+## Midsem Question Paper
+
+![[Top_Midsem.pdf]]
