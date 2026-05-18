@@ -2,7 +2,7 @@
 
 If $p \in [1, \infty]$ and $f_n \to f$ in $L^p(\Omega)$, prove that $\|f_n\|_p \to \|f\|_p$.
 
-## Solution
+### Answer
 
 Let $\|f_n-f\|_p \to 0$. Since $\|\cdot\|_p$ is a norm on $L^p(\Omega)$, the reverse triangle inequality gives
 
@@ -24,7 +24,7 @@ ___
 
 Suppose $\{f_n\} \subset L^p(\Omega)$, $p \in [1,\infty]$, and $\|f_n\|_p \le 1$. If $f_n \to f$ pointwise almost everywhere, prove that $f \in L^p(\Omega)$ with $\|f\|_p \le 1$.
 
-## Solution
+### Answer
 
 We split the proof into the cases $1 \le p < \infty$ and $p=\infty$.
 
@@ -44,7 +44,7 @@ ___
 
 If $f_n \to f$ in $L^p(\Omega)$ and $g_n \to g$ in $L^{p'}(\Omega)$, where $\frac1p + \frac1{p'} = 1$, prove that $f_n g_n \to fg$ in $L^1(\Omega)$.
 
-## Solution
+### Answer
 
 Assume $1 \le p < \infty$ and let $p'$ be the conjugate exponent so that $\frac1p + \frac1{p'} = 1$. Then
 
@@ -85,7 +85,7 @@ If in addition to (a), $\|f_n\|_\infty \le M$ for all $n$, prove that $f_n \to f
 
 If $\{E_n : n \in \mathbb{N}\} \subset \mathcal{F}$ is such that $\mu(E_n) < \infty$ for all $n$ and $\chi_{E_n} \to f$ in $L^1(\Omega)$, prove that $f$ is almost everywhere equal to the characteristic function of a measurable set.
 
-## Solution
+### Answer
 
 ### Part (a)
 
@@ -133,7 +133,7 @@ ___
 
 Suppose $1 \le p < q \le \infty$ and $f \in L^p(\Omega) \cap L^q(\Omega)$. Prove that $f \in L^r(\Omega)$ for all $r \in (p,q)$.
 
-## Solution
+### Answer
 
 Choose $r \in (p,q)$. Then there exists $\alpha \in (0,1)$ such that
 
@@ -163,7 +163,7 @@ ___
 
 Given $p \in [1,\infty)$, construct $f \in L^p(\mathbb{R})$ and $g \in L^p(\mathbb{R})$ such that $fg \notin L^p(\mathbb{R})$.
 
-## Solution
+### Answer
 
 Define
 
@@ -211,7 +211,7 @@ ___
 
 For $p \in (1,\infty)$, if $f_n \to f$ in $L^p(\Omega)$, prove that $\| |f_n|^p - |f|^p \|_1 \to 0$.
 
-## Solution
+### Answer
 
 Use the inequality from the hint:
 
@@ -249,7 +249,7 @@ $$
 \|f+g\|_p^p = \|f\|_p^p + \|g\|_p^p.
 $$
 
-## Solution
+### Answer
 
 Since $fg=0$ almost everywhere, for almost every $x \in \Omega$ at least one of $f(x)$ and $g(x)$ is zero. Therefore, almost everywhere,
 
@@ -287,7 +287,7 @@ $$
 
 for almost every $x$ such that $f(x) \ne 0$.
 
-## Solution
+### Answer
 
 Always,
 
@@ -321,7 +321,7 @@ $$
 \lim_{p\to\infty} \|f\|_p = \|f\|_\infty.
 $$
 
-## Solution
+### Answer
 
 Let $M = \|f\|_\infty$.
 
@@ -385,7 +385,7 @@ $$
 \|fg\|_r \le \|f\|_p\|g\|_q.
 $$
 
-## Solution
+### Answer
 
 Let
 
@@ -429,7 +429,7 @@ $$
 \|f\|_r^r \le \|f\|_p^{\alpha p}\,\|f\|_q^{(1-\alpha)q}.
 $$
 
-## Solution
+### Answer
 
 Write
 
@@ -459,7 +459,7 @@ ___
 
 For $p \in [1,\infty)$, suppose $\{f_n\} \subset L^p(\Omega)$ and $f \in L^p(\Omega)$ such that $f_n \to f$ pointwise almost everywhere. Prove that $f_n \to f$ in $L^p(\Omega)$ if and only if $\|f_n\|_p \to \|f\|_p$.
 
-## Solution
+### Answer
 
 If $f_n \to f$ in $L^p(\Omega)$, then the result follows from Question 1.
 
@@ -477,7 +477,7 @@ ___
 
 Prove that $L^p([0,1],\lambda)$ is separable.
 
-## Solution
+### Answer
 
 Let $\mathcal{S}$ be the collection of simple functions of the form
 
@@ -542,7 +542,7 @@ $$
 
 is uniformly continuous.
 
-## Solution
+### Answer
 
 ### Part (a)
 
@@ -639,7 +639,7 @@ $$
 3. Are there measures $\mu$ such that $A_f$ is convex for every $f \in L^\infty(\Omega,\mu)$?
 4. Are there measures $\mu$ such that $A_f$ fails to be convex for some $f \in L^\infty(\Omega,\mu)$?
 
-## Solution
+### Answer
 
 ### Part (a)
 

@@ -26,7 +26,7 @@ $$\int_X f \, d\mu \leq \int_X g \, d\mu$$
 
 ---
 
-## Solution (Step-by-Step Explanation)
+### Answer
 
 To prove equality, we will show that $\int f \leq \lim \int f_n$ and $\int f \geq \lim \int f_n$ separately.
 
@@ -106,7 +106,7 @@ $$\int_{\Omega} \chi_E \, d\mu = \mu(E)$$
 
 ---
 
-## Solution (Step-by-Step Explanation)
+### Answer
 
 To show the inequality is not true, we only need to find one counter-example where the left side is strictly greater than the right side.
 
@@ -203,7 +203,7 @@ If $f \leq g$ on a set $E$, then $\int_E f \, d\mu \leq \int_E g \, d\mu$.
 
 ---
 
-## Solution (Step-by-Step Explanation)
+### Answer
 
 We will use a proof by contradiction, focusing on the set where the function $f$ takes negative values.
 
@@ -294,7 +294,7 @@ If $f$ is Riemann integrable on a closed interval $[a, b]$, it is also Lebesgue 
 
 ---
 
-## Solution (Step-by-Step Explanation)
+### Answer
 
 ### Step 1: Define a sequence of truncated functions
 
@@ -390,7 +390,7 @@ If a function $f$ is Riemann integrable on a closed interval $[a, b]$, then it i
 
 ---
 
-## Solution (Step-by-Step Explanation)
+### Answer
 
 ### Step 1: Handle the singularity with a sequence
 
@@ -487,7 +487,7 @@ For a constant $c \geq 0$, the integral $\int_{\Omega} c \, d\mu = c \cdot \mu(\
 
 ---
 
-## Solution (Step-by-Step Explanation)
+### Answer
 
 ### Part 1: Proof for Finite Measure Spaces
 
@@ -583,7 +583,7 @@ As established in previous exercises, the integral $\int_{(0, 1]} x^{\alpha} \, 
 
 ---
 
-## Solution (Step-by-Step Explanation)
+### Answer
 
 ### Step 1: Decompose the Integral
 
@@ -674,7 +674,7 @@ If $|f| \leq |g|$ and $g$ is integrable, then $f$ is integrable.
 
 ---
 
-## Solution (Step-by-Step Explanation)
+### Answer
 
 ### Part 1: Does $f$ integrable imply $xf$ integrable?
 
@@ -771,7 +771,7 @@ For any $\theta \in \mathbb{R}$, $|\sin(\theta)| \leq |\theta|$. Additionally, $
 
 ---
 
-## Solution (Step-by-Step Explanation)
+### Answer
 
 ### Step 1: Formalize the derivative using limits
 
@@ -858,7 +858,7 @@ For $x \in [0, 1]$, the sequence $x^n$ converges to $0$ if $0 \leq x < 1$, and c
 
 ---
 
-## Solution (Step-by-Step Explanation)
+### Answer
 
 ### Step 1: Identify the sequence of functions
 
@@ -943,7 +943,7 @@ $$\sum_{n=0}^{\infty} r^n = \frac{1}{1 - r}$$
 
 ---
 
-## Solution (Step-by-Step Explanation)
+### Answer
 
 ### Step 1: Check for non-negativity
 
@@ -1049,7 +1049,7 @@ The function $x^p$ is integrable on $(0, 1]$ if and only if $p > -1$.
 
 ---
 
-## Solution (Step-by-Step Explanation)
+### Answer
 
 ### Step 1: Analyze Pointwise Convergence
 
@@ -1142,7 +1142,7 @@ For $|r| < 1$, the sum $\sum_{n=1}^{\infty} r^n = \frac{r}{1-r}$.
 
 ---
 
-## Solution (Step-by-Step Explanation)
+### Answer
 
 ### Step 1: Proof of (a)
 
@@ -1227,7 +1227,7 @@ The function $\chi_E(x)$ is defined as $1$ if $x \in E$ and $0$ otherwise.
 
 ---
 
-## Solution (Step-by-Step Explanation)
+### Answer
 
 ### Part (a): Pointwise convergence does not imply integral convergence
 
@@ -1334,7 +1334,7 @@ If $f$ and $g$ are integrable, then $\int (f + g) = \int f + \int g$.
 
 ---
 
-## Solution (Step-by-Step Explanation)
+### Answer
 
 ### Part (a)
 
@@ -1443,7 +1443,7 @@ An integral defined by $\nu(E) = \int_E f \, d\lambda$ creates a new measure $\n
 
 ---
 
-## Solution (Step-by-Step Explanation)
+### Answer
 
 We will use a proof by contradiction to show that no such function $f$ exists.
 
@@ -1527,7 +1527,7 @@ If $0 \leq g \leq h$ almost everywhere, then $\int g \, d\mu \leq \int h \, d\mu
 
 ---
 
-## Solution (Step-by-Step Explanation)
+### Answer
 
 ### Part 1: Proof of Chebyshev's Inequality
 
@@ -1651,7 +1651,7 @@ A measurable function $f$ is integrable if $\int_{\Omega} |f| \, d\mu < \infty$.
 
 ---
 
-## Solution (Step-by-Step Explanation)
+### Answer
 
 ### Step 1: Utilize the $\sigma$-finite property
 
@@ -1721,7 +1721,7 @@ For any interval $[a, b]$, the Lebesgue measure is simply its length: $\lambda([
 
 ---
 
-## Solution (Step-by-Step Explanation)
+### Answer
 
 ### Step 1: Rewrite the expression using the measure of the interval
 
@@ -1802,7 +1802,7 @@ If the range of $f$ is partitioned into disjoint sets $E_i = f^{-1}((2^{i-1}, 2^
 
 ---
 
-## Solution (Step-by-Step Explanation)
+### Answer
 
 ### Step 1: Decompose the function into layers
 
