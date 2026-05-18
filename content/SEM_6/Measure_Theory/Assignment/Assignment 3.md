@@ -1,3 +1,9 @@
+## Assignment 3
+
+![[Assignment 3.pdf]]
+
+---
+
 ## Question
 
 Let $(X, \mathcal{M}, \mu)$ be a measure space. Suppose $\{f_n\}$ is a sequence of measurable functions such that $0 \leq f_1 \leq f_2 \leq \dots \leq f = \lim_{n \to \infty} f_n$ pointwise. Using Fatou's Lemma, prove the **Monotone Convergence Theorem (MCT)**, which states:
