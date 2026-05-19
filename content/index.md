@@ -10,7 +10,7 @@ Welcome to our collaborative study resource! This is a growing collection of lec
 
 This repository contains detailed notes from various mathematics courses, created and maintained by students for students. Our goal is to provide clear, comprehensive, and accessible study materials that complement classroom learning.
 
-**Contributors:** [SivasankaranRS](https://github.com/sivasankaranrs) ($i^2$M), [AKwasTaken](https://github.com/akwastaken) (BS-MS Math)  
+**Contributors:** [SivasankaranRS](https://github.com/sivasankaranrs) ($i^2$M), [Aneeth Kumaar](https://github.com/akwastaken) (BS-MS Math)  
 **Current Status:** Year 3, Semester 6 (Spring 2026)  
 **Format:** Lecture notes, problem sets, assignments, and question papers
 
