@@ -10,7 +10,9 @@ A sequence  $(x_n)_{n \in \mathbb{N}} \subset X$  is Cauchy if  $\forall \vareps
 
 → Def<sup>n</sup>:  $X$  is a vector space
 
-$$\left\{ \begin{array}{l} x, (\cdot, \cdot)_x \\ x, \|\cdot\|_x \\ x, d(\cdot, \cdot) \end{array} \right\} \text{ is called } \left\{ \begin{array}{l} \text{Hilbert} \\ \text{Banach} \\ \text{Fréchet} \end{array} \right\} \text{ space.}$$
+$$
+\left\{ \begin{array}{l} x, (\cdot, \cdot)_x \\ x, \|\cdot\|_x \\ x, d(\cdot, \cdot) \end{array} \right\} \text{ is called } \left\{ \begin{array}{l} \text{Hilbert} \\ \text{Banach} \\ \text{Fréchet} \end{array} \right\} \text{ space.}
+$$
 
 if every Cauchy seq in  $X$  converges in  $X$ .
 
