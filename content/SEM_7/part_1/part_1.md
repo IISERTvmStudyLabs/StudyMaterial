@@ -1,0 +1,362 @@
+
+Cont. of examples of Banach spaces.
+
+② Sequence space
+
+For  $1 \leq p < \infty$ , let  $l_p$  denote the set of all real (complex) seq.
+
+ $x = (x_n)_{n \in \mathbb{N}}$  for which  $\sum_{n=1}^{\infty} |x_n|^p < \infty$  (p-summable seq.)
+
+For  $x \in l_p$ , define
+
+$$\|x\|_p = \left( \sum_{n=1}^{\infty} |x_n|^p \right)^{1/p}$$
+
+ $x_1 y \in l_p$  by Minkowski  $\forall n \in \mathbb{N}$ .
+
+$$\left( \sum_{k=1}^n |x_k + y_k|^p \right)^{1/p} \leq \left( \sum_{k=1}^n |x_k|^p \right)^{1/p} + \left( \sum_{k=1}^n |y_k|^p \right)^{1/p}$$
+
+$$\|x + y\|_p \leq \|x\|_p + \|y\|_p$$
+
+For  $p = \infty$  the set of all bdd sequences loo is the set of all seq.  $x = (x_n)_{n \in \mathbb{N}}$ 
+
+$$\|x_n\|_\infty = \sup_{k \in \mathbb{N}} |x_k| < \infty$$
+
+ $(l_p, \|l_p\|)$  and  $(l_\infty, \|l_\infty\|)$  are Banach.
+
+③ Function space.
+
+let  $C[0,1]$  be the set of all continuous func on  $[0,1]$ . Define,
+
+$$\|f\|_\infty = \sup_{x \in [0,1]} |f(x)|.$$
+
+$(f_n)_{n \in \mathbb{N}} \subset C[0,1]$  in Cauchy  $\forall \varepsilon > 0 \exists N_0 \in \mathbb{N}$  s.t.
+
+$$\|f_n - f_m\|_\infty < \varepsilon \quad \forall n, m \geq N_0$$
+
+For every  $x \in [0,1]$ 
+
+$$|f_n(x) - f_m(x)| \leq \sup_{x \in [0,1]} |f_n(x) - f_m(x)|$$
+
+$$= \|f_n - f_m\|$$
+
+$$< \varepsilon.$$
+
+ $(f_n(x))_{n \in \mathbb{N}}$  is a uniformly cauchy.
+
+ $\Rightarrow$  For each  $x \in [0,1]$   $(f_n(x))$  converges seq. of  $f(x)$ .
+
+$$f(x) = \lim_{n \rightarrow \infty} f_n(x). \quad x \in [0,1]$$
+
+$$|f_n(x) - f(x)| = |f_n(x) - f_m(x) + f_m(x) - f(x)|$$
+
+$$\leq |f_n(x) - f_m(x)| + |f_m(x) - f(x)|$$
+
+$$|f_n(x) - f_m(x)| < \frac{\varepsilon}{2} \quad \forall n, m \geq N_0 \in \mathbb{N}. \quad (\text{depends on } \varepsilon)$$
+
+$$|f_m(x) - f(x)| < \frac{\varepsilon}{2} \quad \forall m \geq N_0 \quad (\text{depends on } \varepsilon \text{ \& } x)$$
+
+$$|f_n(x) - f(x)| < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.$$
+
+$$\|f\| = \sup_{x \in [0,1]} |f(x)| + \sup_{x \in [0,1]} |f'(x)|.$$
+
+(show that  $\|f\|$  is norm).
+
+→ Let  $x \in \mathbb{R}^n$  be open. Let  $L^p(\mathbb{R})$  be the set of all measurable functions  $f: \mathbb{R} \rightarrow \mathbb{R}$  s.t.  $\int_{\mathbb{R}} |f(x)|^p dx < \infty \quad 1 \leq p < \infty$ 
+
+$$\|f\|_p = \left( \int_{\mathbb{R}} |f(x)|^p dx \right)^{1/p}$$
+
+$$\|f\|_\infty = \text{ess sup}_{-2} |f(x)| \quad \text{for } L^\infty(\mathbb{R}).$$
+
+→ Remark: It is possible that a vector space is complete wat one norm and not complete wat another norm.
+
+Eg: Let  $X := \text{set of all poly. on } [0,1]$ .
+
+Consider the 2 norms  $\|\cdot\|_\infty$  &  $\|\cdot\|_1$ .
+
+$$f_n(x) = x^n \quad x \in [0,1].$$
+
+$$\begin{aligned} \|f_n\|_1 &= \int_0^1 |f_n(x)| dx \\ &= \int_0^1 x^n dx \\ &= \frac{x^{n+1}}{n+1} \Big|_0^1 = \frac{1}{n+1} \end{aligned}$$
+
+$$\|f_n\|_1 \rightarrow 0 \text{ as } n \rightarrow \infty.$$
+
+$$f_n \rightarrow 0 \text{ wat } \|\cdot\|_1.$$
+
+$$\|f_n\|_\infty = \sup_{x \in [0,1]} |f_n(x)| = 1 \quad \forall n$$
+
+$\therefore f_n$  doesn't converge in  $\mathbb{L}^\infty$ .
+
+![](_page_13_Figure_11.jpeg)
+
+ $\rightarrow$  Defn: Let  $(X, \|\cdot\|_X)$  and  $(Y, \|\cdot\|_Y)$  be two normed linear spaces over the same field  $\mathbb{K}$ .
+
+① A  $f_n^{-1}: X \rightarrow Y$  is called cont'on  $X$  if  $\forall x_0 \in X \quad \forall \varepsilon > 0 \quad \exists \varepsilon > 0$  s.t.
+
+$$\|x - x_0\|_X < \varepsilon \Rightarrow \|f(x) - f(x_0)\|_Y < \varepsilon$$
+
+ $\Leftrightarrow x_n \rightarrow x_0$  in  $X \Rightarrow f_n(x) \rightarrow f(x_0)$  in  $Y$ .
+
+② We say that  $f$  is bdd if it maps bdd sets in  $X$  to bdd sets in  $Y$ .
+
+③  $L: \text{Dom } L \subseteq X \rightarrow Y$  is called linear if  $L(x+y) = Lx + Ly \quad \forall x, y \in \text{Dom } L$   
+ $L(\lambda x) = \lambda Lx \quad \forall x \in \text{Dom } L \quad \forall \lambda \in \mathbb{K}$ .
+
+ $\text{Dom } L \subseteq X$  is called the domain of  $L$  or subspace of  $X$ .
+
+ $\text{Range } L := \{y \in Y \mid y = Lx \text{ for some } x \in \text{Dom } L\}$ .
+
+is called the range of  $L$  or the image of  $L$   
+( $\text{Im } L$ ) a subspace of  $Y$ .
+
+Ker  $L = \{x \in X : \langle x = 0 \rangle\}$  the kernel or the null space of  $L$  a subspace of  $X$ .
+
+→ Proposition: Let  $L: X \rightarrow Y$  be linear  $\text{Dom } L = X$ . Then  $L$  is bold  $\Leftrightarrow$ 
+
+$$\|L\| := \sup_{x \in X} \|Lx\|_Y < \infty$$
+
+$$\|x\|_X \leq 1$$
+
+Proof:  $L$  is bold  $\Rightarrow \|L\| < \infty$ 
+
+Conversely suppose  $\|L\| < \infty$ ,
+
+to prove :  $L$  is bold.
+
+$$\|L\| = \sup_{x \in X} \|Lx\|_Y < \infty.$$
+
+$$\|x\|_X \leq 1$$
+
+For any  $x \in X$  ( $x \neq 0$ ),
+
+$$\|Lx\|_Y = \|L(\|x\|_X x / \|x\|_X)\|_Y$$
+
+$$= \|x\|_X \|L(x / \|x\|_X)\|_Y$$
+
+$$\leq \|L\|_Y \|x\|_X \quad (\text{since } \frac{x}{\|x\|_X} = 1)$$
+
+ $\forall x \in X \quad x \neq 0$ .
+
+$$\|Lx\|_Y \leq \|L\|_Y \|x\|_X$$
+
+and for  $x=0$  it is trivial
+
+ $\Rightarrow L$  maps bold sets in  $X$  to bold sets in  $Y$ . or it is bold.
+
+→ Recall:  $L: X \rightarrow Y$  is called bold if  $\|L\| := \sup_{x \in X} \|Lx\|_y < \infty$  if  $\exists M > 0$  s.t.
+
+$$\|Lx\|_y \leq M \|x\|_x \quad \forall x \in X - (*)$$
+
+then  $L$  is bold and conversely
+
+$$\|L\| = \inf M, \quad \forall M \text{ satisfying } (*)$$
+
+ $L: X \rightarrow Y$  is cont. on  $X \quad \forall x_0 \in X \quad \forall \varepsilon > 0 \quad \exists \delta > 0$  s.t.
+
+$$\|x - x_0\| < \delta \Rightarrow \|Lx - Lx_0\|_y < \varepsilon$$
+
+ $L$  is cont. on  $X \Leftrightarrow L$  is cont. at  $0$ .
+
+→ Theorem: A linear map  $L: X \rightarrow Y$  is cont.  $\Leftrightarrow$  it is bold.
+
+Proof:
+
+Suppose  $L$  is cont. on  $X$ .
+
+Hence,  $L$  is cont. at  $0$ .
+
+$$\Rightarrow \exists \delta > 0 \text{ s.t.}$$
+
+$$\|x\|_x \leq \delta \Rightarrow \|Lx\|_y \leq 1.$$
+
+For any  $y \in X$   $\|y\| \leq 1$ ,  $\|\delta y\| \leq \delta$ .
+
+$$\|L(\delta y)\|_y = \delta \|Ly\| \leq 1.$$
+
+$$\|Ly\| \leq 1/\delta \quad \forall y \in X \text{ with } \|y\| \leq 1.$$
+
+$$\Rightarrow \|L\| < \infty$$
+
+Conveniently suppose let  $L$  be bdd.
+
+$$\begin{aligned} \|Lx_1 - Lx_2\|_Y &= \|L(x_1 - x_2)\|_Y \\ &\leq \|L\| \|x_1 - x_2\|. \quad \forall x_1, x_2 \in X \end{aligned}$$
+
+Hence  $L$  is lipschitz cont.
+
+→ Equivalent conditions
+
+1. 1.  $L$  is cont. at 0
+2. 2.  $L$  is unit on  $X$
+3. 3.  $L$  is bdd.
+4. 4.  $\exists M > 0$  s.t.  $\|Lx\|_Y \leq M \|x\|_X \quad \forall x \in X$ .
+
+→ Denote  $\mathcal{L}(X, Y) = \{L: X \rightarrow Y : L \text{ is linear \& bdd}\}$   
+(linear & cont.)
+
+$$\mathcal{L}(X) = \mathcal{L}(X, X)$$
+
+$$X' = \mathcal{L}(X, \mathbb{K}) = X^* \text{ (Dual)}$$
+
+→  $\|L\| := \sup_{\|x\|_X \leq 1} \|Lx\|_Y$  is indeed a norm  $\mathcal{L}(X, Y)$   
+(when  $Y$  is complete  $\mathcal{L}(X, Y)$  is Banach)
+
+→ Theorem:  $(\mathcal{L}(X, Y), \|\cdot\|_{\mathcal{L}(X, Y)})$ , where  $\|L\|_{\mathcal{L}(X, Y)} = \|L\|$   
+ $= \sup_{\|x\|_X \leq 1} \|Lx\|_Y$ 
+
+for  $L \in \mathcal{L}(X, Y)$  is a NLS. In addition, if  $Y$  is Banach then  $\mathcal{L}(X, Y)$  is also Banach with  $\|\cdot\|_{\mathcal{L}(X, Y)}$ .  
+Consequently,  $X' = \mathcal{L}(X, \mathbb{K})$  is Banach.
+
+$$(L_1 + L_2)(x) = L_1 x + L_2 x$$
+
+$$\forall L_1, L_2 \in \mathbb{Z}(x, y)$$
+
+$$(\lambda L)(x) = \lambda L x$$
+
+$$\forall x \in \mathbb{K}$$
+
+To show:  $\|\cdot\|$  is a measure
+
+(N1) Clearly  $\|L\| \geq 0$  by def.
+
+If  $L = 0$  then  $\|L\| = 0$ 
+
+If  $L \neq 0$  then  $L \neq 0$ . for some  $x_0 \neq 0$ 
+
+$$\|L\| = \sup_{\|x\|_x \leq L} \|Lx\|_y \geq \|L(\frac{x_0}{\|x_0\|})\|_y$$
+
+$$\geq \frac{1}{\|x_0\|} \|Lx_0\|_1 > 0$$
+
+$$(N2) \quad \|\lambda L\| = \sup_{\|x\| \leq 1} \|(\lambda L)(x)\|_y$$
+
+$$= \sup_{\|x\| \leq 1} \|\lambda Lx\|_y$$
+
+$$= \|\lambda\| \|L\|$$
+
+(N3) For any  $x \in X$   $\|x\| \leq 1$ .
+
+$$\|(L_1 + L_2)(x)\| = \|L_1 x + L_2 x\|$$
+
+$$\leq \|L_1 x\| + \|L_2 x\|$$
+
+$$\leq \sup_{\|x\| \leq 1} \|L_1 x\| + \sup_{\|x\| \leq 1} \|L_2 x\|$$
+
+$$= \|L_1\| + \|L_2\|$$
+
+$$\Rightarrow \|L_1 + L_2\| = \sup_{\|x\| \leq 1} \|(L_1 + L_2)(x)\| \leq \|L_1\| + \|L_2\|$$
+
+to show that:  $h(x, y)$  is complete. Whenever  $y$  is complete.
+
+Let  $(L_n)_{n \in \mathbb{N}}$  be Cauchy in  $h(x, y)$ 
+
+$$\Rightarrow \forall \varepsilon > 0 \quad \exists N_0 \in \mathbb{N} \text{ s.t.}$$
+
+$$\|L_n - L_m\| < \varepsilon \quad \forall n, m \geq N_0$$
+
+to show:  $L_n \rightarrow L$  in  $h(x, y)$ 
+
+ie  $\|L_n - L\| \rightarrow 0$  as  $n \rightarrow \infty$ 
+
+$$\begin{aligned} \|L_n x - L_m y\|_y &= \|(L_n - L_m)x\|_y \\ &\leq \|L_n - L_m\| \|x\| \quad \forall x \in X. \end{aligned}$$
+
+For each finite  $x \in X$ ,  $(L_n x)_{n \in \mathbb{N}}$  is Cauchy in  $y$ .
+
+Since  $y$  is complete,  $(L_n x)_{n \in \mathbb{N}}$  converges to some  $y \in Y_3$ , say  $Lx$ .
+
+to show:  $L \in h(x, y)$ 
+
+Since  $L_n$ 's are linear,  $L$  is linear.
+
+Claim:  $L$  is bold.
+
+We note that  $\|L_n x\|_y \rightarrow \|Lx\|_y$ 
+
+$$\begin{aligned} \|L_n x\|_y &= \|L_n x - Lx + Lx\|_y \\ &\leq \|L_n x - Lx\|_y + \|Lx\|_y \end{aligned}$$
+
+$$\|Lx\| \leq \|Lx - L_n x\| + \|L_n x\|$$
+
+$$\pm (\|L_n x\| - \|L x\|) \leq \|L_n x - L x\| \rightarrow 0$$
+
+$$\|L_n x\|_y \rightarrow \|L x\|_y$$
+
+$$\|L x\| = \begin{cases} \|L_n x\| & \leq \|L_n x - L_{N_0} x\| \\ n \rightarrow \infty & + \|L_{N_0} x\| \end{cases}$$
+
+$$\leq 1 + \|L_{N_0} x\| \quad \forall x \in X \quad \|x\| \leq 1.$$
+
+$$\Rightarrow \|L\| \leq 1 + \|L_{N_0}\|$$
+
+ $\Rightarrow L$  is bed.
+
+Finally to show that  $L_n \rightarrow L$  as  $n \rightarrow \infty$ 
+
+For  $x \in X \quad \|x\| \leq 1$ .
+
+$$\begin{aligned} \|L_n x - L_m x\|_y &\leq \|L_n - L_m\| \|x\|_x \\ &\leq \|L_n - L_m\| \\ &\leq \varepsilon \quad \forall n, m \geq N_0 \end{aligned}$$
+
+Fix  $n \geq N_0$  and let  $m \rightarrow \infty$ 
+
+$$\|L_n x - L_m x\|_y < \varepsilon \quad \forall n, m \geq N_0 \quad \forall x \in X \quad \|x\| \leq 1$$
+
+$$\Rightarrow \|L_n - L\| = \sup_{\|x\| \leq 1} \|L_n x - L_m x\| < \varepsilon \quad \forall n \geq N_0$$
+
+Example:
+
+ $A \in \mathbb{K}^{M \times N}$  consider the map
+
+$$x \in \mathbb{K}^N \mapsto Ax \in \mathbb{K}^M$$
+
+$$\begin{aligned}
+\|Ax\|_{\mathbb{K}^M} &= \sum_{i=1}^M |(Ax)_i| \\
+&= \sum_{i=1}^M \left| \sum_{j=1}^N a_{ij} x_j \right| \\
+&\leq C \sum_{j=1}^N |x_j| = C \|x\|_{\mathbb{K}^N}
+\end{aligned}$$
+
+ $\Rightarrow x \mapsto Ax$  is bold linear
+
+4/08
+
+ $\rightarrow$  Examples:
+
+① Diagonal operator on  $\mathbb{R}^p$   $1 \leq p \leq \infty$ .
+
+Let  $(\lambda_k)_{k \in \mathbb{N}} \subset \mathbb{K}$  be arbitrary, define  $Lx = L(x_1, \dots, x_k, \dots) = (x_1, x_1, \dots, x_k, x_k, \dots)$ 
+
+$$Lx = \begin{pmatrix} \lambda_1 & 0 & \dots & 0 & \dots & 0 \\ 0 & \lambda_2 & \dots & 0 & \dots & 0 \\ & & \ddots & & & \\ & & & \lambda_k & \dots & 0 \\ & & & & & 0 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \\ \vdots \\ \vdots \\ x_k \\ \vdots \end{pmatrix}$$
+
+If  $(\lambda_k)_{k \in \mathbb{N}}$  is bold, then  $L$  is also bold and  $\|L\| = \sup_{k \in \mathbb{N}} |\lambda_k|$ 
+
+If  $(\lambda_k)_{k \in \mathbb{N}}$  is not bold,  $L$  is also not bold.
+
+ $L: \text{Dom } L \hookrightarrow \mathbb{R}^p \rightarrow \mathbb{R}^p$ 
+
+Suppose  $\lambda_* = \sup_{k \in \mathbb{N}} |\lambda_k| < \infty$ .  $L$  maps to itself.
+
+$$\begin{aligned}
+ \|Lx\|_p &= \left( \sum_{k=1}^{\infty} |Lx_k|^p \right)^{1/p} \\
+ &= \left( \sum_{k=1}^{\infty} |\lambda_k x_k|^p \right)^{1/p} \\
+ &= \left( \sum_{k=1}^{\infty} (|\lambda_k| |x_k|)^p \right)^{1/p} \\
+ &\leq \left( |\lambda_k|^p \sum_{k=1}^{\infty} |x_k|^p \right)^{1/p} \\
+ &\leq \lambda_* \|x\|_p
+ \end{aligned}$$
+
+ $L$  is bold  $\|L\| \leq \lambda_*$  when  $p = \infty$ 
+
+$$\begin{aligned}
+ \|Lx\|_{\infty} &= \sup_{k \in \mathbb{N}} |Lx_k|_k = \sup_{k \in \mathbb{N}} |\lambda_k x_k| \\
+ &\leq \lambda_* \sup_{k \in \mathbb{N}} |x_k| \\
+ &= \lambda_* \|x\|_{\infty}
+ \end{aligned}$$
+
+![](_page_21_Diagram_15.jpeg)
+
+ $L$  is bold  $\|L\| \leq \lambda_*$ 
+
+to show that :  $\|L\| \geq \lambda_*$ 
+
+Take a particular element  $e_k = (0, \dots, 1, \dots, 0)$   
+ $e_k$  is a particular element of the map with eigenvalue  $\lambda_k$  and  $e_k$  is a positive vector of  $e_k$  in  $\mathbb{R}^{n_k}$ 
+
+ $\|e_k\|_p = \lambda_k \|e_k\|_{\infty}$  (eigen vectors of the map with eigenvalue  $\lambda_k$ )
+
+$$\|Le_k\| = |\lambda_k|$$
+
+$$\|L\| \geq \|Le_k\|_p = |\lambda_k|$$
+
+Since it is true for  $k$  it is true for  $\sup_{k \in \mathbb{N}} |\lambda_k|$  also.
