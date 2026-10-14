@@ -1,3 +1,8 @@
+---
+course: Functional Analysis
+Lecture: "4"
+date: 3 August
+---
 
 → Recall:  $L: X \rightarrow Y$  is called bold if  $\|L\| := \sup_{x \in X} \|Lx\|_y < \infty$  if  $\exists M > 0$  s.t.
 
@@ -167,54 +172,3 @@ $$\begin{aligned}
 \end{aligned}$$
 
  $\Rightarrow x \mapsto Ax$  is bold linear
-
-4/08
-
- $\rightarrow$  Examples:
-
-① Diagonal operator on  $\mathbb{R}^p$   $1 \leq p \leq \infty$ .
-
-Let  $(\lambda_k)_{k \in \mathbb{N}} \subset \mathbb{K}$  be arbitrary, define  $Lx = L(x_1, \dots, x_k, \dots) = (x_1, x_1, \dots, x_k, x_k, \dots)$ 
-
-$$Lx = \begin{pmatrix} \lambda_1 & 0 & \dots & 0 & \dots & 0 \\ 0 & \lambda_2 & \dots & 0 & \dots & 0 \\ & & \ddots & & & \\ & & & \lambda_k & \dots & 0 \\ & & & & & 0 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \\ \vdots \\ \vdots \\ x_k \\ \vdots \end{pmatrix}$$
-
-If  $(\lambda_k)_{k \in \mathbb{N}}$  is bold, then  $L$  is also bold and  $\|L\| = \sup_{k \in \mathbb{N}} |\lambda_k|$ 
-
-If  $(\lambda_k)_{k \in \mathbb{N}}$  is not bold,  $L$  is also not bold.
-
- $L: \text{Dom } L \hookrightarrow \mathbb{R}^p \rightarrow \mathbb{R}^p$ 
-
-Suppose  $\lambda_* = \sup_{k \in \mathbb{N}} |\lambda_k| < \infty$ .  $L$  maps to itself.
-
-$$\begin{aligned}
- \|Lx\|_p &= \left( \sum_{k=1}^{\infty} |Lx_k|^p \right)^{1/p} \\
- &= \left( \sum_{k=1}^{\infty} |\lambda_k x_k|^p \right)^{1/p} \\
- &= \left( \sum_{k=1}^{\infty} (|\lambda_k| |x_k|)^p \right)^{1/p} \\
- &\leq \left( |\lambda_k|^p \sum_{k=1}^{\infty} |x_k|^p \right)^{1/p} \\
- &\leq \lambda_* \|x\|_p
- \end{aligned}$$
-
- $L$  is bold  $\|L\| \leq \lambda_*$  when  $p = \infty$ 
-
-$$\begin{aligned}
- \|Lx\|_{\infty} &= \sup_{k \in \mathbb{N}} |Lx_k|_k = \sup_{k \in \mathbb{N}} |\lambda_k x_k| \\
- &\leq \lambda_* \sup_{k \in \mathbb{N}} |x_k| \\
- &= \lambda_* \|x\|_{\infty}
- \end{aligned}$$
-
-![](_page_21_Diagram_15.jpeg)
-
- $L$  is bold  $\|L\| \leq \lambda_*$ 
-
-to show that :  $\|L\| \geq \lambda_*$ 
-
-Take a particular element  $e_k = (0, \dots, 1, \dots, 0)$   
- $e_k$  is a particular element of the map with eigenvalue  $\lambda_k$  and  $e_k$  is a positive vector of  $e_k$  in  $\mathbb{R}^{n_k}$ 
-
- $\|e_k\|_p = \lambda_k \|e_k\|_{\infty}$  (eigen vectors of the map with eigenvalue  $\lambda_k$ )
-
-$$\|Le_k\| = |\lambda_k|$$
-
-$$\|L\| \geq \|Le_k\|_p = |\lambda_k|$$
-
-Since it is true for  $k$  it is true for  $\sup_{k \in \mathbb{N}} |\lambda_k|$  also.
