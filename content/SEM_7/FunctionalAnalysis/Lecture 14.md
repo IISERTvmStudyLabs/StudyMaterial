@@ -3,7 +3,7 @@ course: Functional Analysis
 Lecture: "14"
 date: 31 August
 ---
-$\Rightarrow$  Weak and Weak\* convergence
+#  Weak and Weak\* convergence
 
 A bold sequence in a finite dimensional NLS has a converging subseq.  
  $(x_n)_{n \in \mathbb{N}} \subset X_1$  finite dimensional, bold
