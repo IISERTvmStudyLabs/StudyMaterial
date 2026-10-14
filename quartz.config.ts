@@ -27,28 +27,28 @@ const config: QuartzConfig = {
         body: "Source Sans Pro",
         code: "IBM Plex Mono",
       },
-      colors: {
+    colors: {
         lightMode: {
-          light: "#faf8f8",
-          lightgray: "#e5e5e5",
-          gray: "#b8b8b8",
-          darkgray: "#4e4e4e",
-          dark: "#2b2b2b",
-          secondary: "#284b63",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
-          textHighlight: "#fff23688",
+          light: "#e1e2e7",
+          lightgray: "#cfc9c2",
+          gray: "#a8aecb",
+          darkgray: "#343b58",
+          dark: "#0f0f14",
+          secondary: "#34548a",
+          tertiary: "#006a83",
+          highlight: "rgba(52, 84, 138, 0.15)",
+          textHighlight: "#b15c0088",
         },
         darkMode: {
-          light: "#161618",
-          lightgray: "#393639",
-          gray: "#646464",
-          darkgray: "#d4d4d4",
-          dark: "#ebebec",
-          secondary: "#7b97aa",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
-          textHighlight: "#b3aa0288",
+          light: "#1a1b26",       // Page background
+          lightgray: "#24283b",   // Borders
+          gray: "#565f89",        // Muted text & graph lines
+          darkgray: "#a9b1d6",    // Body text
+          dark: "#c0caf5",        // Headers & icons
+          secondary: "#7aa2f7",   // Link color & active node
+          tertiary: "#7dcfff",    // Hover states & visited links
+          highlight: "rgba(122, 162, 247, 0.15)", // Internal link highlights
+          textHighlight: "#e0af6888", // Markdown text highlight (==text==)
         },
       },
     },
