@@ -8,7 +8,11 @@ date: 10 August
 
 Consider  $X = C(0,1)$ . If we define
 
-$$p(f) = \sup_{x \in (0,1)} |f(x)|$$
+
+$$
+p(f) = \sup_{x \in (0,1)} |f(x)|
+$$
+
 
 then  $p$  need not be a norm.  $X$  can be unbold. fun's and  $p(f) = +\infty$ . for some  $f \in X$  e.g.  $f(x) = \frac{1}{x}$ .
 
@@ -16,7 +20,11 @@ Construction of a Fréchet space.
 
 For  $[a, b] \subset (0,1)$  define
 
-$$p_{a,b}(f) := \sup_{x \in [a, b]} |f(x)| = \max_{x \in [a, b]} |f(x)| < \infty$$
+
+$$
+p_{a,b}(f) := \sup_{x \in [a, b]} |f(x)| = \max_{x \in [a, b]} |f(x)| < \infty
+$$
+
 
 (N3) & (N2) are satisfied by  $p_{a,b}$ .
 
@@ -30,11 +38,23 @@ to check (N1):
 
 \* mapping  $p: X \rightarrow \mathbb{R}$  is called a seminorm if
 
-$$(SN1) \quad p(x) \geq 0 \quad \forall x \in X$$
 
-$$(SN2) \quad p(\lambda x) = |\lambda| p(x) \quad \forall x \in X \quad \forall \lambda \in \mathbb{K}.$$
+$$
+(SN1) \quad p(x) \geq 0 \quad \forall x \in X
+$$
 
-$$(SN3) \quad p(x+y) \leq p(x) + p(y) \quad \forall x, y \in X.$$
+
+
+$$
+(SN2) \quad p(\lambda x) = |\lambda| p(x) \quad \forall x \in X \quad \forall \lambda \in \mathbb{K}.
+$$
+
+
+
+$$
+(SN3) \quad p(x+y) \leq p(x) + p(y) \quad \forall x, y \in X.
+$$
+
 
 $d(x, y) = x-y$  need not be a metric on  $X$  if we can have  $x \neq y$  but  $d(x, y) = 0$ .
 
@@ -44,7 +64,11 @@ $d(x, y) = x-y$  need not be a metric on  $X$  if we can have  $x \neq y$  but  
 
 Let  $(p_k)_{k \in \mathbb{N}}$  be a separating sequence of seminorms on  $X$ . Then,
 
-$$d(x, y) := \sum_{k=1}^{\infty} \frac{1}{2^k} \frac{p_k(x-y)}{\|x-y\|_2} \quad x, y \in X.$$
+
+$$
+d(x, y) := \sum_{k=1}^{\infty} \frac{1}{2^k} \frac{p_k(x-y)}{\|x-y\|_2} \quad x, y \in X.
+$$
+
 
 is a metric on  $X$ .
 
@@ -52,7 +76,11 @@ Proof:
 
 (D1) Clearly  $d(x, y) \geq 0$ . and since  $(p_k)_{k \in \mathbb{N}}$  is separating  $x \neq y$ .
 
-$$\Rightarrow p_{k_0}(x-y) > 0 \text{ for some } k_0.$$
+
+$$
+\Rightarrow p_{k_0}(x-y) > 0 \text{ for some } k_0.
+$$
+
 
 (D2)  $d(x, y) = d(y, x)$  by homogeneity of  $p_k$ 's.
 
@@ -60,11 +88,23 @@ $$\Rightarrow p_{k_0}(x-y) > 0 \text{ for some } k_0.$$
 
 Let  $0 < a, b, c$  s.t.  $c \leq a+b$ .
 
-$$\frac{c}{1+c} \leq \frac{a+b}{1+a+b} \leq \frac{a}{1+a} + \frac{b}{1+b}.$$
 
-$$\therefore \frac{P_k(x-z)}{1 + P_k(x-z)} \leq \frac{P_k(x-y)}{1 + P_k(x-y)} + \frac{P_k(y-z)}{1 + P_k(y-z)}$$
+$$
+\frac{c}{1+c} \leq \frac{a+b}{1+a+b} \leq \frac{a}{1+a} + \frac{b}{1+b}.
+$$
 
-$$\therefore \sum_{k=1}^N \frac{1}{2^k} \frac{P_k(x-z)}{1 + P_k(x-z)} \leq \sum_{k=1}^N \frac{1}{2^k} \frac{P_k(x-y)}{1 + P_k(x-y)} + \sum_{k=1}^N \frac{1}{2^k} \frac{P_k(y-z)}{1 + P_k(y-z)}$$
+
+
+$$
+\therefore \frac{P_k(x-z)}{1 + P_k(x-z)} \leq \frac{P_k(x-y)}{1 + P_k(x-y)} + \frac{P_k(y-z)}{1 + P_k(y-z)}
+$$
+
+
+
+$$
+\therefore \sum_{k=1}^N \frac{1}{2^k} \frac{P_k(x-z)}{1 + P_k(x-z)} \leq \sum_{k=1}^N \frac{1}{2^k} \frac{P_k(x-y)}{1 + P_k(x-y)} + \sum_{k=1}^N \frac{1}{2^k} \frac{P_k(y-z)}{1 + P_k(y-z)}
+$$
+
 
  $\therefore$  The triangle inequality holds.
 
@@ -80,7 +120,11 @@ for  $k \in \mathbb{N}$
 
  $A_k$  are compact.
 
-$$s_k = \bigcup_{k=1}^{\infty} A_k$$
+
+$$
+s_k = \bigcup_{k=1}^{\infty} A_k
+$$
+
 
 ![](_page_10_Picture_23.jpeg)
 
@@ -95,15 +139,27 @@ Case:  $C(s_k)$  is complete write to  $d(f, g) = \sum_{k=1}^{\infty} \frac{1}{2
 
 Let  $(f_n)_{n \in \mathbb{N}}$  be cauchy ie for every  $\varepsilon > 0 \exists N_0 \in \mathbb{N}$  s.t.
 
-$$d(f_n, f_m) < \varepsilon \quad \forall n, m \geq N_0.$$
 
-$$\Rightarrow P_k(f_n - f_m) < \varepsilon \quad \forall k \in \mathbb{N},$$
+$$
+d(f_n, f_m) < \varepsilon \quad \forall n, m \geq N_0.
+$$
+
+
+
+$$
+\Rightarrow P_k(f_n - f_m) < \varepsilon \quad \forall k \in \mathbb{N},
+$$
+
 
  $(f_n)$  is uniformly cavely on  $A_k$ 
 
 Since  $s$  is the  $s = \bigcup_{k=1}^{\infty} A_k$  for every  $x \in s \setminus \{k \text{ .t. } x \in A_k\}$ 
 
-$$|(f_n(x) - f_m(x))| \leq P_k(f_n - f_m) < \varepsilon.$$
+
+$$
+|(f_n(x) - f_m(x))| \leq P_k(f_n - f_m) < \varepsilon.
+$$
+
 
 Define  $f_n(x) = \begin{cases} f_n(x) & \text{the pointwise limit which is } \\ & n \rightarrow \infty \end{cases}$   
 well-defined.

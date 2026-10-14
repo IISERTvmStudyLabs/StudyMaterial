@@ -28,7 +28,11 @@ ii) An element  $a \in P$  is called an upper bound of a subset  $Q \subset P$  
 
 iii) An element  $a \in P$  is called a maximal element of  $P$  for any  $b \in P$
 
-$$a \leq b \Rightarrow b = a.$$
+
+$$
+a \leq b \Rightarrow b = a.
+$$
+
 
 → Lemma: (Bornl's)
 
@@ -46,21 +50,41 @@ Step 1: We extend  $f$  to a subspace that is one-dimensional larger than  $V$ .
 
 Fix  $x_0 \in X \setminus V$  and let
 
-$$W = \{x + \lambda x_0 \mid x \in V, \lambda \in \mathbb{R}\} = V \oplus \mathbb{R}_{x_0}$$
+
+$$
+W = \{x + \lambda x_0 \mid x \in V, \lambda \in \mathbb{R}\} = V \oplus \mathbb{R}_{x_0}
+$$
+
 
 If  $W$  is a subspace of  $X$  (verify). and  $V \subset W$ .
 
 For any  $x, y \in V$  we have
 
-$$f(x) + f(y) = f(x+y) \leq p(x+y) = p(x-x_0+y+x_0)$$
 
-$$\leq p(x-x_0) + p(y+x_0)$$
+$$
+f(x) + f(y) = f(x+y) \leq p(x+y) = p(x-x_0+y+x_0)
+$$
 
-$$f(x) - p(x-x_0) \leq p(y+x_0) - f(y) \quad \forall x, y \in V. \quad \text{—————} \textcircled{\#}$$
+
+
+$$
+\leq p(x-x_0) + p(y+x_0)
+$$
+
+
+
+$$
+f(x) - p(x-x_0) \leq p(y+x_0) - f(y) \quad \forall x, y \in V. \quad \text{—————} \textcircled{\#}
+$$
+
 
 We want to extend  $f$  to  $W$  say  $\phi$ 
 
-$$\begin{aligned} \phi(x+\lambda x_0) &= \phi(x) + \lambda \phi(x_0) \\ &= f(x) + \lambda \phi(x_0) \end{aligned}$$
+
+$$
+\begin{aligned} \phi(x+\lambda x_0) &= \phi(x) + \lambda \phi(x_0) \\ &= f(x) + \lambda \phi(x_0) \end{aligned}
+$$
+
 
 We need to know  $\phi(x_0)$ 
 
@@ -68,15 +92,31 @@ Let  $a_0 = \sup_{x \in V} f(x) - p(x-x_0)$
 
 From  $\circledast$ ,
 
-$$f(x) - p(x-x_0) \leq a_0 \leq p(x+x_0) - f(x) \quad \forall x \in X.$$
 
-$$\therefore f(x) - a_0 \leq p(x-x_0) \quad ————— $\circledast$ \quad \forall x \in V.$$
+$$
+f(x) - p(x-x_0) \leq a_0 \leq p(x+x_0) - f(x) \quad \forall x \in X.
+$$
 
-$$f(x) + a_0 \leq p(x+x_0) \quad ————— $\enclose{circle}{**}$$$
+
+
+$$
+\therefore f(x) - a_0 \leq p(x-x_0) \quad ————— $\circledast$ \quad \forall x \in V.
+$$
+
+
+
+$$
+f(x) + a_0 \leq p(x+x_0) \quad ————— $\enclose{circle}{**}
+$$
+$
 
 Define  $\phi: W \rightarrow \mathbb{R}$  as
 
-$$\phi(x+\lambda x_0) := f(x) + \lambda a_0$$
+
+$$
+\phi(x+\lambda x_0) := f(x) + \lambda a_0
+$$
+
 
 Verify that  $\phi$  is linear, clearly  $\phi = f$  on  $V$ .
 
@@ -86,7 +126,11 @@ to show:  $\phi \leq p$ .
 
 If  $y \in W$ , then  $\exists ! x \in V$  and  $\lambda \in \mathbb{R}$  s.t.  $y = x + \lambda x_0$ .
 
-$$\begin{aligned} \text{If } \lambda > 0, \phi(x+\lambda x_0) &= f(x) + \lambda a_0 \\ &= \lambda \left( f\left(\frac{x}{\lambda}\right) + a_0 \right) \\ &\leq \lambda p\left(\frac{x}{\lambda} + x_0\right) \quad (\text{from } \enclose{circle}{**}) \\ &= p(x+\lambda x_0) \quad (\text{homogenity}) \end{aligned}$$
+
+$$
+\begin{aligned} \text{If } \lambda > 0, \phi(x+\lambda x_0) &= f(x) + \lambda a_0 \\ &= \lambda \left( f\left(\frac{x}{\lambda}\right) + a_0 \right) \\ &\leq \lambda p\left(\frac{x}{\lambda} + x_0\right) \quad (\text{from } \enclose{circle}{**}) \\ &= p(x+\lambda x_0) \quad (\text{homogenity}) \end{aligned}
+$$
+
 
  $\parallel \downarrow$  if  $\lambda < 0$ ,  $\phi(x+\lambda x_0) \leq p(x_0+\lambda x_0)$
 
@@ -96,9 +140,17 @@ Let  $P$  be the set of all pairs  $(W, \phi)$ . When  $W$  is a subspace of  $X
 
 Define  $\leq$  on  $P$  via
 
-$$(W_1, \phi_1) \leq (W_2, \phi_2) \text{ if } W_1 \subset W_2$$
 
-$$\phi_2|_{W_1} = \phi_1$$
+$$
+(W_1, \phi_1) \leq (W_2, \phi_2) \text{ if } W_1 \subset W_2
+$$
+
+
+
+$$
+\phi_2|_{W_1} = \phi_1
+$$
+
 
 (Verify that this is partial order relation)
 
@@ -120,7 +172,11 @@ Either  $W_\alpha \subset W_\beta$  or  $W_\beta \subset W_\alpha$
 
 Define  $\phi_q: W_q \rightarrow \mathbb{R}$  as
 
-$$\phi_q(x) = \phi_\alpha(x) \text{ if } x \in W_\alpha$$
+
+$$
+\phi_q(x) = \phi_\alpha(x) \text{ if } x \in W_\alpha
+$$
+
 
 (Verify that  $\phi_q$  is well defined and linear)
 

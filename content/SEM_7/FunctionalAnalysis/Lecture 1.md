@@ -26,9 +26,12 @@ we need additional structure on the space
 → Norm: let  $X$  be a vector space on a field  $K$ . Then a map  $x \mapsto \|x\|_X: X \rightarrow \mathbb{R}$  is called a norm if it satisfies
 
 
+
 $$
 (N1) \quad ① \quad \|x\| \geq 0 \quad \forall x \in X \quad \text{if } \|x\| = 0 \Leftrightarrow x = 0
 $$
+
+
 
 
 
@@ -38,9 +41,12 @@ $$
 
 
 
+
+
 $$
 (N3) \quad ③ \quad \|x+y\| \leq \|x\| + \|y\| \quad \forall x, y \in X.
 $$
+
 
 
 N1 - positive definiteness
@@ -57,9 +63,12 @@ is a metric on  $X$ .
 #### Proof 
 
 
+
 $$
 d(x, y) \geq 0
 $$
+
+
 
 
 
@@ -69,9 +78,13 @@ $$
 
 
 
+
+
 $$
 \Leftrightarrow \|x - y\| = 0
 $$
+
+
 
 
 
@@ -81,9 +94,12 @@ $$
 
 
 
+
+
 $$
 \begin{aligned} d(y, x) &= \|y - x\| \\ &= \|-\|x - y\| \\ &= d(x, y) \end{aligned}
 $$
+
 
 
  $\Delta$  inequality.
@@ -94,17 +110,22 @@ For  $x_0 \in X$ ,  $x_1 > 0$  the open ball of medium  $x_1$ , centred at  $x$ 
 is defined by
 
 
+
 $$
 B_x(x_0) = \{y \in X \mid d(x, y) < x\}.
 $$
 
 
+
 Since  $X$  has algebraic structure of a vector space the distance  $d$  is consistent with the algebraic structure
+
 
 
 $$
 (P1) \quad d(x+z, y+z) = d(x, y) \quad \forall x, y, z \in X,
 $$
+
+
 
 
 
@@ -114,9 +135,12 @@ $$
 
 
 
+
+
 $$
 (P3) \quad B_n(x_0)  \text{ is convex.}
 $$
+
 
 
 P1 - invariance of  $d$  under translation.
@@ -126,12 +150,15 @@ P2 - invariance of  $d$ under scalar multi.
 P3 - convergence of the ball.
 
 
+
 $$
 P1 \Rightarrow d(x-y, 0) = d(x, y)
 $$
 
 
+
  $\Rightarrow$  If we know  $d(x, 0) \forall x \in X$  then we know  $d(x, y) \forall x, y \in X$ .
+
 
 
 $$
@@ -140,12 +167,16 @@ $$
 
 
 
+
+
 $$
 d(x_0 - y, 0) = d(x_0, y).
 $$
 
 
+
 We can choose  $x_0 = 0$ 
+
 
 
 $$
@@ -153,12 +184,16 @@ d(0, y) = d(-y, 0) = d(y, 0)
 $$
 
 
+
 let  $x, y \in B_r(0)$  let  $\theta \in (0, 1)$ 
+
 
 
 $$
 \|\theta x + (1-\theta)y\| \leq \|\theta x\| + \|(1-\theta)y\|
 $$
+
+
 
 
 
@@ -168,15 +203,20 @@ $$
 
 
 
+
+
 $$
 \leq \theta \|x\| + (1-\theta) \|y\|
 $$
 
 
 
+
+
 $$
 \leq \theta x + (1-\theta)y = x.
 $$
+
 
 
 A subset  $U \subseteq X$  is called open if  $\forall x \in U$  if  $B_x(x) \subseteq U$ .
