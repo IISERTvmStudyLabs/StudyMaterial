@@ -3,108 +3,66 @@ course: Functional Analysis
 Lecture: "6"
 date: 6 August
 ---
-
-Proof:
-
-Since  $B$  is a basis of  $X$ , clearly  $L$  is bijective.  
-Hence  $L^{-1}$  is well-defined.
-
-to show:  $L$  is bdd
-
-
+[[Lecture 5#Theorem|theorem]]
+### Proof:
+Since  $B$  is a basis of  $X$ , clearly  $L$  is bijective.  Hence  $L^{-1}$  is well-defined. 
+- To show:  $L$  is bounded
 $$
-\begin{aligned} \|L\lambda\|_X &= \left\| \sum_{i=1}^N \lambda_i x_i \right\| \leq \sum_{i=1}^N \|\lambda_i x_i\| \\ &= \sum_{i=1}^N \|\lambda_i\| \|x_i\| \\ &\leq \left( \sum_{i=1}^N \|\lambda_i\| \right) \left( \sum_{i=1}^N \|x_i\| \right) \\ &= M \|\lambda\|_{K^N} \end{aligned}
+\begin{aligned} \|L\lambda\|_X &= \left\| \sum_{i=1}^N \lambda_i x_i \right\| \leq \sum_{i=1}^N \|\lambda_i x_i\| \\ &= \sum_{i=1}^N \|\lambda_i\| \|x_i\| \\ &\leq \left( \sum_{i=1}^N \|\lambda_i\| \right) \left( \sum_{i=1}^N \|x_i\| \right) \\ &= M \|\lambda\|_{\mathbb{K}^N} \end{aligned}
 $$
-
-
- $\Rightarrow L$  is bdd.
-
-to show:  $L^{-1}: X \rightarrow K^N$  is also bdd.
-
-Suppose not then  $\exists$  a seq  $(y_n)_{n \in \mathbb{N}}$  in  $X$ 
-
-
+ $\Rightarrow L$  is bounded.
+ - To show:  $L^{-1}: X \rightarrow \mathbb{K}^N$  is also bounded.
+Suppose not then  $\exists$  a sequence  $(y_n)_{n \in \mathbb{N}}$  in  $X$ 
 $$
-\|y_n\| \leq 1 \quad \forall n \quad \text{but the } \|L^{-1}y_n\|_{K^N} \rightarrow \infty
+\|y_n\| \leq 1 \quad \forall n \quad \text{but the } \|L^{-1}y_n\|_{\mathbb{K}^N} \rightarrow \infty
 $$
-
-
-Define  $\mu_n := \frac{L^{-1}y_n}{\|L^{-1}y_n\|_{K^N}} \in K^N$ 
-
-Then  $\|\mu_n\|_{K^N} = 1$  and  $L\mu_n = \frac{y_n}{\|L^{-1}y_n\|_{K^N}}$ 
-
- $L\mu_n \rightarrow 0$
-
-Since  $(\mu_n)_{n \in \mathbb{N}}$  is bed in  $K^N$ , it has a convergent subseq. by Bolzano-Weierstrass)  $(\mu_{n_k})_{k \in \mathbb{N}}$ .
-
-
+*Define*  
 $$
-\mu_{n_k} \rightarrow \mu \quad \text{as } k \rightarrow \infty. \quad (\mu \in K^N)
+\mu_n := \frac{L^{-1}y_n}{\|L^{-1}y_n\|_{\mathbb{K}^N}} \in \mathbb{K}^N
+$$ 
+Then  $\|\mu_n\|_{\mathbb{K}^N} = 1$  and  $L\mu_n = \frac{y_n}{\|L^{-1}y_n\|_{\mathbb{K}^N}}$ 
+ $$
+ L\mu_n \rightarrow 0
+ $$
+Since  $(\mu_n)_{n \in \mathbb{N}}$  is bounded in  $\mathbb{K}^N$ , it has a convergent subsequence by Bolzano-Weierstrass $(\mu_{n_k})_{k \in \mathbb{N}}$ .
 $$
-
-
-
+\mu_{n_k} \rightarrow \mu \quad \text{as } k \rightarrow \infty. \quad (\mu \in \mathbb{K}^N)
+$$
 $$
 \|\mu\| = \lim_{k \rightarrow \infty} \|\mu_{n_k}\| = 1.
 $$
-
-
-
 $$
-\text{Now } L_\mu := L(L_{k \rightarrow \infty} \mu_{n_k})
+\text{Now } L\mu := L(L_{k \rightarrow \infty} \mu_{n_k})
 $$
-
-
-
 $$
-= \lim_{k \rightarrow \infty} L_{\mu_{n_k}}
+= \lim_{k \rightarrow \infty} L{\mu_{n_k}}
 $$
-
-
-
 $$
 = \lim_{k \rightarrow \infty} \frac{y_{n_k}}{\|L^{-1} y_{n_k}\|}
 $$
-
-
-
 $$
 = 0. \quad \Rightarrow \Leftarrow
 $$
-
-
-(since  $\|L^{-1} y_{n_k}\| \rightarrow \infty$ )  
- $\|L^{-1} y_{n_k}\| \rightarrow 0$ 
-
-Not possible as  $\|\mu\| = 1$ .
-
- $\therefore L^{-1}$  is bed.
-
-to show:  $X$  is complete
-
-let  $(x_N)_{N \in \mathbb{N}} \subset X$  be cauchy.
-
- $\Rightarrow (L^{-1} x_n)_{n \in \mathbb{N}}$  is cauchy in  $K^N$ .
-
-
+(since  $\|L^{-1} y_{n_k}\| \rightarrow \infty$ ) and $\|L^{-1} y_{n_k}\| \rightarrow 0$, Not possible as  $\|\mu\| = 1$ .
+ $$
+ \therefore L^{-1}  \text{ is bounded}
+ $$
+ 
+- To show:  $X$  is complete
+Let  $(x_n)_{N \in \mathbb{N}} \subset X$  be Cauchy.
+ $\Rightarrow (L^{-1} x_n)_{n \in \mathbb{N}}$  is Cauchy in  $\mathbb{K}^N$ .
 $$
-L^{-1} x_n \rightarrow x \in K^N
+L^{-1} x_n \rightarrow \lambda \in \mathbb{K}^N
 $$
-
-
-
 $$
 x_n \rightarrow L\lambda \in X
 $$
-
-
-→ Corollary: Any 2 norms  $\|\cdot\|$  &  $\|\cdot\|'$  on a finite dim. NLS are equivalent.
-
-Proof:
-
-Let  $\beta = \{x_1, \dots, x_n\}$  be a basis of  $X$  and define the maps  $L$  &  $L^\dagger$  as above. (Previous thm).
-
-Then both  $L$  &  $L^\dagger$  are bold, linear.  
+___
+### Corollary:
+Any 2 norms  $\|\cdot\|$  &  $\|\cdot\|'$  on a finite dimensional Normed Linear Space are equivalent.
+#### Proof:
+Let  $\beta = \{x_1, \dots, x_N\}$  be a basis of  $X$  and define the maps  $L$  &  $L^{-1}$  as above. ([[Lecture 5#Theorem|Previous theorem]]).
+Then both  $L$  &  $L^\dagger$  are bounded, linear.  
  $\Rightarrow \exists$  constants  $C', C'' > 0$ .
 
 
@@ -112,7 +70,7 @@ $$
 \frac{1}{C'} \|L^\dagger x\|_{K^N} \leq \|x\| \leq C' \|L^\dagger x\|_{K^N}.
 $$
 
-(bold of  $L^\dagger$ ) (bold of  $L$ )
+(bounded of  $L^\dagger$ ) (bounded of  $L$ )
 
 
 $$
@@ -122,7 +80,7 @@ $$
 
 Combining w.r.t. the equivalence of  $\|\cdot\|$  &  $\|\cdot\|'$ .
 
-→ Compactness of  $\overline{B_1(0)}$  in  $\mathbb{R}^N \Leftrightarrow$  closed & bold.
+→ Compactness of  $\overline{B_1(0)}$  in  $\mathbb{R}^N \Leftrightarrow$  closed & bounded.
 
 Consider the space  $l_2$ , define.
 
@@ -158,9 +116,9 @@ Proof:
 
 Suppose  $X$  is finite dim.
 
-Then by the previous theorem  $\exists$  a linear homeomorphism  $L: \mathbb{K}^n \rightarrow X$  with bold inverse.
+Then by the previous theorem  $\exists$  a linear homeomorphism  $L: \mathbb{K}^n \rightarrow X$  with bounded inverse.
 
-Since  $\overline{B_1(0)}$  is closed & bold,  $L^{-1}(\overline{B_1(0)})$  is closed & bold.
+Since  $\overline{B_1(0)}$  is closed & bounded,  $L^{-1}(\overline{B_1(0)})$  is closed & bounded.
 
 By B.W.,  $L^{-1}(\overline{B_1(0)})$  is compact.
 

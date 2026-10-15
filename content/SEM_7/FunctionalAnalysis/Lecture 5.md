@@ -226,11 +226,11 @@ f_n(x) = x^n \quad [0,1].
 $$
 ___
 # Theorem
-Let  $X$  be a finite dimensional Normed Linear Space over  $\mathbb{K}$  and let $B = \{x_1, \dots, x_n\}$  be a basis of  $X$ . Then
+Let  $X$  be a finite dimensional Normed Linear Space over  $\mathbb{K}$  and let $B = \{x_1, \dots, x_N\}$  be a basis of  $X$ . Then
 1.  $X$  is complete and hence Banach
-2.  For every  $\lambda = (\lambda_1, \dots, \lambda_n) \in \mathbb{K}^n$  define
+2.  For every  $\lambda = (\lambda_1, \dots, \lambda_N) \in \mathbb{K}^N$  define
 $$
-L\lambda = \lambda_1 x_1 + \dots + \lambda_n x_n \in X,
+L\lambda = \lambda_1 x_1 + \dots + \lambda_N x_N \in X,
 $$
-Then the linear map  $L: \mathbb{K}^n \rightarrow X$  is bijective & bounded, moreover the inverse map  $L^{-1}: X \rightarrow \mathbb{K}^n$  is also bounded.
-In other words,  $X$  is homeomorphic to  $K^N$ 
+Then the linear map  $L: \mathbb{K}^N \rightarrow X$  is bijective & bounded, moreover the inverse map  $L^{-1}: X \rightarrow \mathbb{K}^N$  is also bounded.
+In other words,  $X$  is **homoeomorphic** to  $\mathbb{K}^N$ 
