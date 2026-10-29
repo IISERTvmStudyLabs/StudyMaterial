@@ -39,8 +39,6 @@
     "@floating-ui/dom": "^1.7.4",
     "@myriaddreamin/rehype-typst": "^0.6.0",
     "@napi-rs/simple-git": "0.1.22",
-    "@quartz-themes/core": "^2.0.0",
-    "@quartz-themes/tokyo-night": "^1.0.1",
     "@tweenjs/tween.js": "^25.0.0",
     "ansi-truncate": "^1.4.0",
     "async-mutex": "^0.5.0",
