@@ -4,7 +4,7 @@ Lecture: "6"
 date: 6 August
 ---
 [[Lecture 5#Theorem|theorem]]
-### Proof:
+	### Proof:
 Since  $B$  is a basis of  $X$ , clearly  $L$  is bijective.  Hence  $L^{-1}$  is well-defined. 
 - To show:  $L$  is bounded
 $$
