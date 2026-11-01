@@ -1,17 +1,34 @@
-# Quartz v5
+# IISER TVM Mathematics Study Notes
 
-> “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
+Student-maintained lecture notes and study resources for the Mathematics major program at the **Indian Institute of Science Education and Research, Thiruvananthapuram (IISER TVM)**.
 
-Quartz is a set of tools that helps you publish your [digital garden](https://jzhao.xyz/posts/networked-thought) and notes as a website for free.
+The notes are organized by semester and course in [`content/`](content/). The site index is available at [`content/index.md`](content/index.md).
 
-🔗 Read the documentation and get started: https://quartz.jzhao.xyz/
+## Courses
 
-[Join the Discord Community](https://discord.gg/cRFFHYye7t)
+### Semester 6
 
-## Sponsors
+Course notes are available for:
 
-<p align="center">
-  <a href="https://github.com/sponsors/jackyzha0">
-    <img src="https://cdn.jsdelivr.net/gh/jackyzha0/jackyzha0/sponsorkit/sponsors.svg" />
-  </a>
-</p>
+- Data Structures and Algorithms
+- Galois Theory
+- Measure Theory
+- Ordinary Differential Equations
+- PTSP
+- Topology
+
+Browse the [Semester 6 notes](content/SEM_6/).
+
+### Semester 7
+
+- [Functional Analysis](content/SEM_7/FunctionalAnalysis/) — 27 lecture notes
+
+## About the notes
+
+Materials include lecture notes and other student-contributed study resources. They are intended to supplement, not replace, official course materials; please verify content with instructors and textbooks.
+
+This repository uses [Quartz](https://quartz.jzhao.xyz/) to publish the notes as a website.
+
+## Contributing
+
+Contributions such as corrections, additional notes, and study resources are welcome. Keep new materials organized under the appropriate semester and course in `content/`.

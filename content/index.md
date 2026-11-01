@@ -79,12 +79,22 @@ ___
 **Resources:** Lecture notes, assignments
 ___
 
+## 📖 Semester 7: Fall 2026
+
+#### [Functional Analysis](SEM_7/FunctionalAnalysis/)
+**27 Lectures** | Normed spaces, Banach and Hilbert spaces, bounded operators, and weak convergence
+
+**Topics Covered:**
+- Normed linear spaces and completeness
+- Banach and Hilbert spaces
+- Bounded linear operators and dual spaces
+- Adjoint operators, weak convergence, and compact operators
+
+**Resources:** Lecture notes
+
 ## 🗂️ Future Semesters
 
 *Coming soon! This section will be updated as we progress through the program.*
-
-### Semester 7 (Fall 2026)
-- *To be added*
 
 ### Semester 8 (Spring 2027)
 - *To be added*
