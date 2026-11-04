@@ -1,7 +1,7 @@
 ---
 course: Functional Analysis
 Lecture: "27"
-date: 15 October
+date: 2028-10-15
 ---
 ## Corollary: Every Hilbert space is reflexive.
 Let $\Phi \in H^{**}$. Show that $\exists x \in H$ such that $\Phi(\phi) = \phi(x)$
@@ -95,7 +95,7 @@ $$
 \Leftrightarrow (x_n, y)_X \rightarrow (x, y)_X \quad \forall y \in X.
 $$
 
-$\rightarrow$ Theorem: (Weak convergence and compact operators)
+# Theorem: (Weak convergence and compact operators)
 Let $H$ be Hilbert, $x_n \rightharpoonup x$ in $H$, and $L \in \mathcal{L}(H,H)$ be compact. Then
 
 $$
@@ -155,3 +155,4 @@ $L : L^2(0,\pi) \rightarrow L^2(0,\pi)$ integral operator
 $$
 L(f)(x) := \int_0^\pi f(y) dy \quad \forall f \in L^2(0,\pi)
 $$
+_______

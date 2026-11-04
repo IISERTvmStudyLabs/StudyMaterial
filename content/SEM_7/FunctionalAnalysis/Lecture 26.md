@@ -1,7 +1,7 @@
 ---
 course: Functional Analysis
 Lecture:
-date: 13 October 2026
+date: 2026-10-13
 ---
 # F. Riesz Representation Theorem
 
