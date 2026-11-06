@@ -32,7 +32,7 @@ If $\lambda \in \mathbb{K}$ is not an eigenvalue then $\lambda I - A$ has full r
 
 ---
 
-# Definitio: Spectrum
+# Definition: Spectrum
 
 Let $X$ be Banach and $L \in \mathcal{L}(X)$. The spectrum $\sigma(L)$ consists of
 
@@ -41,7 +41,7 @@ defined by
 $$
 \sigma_p(L) = \{ \lambda \in \mathbb{K} : \lambda I - L \text{ is not injective} \}
 $$
-$\lambda \in \sigma_p(L) \implies \exists$ non-zero $x \in X$ s.t. $(\lambda I - L)x = 0$ or $Lx = \lambda x$
+$\lambda \in \sigma_p(L) \implies \exists$ non-zero $x \in X$ such that $(\lambda I - L)x = 0$ or $Lx = \lambda x$
 $\lambda$ is an eigenvalue of $L$ and $x$ is an eigenvector corresponding to $\lambda$
 
 2.  The **residual spectrum**:
