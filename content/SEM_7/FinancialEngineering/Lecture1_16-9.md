@@ -17,20 +17,30 @@ tags:
 - **Portfolio B:** Put + Stock
 
 At time $T$:
+
 $$
 \text{Value}(P_A) = \max\{S_T-K, 0\} + K = \max\{S_T, K\}
 $$
+
+
 $$
 \text{Value}(P_B) = \max\{K-S_T, 0\} + S_T = \max\{S_T, K\}
 $$
 
+
 Since both portfolios have identical payoffs at $T$, by no-arbitrage they must have the same value at time 0:
+
 
 $$
 \boxed{C + Ke^{-rT} = P + S_0} \quad \text{(European call \& European put only)}
 $$
 
-$$S_0 + K \le C - P \le S_0 - Ke^{-rT}$$
+
+
+$$
+S_0 + K \le C - P \le S_0 - Ke^{-rT}
+$$
+
 
 
 ## Option Strategies
@@ -95,20 +105,28 @@ Also known as **Plain Vanilla Swap**.
 | $\omega_1$ | 12% | 13% | 2%  | 0.25 |
 | $\omega_2$ | 12% | 10% | 22% | 0.75 |
 
+
 $$
 E[R_1] = 0.25(12) + 0.75(12)
 $$
+
+
 $$
 E[R_2] = 0.25(13) + 0.75(10)
 $$
+
+
 $$
 E[R_3] = 0.25(2) + 0.75(22)
 $$
 
+
 **Variance:**
+
 
 $$
 \text{Var}(R_i) = E[R_i^2] - \big(E[R_i]\big)^2
 $$
+
 
 *(To be computed for $R_1$, $R_2$, $R_3$ — left as an exercise in the original notes.)*
