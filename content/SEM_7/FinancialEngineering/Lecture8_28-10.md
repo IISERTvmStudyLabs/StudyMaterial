@@ -24,8 +24,8 @@ $$
 
 
 $\Rightarrow V_{1}^{h}=x(1+R)+yS_{0}u$ if $Z=u
-$$
-\Rightarrow V_{1}^{h}=x(1+R)+yS_{0}d$ if $Z=d$
+$
+$\Rightarrow V_{1}^{h}=x(1+R)+yS_{0}d$ if $Z=d$
 
 In order to have $V_{1}^{h}=\Phi(Z)$, we should have:
 
