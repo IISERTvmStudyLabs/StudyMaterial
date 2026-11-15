@@ -110,7 +110,8 @@ d_0 = \sum_{i=1}^m z_i d_i
 $$
 2. There exists a row vector $h \in \mathbb{R}^N$ such that:
 $$
-h d_0 < 0 \quad \text{and} \quad h d_j \ge 0 \quad \forall j = 1, \dots, m$$
+h d_0 < 0 \quad \text{and} \quad h d_j \ge 0 \quad \forall j = 1, \dots, m
+$$
 
 **Proof Sketch:**
 Let $K$ be the set consisting of all possible non-negative linear combinations of $d_1, d_2, \dots, d_m$. Then $K$ is a convex cone containing the origin. Two mutually exclusive possibilities can occur:
