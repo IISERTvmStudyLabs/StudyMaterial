@@ -1,7 +1,7 @@
 ---
 course: Functional Analysis
 Lecture: "20"
-date: 15 September
+date: 2026-09-15
 ---
 
 # Theorem: (Open Mapping Theorem)

@@ -47,7 +47,7 @@ $$ W^\perp := \{ x \in X : \phi(x) = 0 \ \forall \ \phi \in W \} $$
 
 2. $X, Y$ be Banach and $\mathcal{L} \in \mathcal{L}(X, Y)$. For $\phi \in Y^*$, the composition $\phi \circ \mathcal{L}$ maps $X$ to $\mathbb{K}$ and it is linear and bounded, i.e.,
 $$ \phi \circ \mathcal{L} \in X^* : \text{the operator } \phi \longmapsto \phi \circ \mathcal{L} $$
-is called the adjoint or the dual of $\mathcal{L}$ and is denoted by $\mathcal{L}^*$.
+is called the adjoint or the dual operator of $\mathcal{L}$ and is denoted by $\mathcal{L}^*$.
 
 ---
 
@@ -59,7 +59,7 @@ $$ {}_{X^*} \langle \mathcal{L}^* \phi, x \rangle_X := {}_{Y^*} \langle \phi, \m
 > duality pairing $\langle \cdot, \cdot \rangle$
 > Ex: $\phi(x) := {}_{X^*} \langle \phi, x \rangle_X$
 
-**Ex:** Take $X = c_0$, the space of all sequence converging to 0
+**Exercise:** Take $X = c_0$, the space of all sequence converging to 0
 $X^* = l_1$, abs summable sequences.
 
 $\mathcal{L} : X \to X$, left shift operator is $\mathcal{L}(x_1, x_2, \dots) = (x_2, x_3, \dots)$

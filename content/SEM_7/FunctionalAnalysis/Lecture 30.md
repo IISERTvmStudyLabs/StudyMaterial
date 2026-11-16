@@ -3,15 +3,14 @@ course: Functional Analysis
 Lecture: "27"
 date: 2028-10-15
 ---
-## Corollary: Every Hilbert space is reflexive.
-Every Hilbert space is reflexive Let $\Phi \in H^{**}$. Show that $\exists x \in H$ such that $\Phi(\phi) = \phi(x)$, or equivalently $J(H) = H^{**}$ where $J(x) = J_x = \Phi$.
+## Theorem 1
 [[Lecture 22#Adjoint of a Linear Operator| Recall:]]
 > [!note]  Definition of the Banach Adjoint
 > If $L \in \mathcal{L}(X,Y)$ where $X, Y$ are Banach spaces, the adjoint $L^* \in \mathcal{L}(Y^*,X^*)$ satisfies:
 > $$\langle L^* \phi, x \rangle_{X^*, X} = \langle \phi, L x \rangle_{Y^*, Y} \quad \forall x \in X, \, \forall \phi \in Y^*$$
 
-Suppose $X$ and $Y$ are Hilbert spaces, and let $\Psi_X : X^* \rightarrow X$ and $\Psi_Y : Y^* \rightarrow Y$ be the Fréchet–Riesz isometries on $X$ and $Y$, respectively (which are conjugate linear).
-Define $L' : Y \rightarrow X$ by:
+Suppose $X$ and $Y$ are Hilbert spaces, and let $\Psi_X : X^* \rightarrow X$ and $\Psi_Y : Y^* \rightarrow Y$ be the [[Lecture 29#Theorem (F. Riesz)|Fréchet–Riesz isometries]] on $X$ and $Y$, respectively (which are conjugate linear).
+Define $L' : Y \rightarrow X$ by:  
  $$L' := \Psi_X \circ L^* \circ \Psi_Y^{-1}$$
  * $L'$ is bounded and linear.
  * $\|L'\|_{\mathcal{L}(Y,X)} = \|L\|_{\mathcal{L}(X,Y)}$
@@ -30,7 +29,7 @@ L'y &= (\Psi_X \circ L^* \circ \Psi_Y^{-1})(y) \\
 \end{aligned}
 $$
 
-Since $L^* \phi_y \in X^*$ and $L'y = \Psi_X(L^* \phi_y)$, $L'y$ is the unique element in $X$ representing $L^* \phi_y \in X^*$ (by the Fréchet–Riesz Representation Theorem):
+Since $L^* \phi_y \in X^*$ and $L'y = \Psi_X(L^* \phi_y)$, $L'y$ is the unique element in $X$ representing $L^* \phi_y \in X^*$ (by the [[Lecture 29#F. Riesz Representation Theorem|Fréchet–Riesz Representation Theorem]]):
 $$\langle L^* \phi_y, x \rangle_X = (x, L'y)_X \tag{$\#$}$$
 
 On the other hand, by the definition of the Banach adjoint:
@@ -68,7 +67,7 @@ $$
 $$
 
 **Proof**:
-Since $x_n \rightharpoonup x$ in $H$, by Banach-Steinhaus $(x_n)_{n\in\mathbb{N}}$ is bounded. Since $L$ is compact, $\exists$ a subsequence $(x_{n_k})_k \subset (x_n)_{n\in\mathbb{N}}$ such that. $(L x_{n_k})$ converges in $H$.
+Since $x_n \rightharpoonup x$ in $H$, by [[SEM_7/FunctionalAnalysis/Lecture 18#Theorem (Banach–Steinhaus)|Banach-Steinhaus]] $(x_n)_{n\in\mathbb{N}}$ is bounded. Since $L$ is compact, $\exists$ a subsequence $(x_{n_k})_k \subset (x_n)_{n\in\mathbb{N}}$ such that. $(L x_{n_k})$ converges in $H$.
 Let $L x_{n_k} \rightarrow y \in H$.
 
 By the definition of the adjoint:

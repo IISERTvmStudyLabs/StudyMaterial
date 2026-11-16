@@ -17,7 +17,7 @@ is a bounded linear functional.
 2. For every $\phi \in H^*$, $\exists! x \in H$ such that.
 
 $$
-\langle \phi, y \rangle_H = \phi(y) = (y, x)_H, \quad \forall y \in H
+\langle \phi, y \rangle_{H^*, H} = \phi(y) = (y, x)_H, \quad \forall y \in H
 $$
 
 
@@ -190,9 +190,5 @@ $\Psi : H^* \rightarrow H$, $\Psi(\phi) = a$, given by F. Riesz is a bijective i
 
 ---
 ## Corollary 2
-Every Hilbert Space is Reflexive.
-Let $\Phi \in H^{**}$. Show that $\exists x \in H$ such that. $J(x) = J_x = \Phi$, or $J(H) = H^{**}$.
-
-$$
-\Phi(\phi) = \phi(x), \quad \forall \phi \in H^*
-$$
+Every Hilbert space is reflexive.
+Let $\Phi \in H^{**}$. Show that $\exists x \in H$ such that $\Phi(\phi) = \phi(x)$, or equivalently $J(H) = H^{**}$ where $J(x) = J_x = \Phi$.
