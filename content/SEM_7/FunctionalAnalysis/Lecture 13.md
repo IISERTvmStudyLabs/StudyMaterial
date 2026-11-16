@@ -1,224 +1,99 @@
 ---
 course: Functional Analysis
 Lecture: "13"
-date: 24 August
+date: 2026-08-24
 ---
- $\rightarrow$  Dual spaces, Reflexivity, Weake & Weak-\* convergence.
+### Dual Spaces, Reflexivity, Weak & Weak-* Convergence
 
-let  $x$  be a Banach space. The dual space of  $x$  is defined to be
+> [!abstract] Definition: Dual Space ($X^*$)
+> Let $X$ be a Banach space. The dual space of $X$ is defined to be:
+> $$
+> \begin{aligned}
+> X', \, X^* &= \mathcal{L}(X, \mathbb{K}) \\
+> &= \{ \phi: X \rightarrow \mathbb{K} \mid \phi \text{ is linear and bounded} \}
+> \end{aligned}
+> $$
+> Since $\mathbb{K}$ is complete, $X^* = \mathcal{L}(X, \mathbb{K})$ is complete under the norm:
+> $$\|\phi\| = \sup_{\|x\|_X \leq 1} |\phi(x)|$$
 
+* $\phi(x)$ is also denoted as $\langle \phi, x \rangle_{X^*, X}$.
 
+#### The Evaluation Map $J_x$ and Second Dual ($X^{**}$)
+
+For a fixed $x \in X$, consider the map $J_x : X^* \rightarrow \mathbb{K}$ given by:
+$$\phi \in X^* \xrightarrow{J_x} \phi(x) \in \mathbb{K}$$
+
+**Linearity of $J_x$:**
 $$
-\begin{aligned} x', x^* &= h(x, k) \\ &= \{ \phi: x \rightarrow k \mid \phi \text{ is linear and kept} \} \end{aligned}
+\begin{aligned}
+J_x(\phi_1 + \phi_2) &= (\phi_1 + \phi_2)(x) \\
+&= \phi_1(x) + \phi_2(x) \\
+&= J_x(\phi_1) + J_x(\phi_2)
+\end{aligned}
 $$
-
-
-Since  $k$  is complete,  $x^* = h(x, k)$  is complete under the norm  $\|\phi\| = \sup_{\|x\|_x \leq 1} |\phi(x)|$ 
-
- $\phi(x)$  is also denoted as  $\langle \phi, x \rangle_{x, x}$ 
-
-
 $$
-\phi \in X^* \xrightarrow{J_n} \phi(n) \in k.
-$$
-
-
-
-$$
-\begin{aligned} J_x(\phi_1 + \phi_2) &= (\phi_1 + \phi_2)(x) \\ &= \phi_1(x) + \phi_2(x). \\ &= J_x(\phi_1) + J_x(\phi_2) \end{aligned}
-$$
-
-
-
-$$
-\begin{aligned} J_x(\lambda\phi)(x) &= (\lambda\phi)(x) \\ &= \lambda(\phi(x)) \\ &= \lambda J_x(\phi) \end{aligned}
-$$
-
-
-Is  $J_x$  continuous?
-
-
-$$
-J_x: X^* \rightarrow \mathbb{K} \quad (X^*, \|\cdot\|_{X^*}) \text{ is Barach}
+\begin{aligned}
+J_x(\lambda\phi) &= (\lambda\phi)(x) \\
+&= \lambda(\phi(x)) \\
+&= \lambda J_x(\phi)
+\end{aligned}
 $$
 
+**Is $J_x$ continuous?**
+For $J_x: X^* \rightarrow \mathbb{K}$ (where $(X^*, \|\cdot\|_{X^*})$ is Banach):
+$$|J_x(\phi)| = |\phi(x)| \leq \|\phi\|_{X^*} \|x\|_X$$
+$$\implies \sup_{\substack{\phi \in X^* \\ \|\phi\|_{X^*} \leq 1}} |J_x(\phi)| \leq \|x\|_X$$
+$$\implies J_x \text{ is bounded, with } \|J_x\| \leq \|x\|_X$$
 
+**Is $\|J_x\| = \|x\|_X$?**
+By Corollary 1 to the Hahn–Banach Theorem for NLS, given any $x \neq 0$, $\exists \phi_0 \in X^*$ with $\|\phi_0\|_{X^*} = 1$ and $\phi_0(x) = \|x\|_X$.
+$$\text{Hence } \|J_x\| = \|x\|_X$$
 
-$$
-\|J_x(\phi)\| = |\phi(x)| \leq \|\phi\|_{X^*} \|x\|_X.
-$$
-
-
-
-$$
-\Rightarrow \sup |J_x(\phi)| \leq \|x\|_X
-$$
-
-
-
-$$
-\phi \in X^*
-$$
-
-
-
-$$
-\|\phi\|_{X^*} \leq 1
-$$
-
-
-
-$$
-\Rightarrow J_x \text{ is bold. } \|J_x\| \leq \|x\|_X
-$$
-
-
-Is  $\|J_x\| = \|x\|$ ?
-
-By Corollary 1 to Mahn-Barach for NLS, given any  $x \neq 0 \exists$ 
-
-
-$$
-\phi_0 \in X^* \text{ with } \|\phi_0\|_{X^*} = 1 \text{ and } \phi_0(x) = \|x\|_X.
-$$
-
-
-
-$$
-\text{Hence } \|J_x\| = \|x\|_X.
-$$
-
-
-
-$$
-\rightarrow J_x \in h(X^*, \mathbb{K}) \text{ and } \|J_x\| = \|x\|.
-$$
-
-
-The span  $h(X^*, \mathbb{K})$  is called the second dual (bi-dual) of  $X$ .
-
-
-$$
-\|J_x\|_{X^{**}} = \|x\|_X.
-$$
-
-
-For each  $x \in X$ , we have  $J_x \in X^{**}$ 
+* Thus, $J_x \in \mathcal{L}(X^*, \mathbb{K})$ and $\|J_x\|_{X^{**}} = \|x\|_X$.
+* The space $X^{**} := \mathcal{L}(X^*, \mathbb{K})$ is called the **second dual (bi-dual)** of $X$.
+* For each $x \in X$, we have $J_x \in X^{**}$.
 
 ![](_page_14_Diagram_20.jpeg)
 
+#### The Canonical Embedding & Reflexivity
 
+Define $J: X \rightarrow X^{**}$ as:
 $$
-J: X \rightarrow X^{**} \text{ as}
+\begin{aligned}
+J(x) &= J_x \\
+J(x)(\phi) &= J_x(\phi) = \phi(x)
+\end{aligned}
 $$
+Clearly, $J(X) \subseteq X^{**}$.
 
+* **Question:** Is every element in $X^{**}$ of the form $J_x$ for some $x \in X$?
+* Since $x \xrightarrow{J} J_x$ satisfies $\|J_x\|_{X^{**}} = \|x\|_X$, the map $J: X \rightarrow X^{**}$ is an isometry and is called the **canonical embedding**.
 
+> [!abstract] Definition: Reflexive Space
+> A normed space $X$ is called **reflexive** if $J(X) = X^{**}$.
 
-$$
-\begin{aligned} J(x) &= J_x \\ J(x)(\phi) &= J_x(\phi) \\ &= \phi(x). \end{aligned}
-$$
+#### Examples
 
+1. **Finite-Dimensional Spaces:**
+   Let $X$ be a finite-dimensional NLS and consider $J: X \rightarrow X^{**}$.
+   If $x \in \ker(J)$:
+   $$
+   \begin{aligned}
+   J(x) = 0 &\implies J(x)(\phi) = 0 \quad \forall \phi \in X^* \\
+   &\implies \phi(x) = 0 \quad \forall \phi \in X^*
+   \end{aligned}
+   $$
+   If $x \neq 0$, then $\exists \phi_0 \in X^*$ such that $\phi_0(x) = \|x\| \neq 0$.
+   $$\implies \ker J = \{0\}$$
+   Since $\dim X = \dim X^* = \dim X^{**} = N$ (say) and $J$ is injective, $J$ is surjective. Hence, every finite-dimensional NLS is reflexive.
 
-
-$$
-J(X) \subseteq X^{**}
-$$
-
-
-Is every element in  $X^{**}$  is of the form  $J_x$  for some  $x \in X$ ?
-
-
-$$
-x \xrightarrow{J} J_x
-$$
-
-
-
-$$
-\|J_x\|_{X^{**}} = \|x\|_X
-$$
-
-
- $\rightarrow J: X \rightarrow X^{**}$  is an isometry and is called a canonical embedding.
-
- $\rightarrow$  Def<sup>n</sup>: A space  $X$  is called reference if  $J(X) = X^{**}$ 
-
-Eg:
-
-① Let  $X$  be a finite dim NLS and consider
-
-
-$$
-J: X \rightarrow X^{**}
-$$
-
-
-If  $x \in \ker(J)$ 
-
-
-$$
-J(x) = 0
-$$
-
-
-
-$$
-\Rightarrow J(x)(\phi) = 0 \quad \forall \phi \in X^*
-$$
-
-
-
-$$
-\Rightarrow \phi(x) = 0 \quad \forall \phi \in X^*
-$$
-
-
-If  $x \neq 0$  then  $\exists \phi_0 \in X^*$   $\phi_0(x) = \|x\| \neq 0$ .
-
-
-$$
-\Rightarrow \ker J = \{0\}
-$$
-
-
-
-$$
-\dim X = \dim X^* = \dim X^{**} = N \quad \text{say}
-$$
-
-
-Since  $J$  is injective,  $J$  is surjective.
-
-②  $L^p(\mathbb{R})$  is regular for  $1 < p < \infty$ 
-
-
-$$
-\frac{1}{p} + \frac{1}{q} = 1 \quad \Rightarrow \quad 1 < q < \infty
-$$
-
-
-If  $g \in L^q(\mathbb{R})$ , then the map
-
-
-$$
-f \in L^p(\mathbb{R}) \mapsto \int_{\mathbb{R}} f g \, dx \in K.
-$$
-
-
-is linear and continuous.
-
-If  $\phi \in (L^p(\mathbb{R}))^*$ , then  $\phi = \phi_g$  for some  $g \in L^q(\mathbb{R})$ .
-
-
-$$
-(L^p(\mathbb{R}))^* \cong L^q(\mathbb{R}).
-$$
-
-
-
-$$
-(L^q(\mathbb{R}))^* \cong L^p(\mathbb{R})
-$$
-
-
- $L^1(\mathbb{R})$  &  $L^\infty(\mathbb{R})$  are not regular
+2. **$L^p$ Spaces:**
+   $L^p(\mathbb{R})$ is reflexive for $1 < p < \infty$, where:
+   $$\frac{1}{p} + \frac{1}{q} = 1 \implies 1 < q < \infty$$
+   * If $g \in L^q(\mathbb{R})$, then the map
+     $$f \in L^p(\mathbb{R}) \mapsto \int_{\mathbb{R}} f g \, dx \in \mathbb{K}$$
+     is linear and continuous.
+   * Conversely, if $\phi \in (L^p(\mathbb{R}))^*$, then $\phi = \phi_g$ for some $g \in L^q(\mathbb{R})$.
+   * Therefore:
+     $$(L^p(\mathbb{R}))^* \cong L^q(\mathbb{R}) \quad \text{and} \quad (L^q(\mathbb{R}))^* \cong L^p(\mathbb{R})$$
+   * However, $L^1(\mathbb{R})$ and $L^\infty(\mathbb{R})$ are **not** reflexive.

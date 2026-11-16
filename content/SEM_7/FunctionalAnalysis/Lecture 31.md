@@ -1,7 +1,7 @@
 ---
 course: Functional Analysis
 Lecture:
-date: 2026-10-10
+date: 2026-10-26
 ---
 # Compact Operators on Hilbert Spaces:
 **Fredholm Alternative:**

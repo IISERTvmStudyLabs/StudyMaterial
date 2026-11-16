@@ -123,19 +123,17 @@ $$
 ## Corollary 1
 Let $H$ be Hilbert. Define $\Psi : H^* \rightarrow H$ by $\Psi(\phi) = a$ where $\phi(x) = (x, a)$ as above.
 
-Suppose $\phi_1$ and $\phi_2$ give the same element $a$.
-$\Rightarrow \phi_1(x) = (x, a) = \phi_2(x) \Rightarrow \phi_1 = \phi_2$
+Suppose $\phi_1$ and $\phi_2$ give the same element $a$. $\Rightarrow \phi_1(x) = (x, a) = \phi_2(x) \Rightarrow \phi_1 = \phi_2$
 $\Psi$ is injective (one-to-one).
 
 If $a \in H$, define $\phi_a$ by:
-By (i),
+By $(1)$,
 
 $$
 \phi_a(x) := (x, a)_H
 $$
 
-$\phi_a \in H^*$ and $\Psi(\phi_a) = a$.
-$\Rightarrow \Psi$ is surjective, so $\Psi$ is bijective.
+$\phi_a \in H^*$ and $\Psi(\phi_a) = a$. $\Rightarrow \Psi$ is surjective, so $\Psi$ is bijective.
 
 If $\Psi(\phi_1) = a_1, \Psi(\phi_2) = a_2$,
 
@@ -188,7 +186,7 @@ $$
 \|\Psi(\phi)\|_H = \|\phi\|_{H^*}
 $$
 
-$\Psi : H^* \rightarrow H$, $\Psi(\phi) = a$, given by F. Riesz is a bijective isometry. And is called F. Riesz isometry.
+$\Psi : H^* \rightarrow H$, $\Psi(\phi) = a$, given by F. Riesz is a bijective isometry. And is called *F. Riesz isometry*.
 
 ---
 ## Corollary 2
