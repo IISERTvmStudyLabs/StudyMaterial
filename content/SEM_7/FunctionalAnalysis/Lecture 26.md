@@ -1,199 +1,188 @@
 ---
 course: Functional Analysis
 Lecture:
-date: 2026-10-13
+date: 2026-10-06
 ---
-# F. Riesz Representation Theorem
+# Inner Product Spaces
+Let $H$ be Vector Space over $\mathbb{K}$ ($\mathbb{R}/\mathbb{C}$). An inner product $(\cdot, \cdot) : H \times H \to \mathbb{K}$ is a map satisfying 
+1. $(x,y) = \overline{(y,x)} \ \forall x,y \in H$ and $\overline{(\ )}$ denotes conjugation.
+2. $(x+y, z) = (x,z) + (y,z) \ \forall x,y,z \in H$.
+3. $(\lambda x, z) = \lambda(x,z) \ \forall x,z \in H \ \forall \lambda \in \mathbb{K}$
+4. $(x,x) \ge 0 \ \forall x \in H$ and $(x,x) = 0 \text{ iff } x = 0$.
 
-## Theorem (F. Riesz)
-Let $H$ be a Hilbert space. Then:
-(i) For every $x \in H$, the map
+- $(x, y+z) = \overline{(y+z, x)} = \overline{(y,x) + (z,x)} = \overline{(y,x)} + \overline{(z,x)} = (x,y) + (x,z)$
+- $(x, \lambda y) = \overline{(\lambda y, x)} = \overline{\lambda(y,x)} = \overline{\lambda}(x,y)$
 
+> **Note:** If $\mathbb{K} = \mathbb{R}$, $(\cdot, \cdot) : H \times H \to \mathbb{R}$ is symmetric bilinear functional.
+
+**Norm induced by a Inner Product** Suppose $(\cdot, \cdot)$ is an inner product on $H$, the norm induced by $(\cdot, \cdot)$ is defined by $\|x\|_H := \sqrt{(x,x)}$
+
+---
+
+# Theorem (Two basic inequalities)
+1. $|(x,y)| \le \|x\| \cdot \|y\| \quad \forall x,y \in H \quad \text{(Cauchy - Schwarz)}$
+2. $\|x+y\| \le \|x\| + \|y\| \quad \forall x,y \in H \quad \text{(Triangle-Inequality / Minkowski Inequality)}$
+
+**Proof:** 
+1. If $y = 0$, inequality is trivial.
+Let $y \neq 0$,
+Take $a = (x,x), \ b = (x,y), \ c = (y,y) > 0$
+For any $\lambda \in \mathbb{K}$, we have:
+$$ 
+\begin{aligned}
+0 &\le (x + \lambda y, x + \lambda y) \\
+&= (x, x + \lambda y) + (\lambda y, x + \lambda y) \\
+&= (x,x) + \overline{\lambda}(x,y) + \lambda(y,x) + \lambda\overline{\lambda}(y,y) \\
+&= a + \overline{\lambda}b + \lambda\overline{b} + \lambda\overline{\lambda}c
+\end{aligned}
 $$
-y \mapsto (y, x)_H \in \mathbb{K}
+Take $\lambda = -b/c$,
 $$
-
-is a bdd linear functional.
-(ii) For every $\phi \in H^*$, $\exists! x \in H$ s.t.
-
+\begin{aligned}
+0 &\le a - b\overline{b}/c - b\overline{b}/c + b\overline{b}/c \\
+&= a - b\overline{b}/c
+\end{aligned}
 $$
-\langle \phi, y \rangle_H = \phi(y) = (y, x)_H, \quad \forall y \in H
+$\implies ac - b\overline{b} \ge 0$
+$\implies (x,y)\overline{(x,y)} \le (x,x)(y,y)$
+
+$$ |(x,y)|^2 \le \|x\|^2 \cdot \|y\|^2 $$
+
+2. By $(1)$,
+$\text{Re}(x,y) \le |(x,y)| \le \|x\| \cdot \|y\|.$
 $$
-
-
-Proof:
-i) Follows easily from Cauchy-Schwarz:
-Let $\phi_x(y) = (y, x)$, ($x$ is fixed).
-
-$$
-|\phi_x(y)| = |(y, x)| \le \|y\|_H \cdot \|x\|_H
-$$
-
-
-$$
-\|\phi_x\| = \sup_{\|y\|=1} |\phi_x(y)| \le \|x\|_H
-$$
-
-
-$$
-\phi_x \in H^*
-$$
-
-
-ii) If $\phi$ is the zero functional, take $x = 0$.
-Suppose $\phi$ is non-trivial. Since $\phi$ is continuous, $V = \ker \phi$ is a closed subspace of $H$.
-Choose $x_0 \in H$ s.t. $\phi(x_0) \neq 0$.
-Let
-
-$$
-z := x_0 - P_V x_0 \in V^\perp
-$$
-
-
-$$
-\phi(z) = \phi(x_0) - \phi(P_V x_0) = \phi(x_0) \neq 0
-$$
-
-
-For any $x \in H$, since
-
-$$
-\phi\left(x - \frac{\phi(x)}{\phi(z)} z\right) = \phi(x) - \frac{\phi(x)}{\phi(z)} \phi(z) = 0
-$$
-
-
-$$
-x - \frac{\phi(x)}{\phi(z)} z \in V
+\begin{aligned}
+\|x+y\|^2 &= (x+y, x+y) \\
+&= (x,x) + (x,y) + (y,x) + (y,y) \\
+&= (x,x) + (x,y) + \overline{(x,y)} + (y,y) \\
+&= \|x\|^2 + 2\text{Re}(x,y) + \|y\|^2 \\
+&\le \|x\|^2 + 2(\|x\| \cdot \|y\|) + \|y\|^2 \\
+&= (\|x\| + \|y\|)^2 \quad \text{(Pd)}
+\end{aligned}
 $$
 
-Since $z \in V^\perp$,
+$$ \therefore \|\cdot\| = \sqrt{(\cdot, \cdot)} \text{ is indeed a norm} $$
 
-$$
-\left(x - \frac{\phi(x)}{\phi(z)} z, z\right) = 0
-$$
+---
 
+# Hilbert Space
+An inner product space $(H, (\cdot, \cdot))$ is called a **Hilbert space** if it is complete wrt norm $\|\cdot\|_H = \sqrt{(\cdot, \cdot)}$
 
+**Exercise:** 
+1. Show that $H = \mathbb{K}^N$ with $(x,y) = \sum_{k=1}^N x_k \overline{y}_k$ is a Hilbert space (where $\mathbb{K} = \mathbb{R}$ or $\mathbb{C}$).
+> [!faq]- Click to reveal the answer
+> 
+> **Answer:**
+> 
+> 
+> 
+> - **Inner Product Properties:**
+>     
+>     
+>     - **Conjugate Symmetry:** $(x,y) = \sum_{k=1}^N x_k \overline{y}_k = \overline{\sum_{k=1}^N y_k \overline{x}_k} = \overline{(y,x)}$.
+>         
+>         
+>         
+>     - **Linearity in the first argument:** $(\alpha x + \beta z, y) = \sum_{k=1}^N (\alpha x_k + \beta z_k)\overline{y}_k = \alpha(x,y) + \beta(z,y)$ for all $\alpha, \beta \in \mathbb{K}$.
+>         
+>         
+>         
+>     - **Positive Definiteness:** $(x,x) = \sum_{k=1}^N |x_k|^2 \ge 0$, and $(x,x) = 0 \iff |x_k|^2 = 0 \ \forall k \iff x = 0$.
+>         
+>         
+>         
+> - **Completeness:**
+>     
+>     
+>     - The induced norm is the standard Euclidean norm $\|x\|_H = \sqrt{\sum_{k=1}^N |x_k|^2}$.
+>         
+>         
+>         
+>     - Let $(x^{(n)})_{n \in \mathbb{N}}$ be a Cauchy sequence in $\mathbb{K}^N$. For each fixed coordinate $k \in \{1, \dots, N\}$, we have $|x_k^{(n)} - x_k^{(m)}| \le \|x^{(n)} - x^{(m)}\|_H$, so $(x_k^{(n)})_{n \in \mathbb{N}}$ is a Cauchy sequence in $\mathbb{K}$.
+>         
+>         
+>         
+>     - Since $\mathbb{K}$ ($\mathbb{R}$ or $\mathbb{C}$) is complete, each coordinate converges: $x_k^{(n)} \to x_k \in \mathbb{K}$ as $n \to \infty$. Defining $x = (x_1, \dots, x_N) \in \mathbb{K}^N$, we get $\|x^{(n)} - x\|_H \to 0$. Thus, $\mathbb{K}^N$ is a Hilbert space.
+>
 
-$$
-(x, z) - \left(\frac{\phi(x)}{\phi(z)} z, z\right) = 0
-$$
+___
 
+2. Show that $H = l_2$ with $(x,y) = \sum_{k=1}^\infty x_k \overline{y}_k$ is a Hilbert space.
+> [!faq]- Click to reveal the answer
+> 
+> **Answer:**
+> 
+> 
+> 
+> - **Well-definedness & Inner Product Properties:**
+>     
+>     
+>     - By the Cauchy-Schwarz inequality, $\sum_{k=1}^\infty |x_k \overline{y}_k| \le \left(\sum_{k=1}^\infty |x_k|^2\right)^{1/2} \left(\sum_{k=1}^\infty |y_k|^2\right)^{1/2} = \|x\|_{l_2}\|y\|_{l_2} < \infty$, so the series converges absolutely.
+>         
+>         
+>         
+>     - Conjugate symmetry, linearity in the first argument, and positive definiteness follow directly from the properties of convergent series and absolute values.
+>         
+>         
+>         
+> - **Completeness:**
+>     
+>     
+>     - Let $(x^{(n)})_{n \in \mathbb{N}}$ be a Cauchy sequence in $l_2$. For any $\epsilon > 0$, $\exists N_0 \in \mathbb{N}$ such that for all $n, m \ge N_0$, $\|x^{(n)} - x^{(m)}\|_{l_2}^2 = \sum_{k=1}^\infty |x_k^{(n)} - x_k^{(m)}|^2 < \epsilon^2$.
+>         
+>         
+>         
+>     - **Candidate limit:** For each fixed $k \in \mathbb{N}$, $|x_k^{(n)} - x_k^{(m)}| < \epsilon$, so $(x_k^{(n)})_{n \in \mathbb{N}}$ is Cauchy in $\mathbb{K}$ and converges to some $x_k \in \mathbb{K}$. Set $x = (x_1, x_2, \dots)$.
+>         
+>         
+>         
+>     - **Convergence in $l_2$:** For any finite $M \in \mathbb{N}$ and $n, m \ge N_0$, $\sum_{k=1}^M |x_k^{(n)} - x_k^{(m)}|^2 < \epsilon^2$. Letting $m \to \infty$ gives $\sum_{k=1}^M |x_k^{(n)} - x_k|^2 \le \epsilon^2$. Now letting $M \to \infty$ yields $\|x^{(n)} - x\|_{l_2} \le \epsilon$ for all $n \ge N_0$.
+>         
+>         
+>         
+>     - **Membership in $l_2$:** Since $x^{(N_0)} \in l_2$ and $x - x^{(N_0)} \in l_2$, the triangle inequality gives $x = (x - x^{(N_0)}) + x^{(N_0)} \in l_2$. Hence, $l_2$ is complete and is a Hilbert space.
+>
 
-$$
-(x, z) - \frac{\phi(x)}{\phi(z)} (z, z) = 0
-$$
+___
 
+3. Let $\Omega \subset \mathbb{R}^N$ be an open set. Show that $H = L^2(\Omega)$ with $(f,g) = \int_\Omega f(x)\overline{g}(x) dx$ is a Hilbert space.
+> [!faq]- Click to reveal the answer
+> 
+> **Answer:**
+> 
+> 
+> 
+> - **Well-definedness & Inner Product Properties:**
+>     
+>     
+>     - By Hölder's (Cauchy-Schwarz) inequality, $\int_\Omega |f(x)\overline{g}(x)| dx \le \left(\int_\Omega |f(x)|^2 dx\right)^{1/2} \left(\int_\Omega |g(x)|^2 dx\right)^{1/2} = \|f\|_{L^2}\|g\|_{L^2} < \infty$, so $f\overline{g} \in L^1(\Omega)$.
+>         
+>         
+>         
+>     - Linearity and conjugate symmetry follow from the linearity of the Lebesgue integral.
+>         
+>         
+>         
+>     - **Positive Definiteness:** $(f,f) = \int_\Omega |f(x)|^2 dx \ge 0$. Moreover, $\int_\Omega |f(x)|^2 dx = 0 \iff f(x) = 0$ almost everywhere (a.e.) on $\Omega$, which means $f = 0$ as an equivalence class in $L^2(\Omega)$.
+>         
+>         
+>         
+> - **Completeness (Riesz-Fischer Theorem):**
+>     
+>     
+>     - Let $(f_n)_{n \in \mathbb{N}}$ be a Cauchy sequence in $L^2(\Omega)$. Pass to a fast-converging subsequence $(f_{n_k})_{k \in \mathbb{N}}$ such that $\|f_{n_{k+1}} - f_{n_k}\|_{L^2} < 2^{-k}$ for all $k \in \mathbb{N}$.
+>         
+>         
+>         
+>     - Define $g_m(x) = \sum_{k=1}^m |f_{n_{k+1}}(x) - f_{n_k}(x)|$. By Minkowski's inequality, $\|g_m\|_{L^2} \le \sum_{k=1}^m 2^{-k} < 1$. By the Monotone Convergence Theorem, $g(x) = \lim_{m \to \infty} g_m(x)$ satisfies $\|g\|_{L^2} \le 1$, so $g(x) < \infty$ a.e. on $\Omega$.
+>         
+>         
+>         
+>     - Thus, the telescoping series $f_{n_1}(x) + \sum_{k=1}^\infty (f_{n_{k+1}}(x) - f_{n_k}(x))$ converges a.e. to a measurable function $f(x)$. By Fatou's Lemma, $\|f - f_{n_k}\|_{L^2} \le \liminf_{j \to \infty} \|f_{n_j} - f_{n_k}\|_{L^2} \to 0$ as $k \to \infty$.
+>         
+>         
+>         
+>     - Since $f = (f - f_{n_k}) + f_{n_k} \in L^2(\Omega)$ and a Cauchy sequence with a convergent subsequence converges to the same limit, $\|f_n - f\|_{L^2} \to 0$. Thus, $L^2(\Omega)$ is a Hilbert space.
+>
 
-$$
-(x, z) - \frac{\phi(x)}{\phi(z)} \|z\|^2 = 0
-$$
-
-
-$$
-\phi(x) = \frac{\phi(z)}{\|z\|^2} (x, z) = \left(x, \frac{\overline{\phi(z)}}{\|z\|^2} z\right) = (x, a)
-$$
-
-
-$$
-a = \frac{\overline{\phi(z)}}{\|z\|^2} z \in H
-$$
-
-
-Given $\phi \in H^*$, $\exists a \in H$ s.t.
-$\phi(x) = (x, a), \forall x \in H$.
-
-If $\exists a' \in H$ s.t. $\phi(x) = (x, a'), \forall x \in H$, then:
-
-$$
-(x, a) = (x, a'), \quad \forall x \in H
-$$
-
-
-$$
-(x, a - a') = 0, \quad \forall x \in H
-$$
-
-Choose $x = a - a'$, then
-
-$$
-(a - a', a - a') = \|a - a'\|^2 = 0 \Rightarrow a = a'
-$$
-
-
-## Corollary
-Let $H$ be Hilbert. Define $\Psi : H^* \rightarrow H$ by $\Psi(\phi) = a$ where $\phi(x) = (x, a)$ as above.
-
-Suppose $\phi_1$ and $\phi_2$ give the same element $a$.
-$\Rightarrow \phi_1(x) = (x, a) = \phi_2(x) \Rightarrow \phi_1 = \phi_2$
-$\Psi$ is injective (one-to-one).
-
-If $a \in H$, define $\phi_a$ by:
-By (i),
-
-$$
-\phi_a(x) := (x, a)_H
-$$
-
-$\phi_a \in H^*$ and $\Psi(\phi_a) = a$.
-$\Rightarrow \Psi$ is surjective, so $\Psi$ is bijective.
-
-If $\Psi(\phi_1) = a_1, \Psi(\phi_2) = a_2$,
-
-$$
-(\phi_1 + \phi_2)(x) = \phi_1(x) + \phi_2(x) = (x, a_1) + (x, a_2) = (x, a_1 + a_2)
-$$
-
-Then
-
-$$
-\Psi(\phi_1 + \phi_2) = a_1 + a_2 = \Psi(\phi_1) + \Psi(\phi_2)
-$$
-
-
-Suppose $\Psi(\phi) = a$.
-Since the inner product $(x, y)$ is conjugate linear in $y$:
-
-$$
-(x, \overline{\lambda} a) = \lambda (x, a) = \lambda \phi(x) = (\lambda \phi)(x)
-$$
-
-
-$$
-\Psi(\lambda \phi) = \overline{\lambda} a = \overline{\lambda} \Psi(\phi)
-$$
-
-$\Psi$ is conjugate linear (linear if over $\mathbb{R}$).
-
-$\phi(x) = (x, a), \forall x \in H$, then
-If $\Psi(\phi) = a$,
-
-$$
-\|\phi\|_{H^*} \le \|a\|_H
-$$
-
-Since $a \neq 0$, take $x = a / \|a\|$ to get:
-
-$$
-\|\phi\|_{H^*} \ge \|a\|_H
-$$
-
-
-$$
-\Rightarrow \|\phi\|_{H^*} = \|a\|_H
-$$
-
-In other words,
-
-$$
-\|\Psi(\phi)\|_H = \|\phi\|_{H^*}
-$$
-
-$\Psi : H^* \rightarrow H$, $\Psi(\phi) = a$, given by F. Riesz is a bijective isometry. And is called F. Riesz isometry.
-
-## Corollary
-Every Hilbert Space is Reflexive.
-Let $\Phi \in H^{**}$. Show that $\exists x \in H$ s.t. $J(x) = J_x = \Phi$, or $J(H) = H^{**}$.
-
-$$
-\Phi(\phi) = \phi(x), \quad \forall \phi \in H^*
-$$
+___

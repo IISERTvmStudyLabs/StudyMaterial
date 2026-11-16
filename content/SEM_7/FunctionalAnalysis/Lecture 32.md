@@ -1,101 +1,66 @@
 ---
 course: Functional Analysis
 Lecture:
-date: 2026-11-03
+date: 2026-10-27
 ---
-Recall 
-$$
-\lambda \in \rho(L) \to \lambda I - L \text{ is invertible}
-$$
-$$
-\implies (\lambda I - L)^{-1} \in \mathcal{L}(X)
-$$
+**Step 3:** $R$ is closed $\Rightarrow$ statement (ii).
+Suppose $v_n \in R$ and suppose $v_n \to v$. Since $v_n \in R$,
+let $u_n \in H$ s.t $(I-K)u_n = v_n$
+We show that $\exists u \in H$ s.t $(I-K)u = v$.
+But, $u_n$ need not cge.
 
-$\implies \lambda u - Lu = f$ is uniquely solvable and the solution depends continuously on $f$.
+Second claim: each inclusion $H_n \supset H_{n+1}$ is strict, i.e., $H_n \supsetneq H_{n+1}$
+If not, suppose for some $n$, $H_n = H_{n+1}$
 $$
-u = R_\lambda f
+\Rightarrow \forall x \in H, \quad \exists y \in H \text{ s.t}
 $$
 $$
-\|u\| \le \|R_\lambda\| \|f\| \le C\|f\|
+(I-K)^n x = (I-K)^{n+1} y = (I-K)^n (I-K) y
 $$
-
-Continuous dependence of $u$ on $f$
-
-The spectrum generalizes the notion of eigenvalues, but is different.
-
-$A \in \mathbb{K}^{N \times N}$, $\lambda \in \mathbb{K}$ is an eigenvalue of $A \to \exists \ 0 \neq x \in \mathbb{K}^N$ s.t. $Ax = \lambda x$
-
-$\implies \lambda I - A$ is not injective
-$\implies \lambda I - A$ is not surjective
-
-If $\lambda \in \mathbb{K}$ is not an eigenvalue then $\lambda I - A$ has full rank, or it is invertible.
-
----
-
-# Definition: Spectrum
-
-Let $X$ be Banach and $L \in \mathcal{L}(X)$. The spectrum $\sigma(L)$ consists of
-
-1.  The **point spectrum**
-defined by 
+Let $x \in H$, then $(I-K)^n x \in H_n = H_{n+1} = (I-K)^{n+1} H$
 $$
-\sigma_p(L) = \{ \lambda \in \mathbb{K} : \lambda I - L \text{ is not injective} \}
+\Rightarrow \exists y \in H \text{ s.t } (I-K)^n x = (I-K)^{n+1} y
 $$
-$\lambda \in \sigma_p(L) \implies \exists$ non-zero $x \in X$ such that $(\lambda I - L)x = 0$ or $Lx = \lambda x$
-$\lambda$ is an eigenvalue of $L$ and $x$ is an eigenvector corresponding to $\lambda$
-
-2.  The **residual spectrum**:
+Since $I-K$ is injective, $(I-K)^n$ is injective.
+$\therefore$ we get $x = (I-K)y$. Since $x$ is arbitrary, this would mean that $(I-K)$ is surjective, not possible.
 $$
-\sigma_r(L) = \{ \lambda \in \mathbb{K} : \lambda I - L \text{ is injective and } \overline{\text{Range}}(\lambda I - L) \neq X \}
+\therefore H_n \supsetneq H_{n+1} \quad \forall n
 $$
 
-3. The **continuous spectrum**
+Choose $e_n \in H_n \cap H_{n+1}^\perp$ & $\|e_n\| = 1$
+Choose $w_n \in H_n \setminus H_{n+1}$ and take $z_n = w_n - P_{H_{n+1}} w_n \in H_{n+1}^\perp$
+But $z_n \in H_n$ & $z_n \neq 0$ - if $z_n = 0$, we get $w_n = P_{H_{n+1}} w_n \in H_{n+1}$. (not possible)
+
+Take $e_n := \frac{z_n}{\|z_n\|}$
+Let $m < n$. Now $K = I - (I-K)$
 $$
-\sigma_c(L) = \{ \lambda \in \mathbb{K} : \lambda I - L \text{ is injective}, \quad \overline{\text{Range}} = X, \quad \text{but Range}(\lambda I - L) \neq X \}
+K e_m - K e_n = e_m - e_n - (I-K) (e_m - e_n)
 $$
-
-$\sigma_p, \sigma_r, \sigma_c$ are disjoint and 
 $$
-\sigma(L) = \sigma_p(L) \cup \sigma_r(L) \cup \sigma_c(L)
+= e_m + \{ (I-K) e_n - e_n - (I-K) e_m \}
 $$
-
-$\lambda I - L$ is injective $\iff \lambda I - L$ is bijective $\to \lambda \in \rho(L)$ resolvent set
-
----
-
-If $\lambda \in \sigma_c(L)$ then $\lambda I - L$ is injective
-
-$(\lambda I - L)^{-1} : \text{Range}(\lambda I - L) \subset X \to X$ is **not bounded**
-$\lambda u - Lu = f$
-
-If $\lambda \in \sigma_p(L) \to$ eigenvalues and eigenvectors
-
-## Proposition: (Approximate eigenvectors)
-Let $X$ be Banach, $L \in \mathcal{L}(X)$, $\lambda \notin \sigma_p(L)$
-Then $(\lambda I - L)^{-1} : \text{Range}(\lambda I - L) \subset X \to X$ is unbounded $\iff\exists \ (x_n) \subset X$ such that $\|x_n\| = 1 \ \forall n$ and $\|(\lambda I - L)x_n\| \to 0$
-($x_n \to$ approximate eigenvector)
-
-**Proof:** Suppose $\lambda \notin \sigma_p(L) \to \lambda I - L$ is injective.
-
-Let $x_n \in X$, $\|x_n\| = 1$, $\|(\lambda I - L)x_n\| \to 0$ as $n \to \infty$
-
-To show that $(\lambda I - L)^{-1}$ is unbounded on $\text{Range}(\lambda I - L)$
-Let 
 $$
-y_n = \frac{(\lambda I - L)x_n}{\|(\lambda I - L)x_n\|} \in \text{Range}(\lambda I - L)
+= e_m + z, \text{ say}
 $$
 
+Claim: $z \in H_{m+1}$
 $$
-(\lambda I - L)^{-1} y_n = \frac{x_n}{\| \dots \|} \implies \|(\lambda I - L)^{-1} y_n\| = \frac{1}{\| \dots \|} \to \infty \text{ as } n \to \infty
+(I-K) e_m \in H_{m+1}
 $$
+$$
+e_n \in H_n \subset H_{m+1}
+$$
+$$
+(I-K) e_n \in H_{n+1} \subset H_{m+1}
+$$
+But, by choice, $e_m \in H_{m+1}^\perp$.
+$$
+\therefore \| K e_m - K e_n \|^2 = \|e_m\|^2 + \|z\|^2 \geq 1
+$$
+$\Rightarrow (K e_n)_n$ cannot have any cgt subseq $(\Rightarrow\Leftarrow)$
+as $(e_n)$ is bdd & $K$ is compact
 
-$\implies (\lambda I - L)^{-1}$ is unbounded on $\text{Range}(\lambda I - L)$
-
-conversely, suppose $(\lambda I - L)^{-1}$ is unbounded
-$\implies \exists$ a sequence $\{y_n\} \subset \text{Range}(\lambda I - L)$
-$\|y_n\| = 1$ but $\|(\lambda I - L)^{-1} y_n\| \ge n$
-
-take 
-$$
-x_n := \frac{(\lambda I - L)^{-1} y_n}{\|(\lambda I - L)^{-1} y_n\|}
-$$
+**Step 6:** $\text{Range} (I-K) = H \Rightarrow \text{Ker} (I-K) = \{0\}$
+$\text{Range} (I-K) = H \Rightarrow \text{Ker} (I-K^*) = \{0\}$.
+$\therefore I-K^*$ is injective
+By step 5, $I-K^*$ is surjective, since $K^*$ is compact

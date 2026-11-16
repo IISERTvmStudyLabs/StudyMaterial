@@ -4,97 +4,55 @@ Lecture: "20"
 date: 15 September
 ---
 
-→ Theorem: (open Mapping thm)
+# Theorem: (Open Mapping Theorem)
+If  $X$  and  $Y$  are Banach spaces and  $L: X \rightarrow Y$  is a bounded, surjective linear operator then  $L$  is an open map i.e.. its maps open sets to open sets.
 
-If  $X$  and  $Y$  are Banach spaces and  $L: X \rightarrow Y$  is a bounded, surjective linear operator then  $L$  is an open map in its maps open sets to open sets.
-
-Remark: Continuity requires preimages of open sets are open sets, reverse implication need not be true.
-
-For example:  $x \mapsto x^2$  maps  $(-1, 1)$  to  $[0, 1)$ 
-
-→ Fact: A map  $f: X \rightarrow Y$  is open iff  $\forall x \in X$  and  $x > 0$  the image  $f(B_r(x))$  contains some ball centred at  $f(x)$  in  $Y$ .
+**Remark**: Continuity requires preimages of open sets are open sets, reverse implication need not be true. **Example**:  $x \mapsto x^2$  maps  $(-1, 1)$  to  $[0, 1)$ 
 
 
+**Fact**: A map  $f: X \rightarrow Y$  is open $\iff$  $\forall x \in X$  and  $x > 0$  the image  $f(B_r(x))$  contains some ball centred at  $f(x)$  in  $Y$ .
 $$
 B_r^Y(f(x)) \subseteq f(B_r^X(x))
 $$
-
-
-Proof: (open mapping them).
-
+**Proof**:
 By linearity of  $L$ 
-
-
 $$
 L(B_n(x)) = Lx + r L(B_1(x))
 $$
-
-
 Denote  $B_1 = B_1(0)$ ,  $B_n = B_n(0)$  etc.
-
 WLOG. we can choose  $x=0$  so that  $Lx=0$  and  $r=1$ 
-
 We need to show that
-
-
 $$
 B_n(0_r) \subseteq L(B_1) \quad (\text{mean thing to be proven})
 $$
-
-
-Since  $L$  is surjective  $Y = \bigcup_{n=1}^{\infty} L(B_n)$ . Any  $y \in Y$ , is  $y = Lx$  take  $n \in \mathbb{N}$  s.t.  $n > \|x\|$ 
-
+Since  $L$  is surjective  $Y = \bigcup_{n=1}^{\infty} L(B_n)$ . Any  $y \in Y$ , is  $y = Lx$  take  $n \in \mathbb{N}$  such that.  $n > \|x\|$ 
 But  $L(B_n) \subseteq \overline{L(B_n)}$  and  $Y \subseteq \bigcup_{n=1}^{\infty} \overline{L(B_n)}$ 
-
-
 $$
 \bigcup_{n=1}^{\infty} \overline{L(B_n)} \subseteq Y
 $$
-
-
-
 $$
 \Rightarrow Y = \bigcup_{n=1}^{\infty} \overline{L(B_n)}
 $$
-
-
-Since  $Y$  is complete by Baile Category thm, atleast one of the  $\overline{L(B_n)}$  should have an non-empty interior.
-
+Since  $Y$  is complete by Baile Category theorem, atleast one of the  $\overline{L(B_n)}$  should have an non-empty interior.
 Rescaling  $B_n = r B_1$  and hence  $L$  being linear
-
-
 $$
 L(B_n) = r L(B_1)
 $$
-
-
-
 $$
 \text{or } \overline{L(B_n)} = r \overline{L(B_1)}
 $$
-
-
  $\Rightarrow \overline{L(B_1)}$  has a non-empty interior
-
-$\Rightarrow \exists y_0 \in Y$  and  $x_0 > 0$  s.t.
-
-
+$\Rightarrow \exists y_0 \in Y$  and  $x_0 > 0$  such that.
 $$
 B_x(y_0) \subseteq \overline{L(B_1)}
 $$
-
-
 Since  $B_1$  is symmetric ( $x \in B_1 \Rightarrow -x \in B_1$ )  $L(B_1)$  and  $\overline{L(B_1)}$  are symmetric.
-
-
 $$
 \therefore B_x(-y_0) \subseteq \overline{L(B_1)}
 $$
+Convexity, since  $B_1$  is convex  $\overline{L(B_1)}$  is convex ( $L$  is linear)
 
-
-Convenity, since  $B_1$  is convex  $\overline{L(B_1)}$  is convex ( $L$  is linear)
-
- $\therefore$  if  $z$  is s.t.  $\|z\| < x_0$  then
+ $\therefore$  if  $z$  is such that.  $\|z\| < x_0$  then
 
 
 $$

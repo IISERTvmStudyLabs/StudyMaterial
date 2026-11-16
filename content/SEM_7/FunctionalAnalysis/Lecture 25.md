@@ -1,121 +1,95 @@
 ---
 course: Functional Analysis
 Lecture:
-date: 12 October
----
-### Proof (cont.)
-
-**Step 2:**
-If $y' \in V$ is any other point such that $\|x - y'\| = \inf_{z \in V} \|x - z\|$, then $y = y'$.
-
-In parallelogram identity, take $u = x - y, v = x - y'$.
-
-$$
-\|y - y'\|^2 = 2\|x - y\|^2 + 2\|x - y'\|^2 - 4\left\|x - \frac{y + y'}{2}\right\|^2
-$$
-
-$$
-\le 2d^2 + 2d^2 - 4d^2 = 0
-$$
-
-$$
-y = y'
-$$
-
-$\exists! y \in V$ such that $d = \|x - y\| = \min_{z \in V} \|x - z\|$.
-
+date: 2026-10-05
 ---
 
-**Step 3 (Characterization of $y$):**
-Call $y$ from Step 2 as $P_V x$, that is, $y = P_V x$.
-We show that $y$ is the unique $y \in V$ such that $x - y \in V^\perp$.
-First we show that $x - y \in V^\perp$, that is, $(x - y, v) = 0, \forall v \in V$.
+## Theorem 1
+Let $X, Y$ be Banach and $\mathcal{L} \in \mathcal{L}(X, Y)$. Then, $\mathcal{L}$ is compact $\iff$ $\mathcal{L}^* \in \mathcal{L}(Y^*, X^*)$ is compact.
 
-Let $v \in V$ be arbitrary. Consider the map $t \in \mathbb{R} \mapsto \|x - (y + tv)\|^2 \in \mathbb{R}$.
+**Proof:** Let $\mathcal{L} \in \mathcal{L}(X,Y)$ be compact.
+Let $(\Phi_n)_{n \in \mathbb{N}} \subset Y^*$ be a bounded seq., i.e., $\|\Phi_n\|_{Y^*} \le 1 \ \forall n \in \mathbb{N}$
+To Show That: $\exists$ subsequence $(\Phi_{n_k})_{k \in \mathbb{N}}$ such that. $(\mathcal{L}^* \Phi_{n_k}) \subset X^*$ cgs in $X^*$.
+(or) $(\mathcal{L}^* \Phi_n)_{n \in \mathbb{N}}$ has a cgt subseq.
 
-$$
-f(t) = \|x - (y + tv)\|^2
-$$
+Let $B_1 = \overline{B_1(0)}$ be the closed unit ball of $X$. Since $\mathcal{L}$ is compact, 
+$E := \overline{\mathcal{L}(B_1)}$ is compact in $Y$.
 
-$$
-= \|x - y\|^2 - 2t \text{Re}(x - y, v) + t^2 \|v\|^2
-$$
+Since $\Phi_n : Y \to \mathbb{K}$, let $\phi_n := \Phi_n|_E$
 
-Since $\|x - y\| = d(x, V)$, the function $f$ attains the minimum at $t = 0$.
-$\Rightarrow f'(0) = 0$
-$\Rightarrow \text{Re}(x - y, v) = 0, \forall v \in V$.
-Replacing $v$ with $-iv$ gives $\text{Im}(x - y, v) = 0, \forall v \in V$.
-Hence $(x - y, v) = 0, \forall v \in V$.
-$\Rightarrow x - y \in V^\perp$.
-
-If $y' \in V$ is any other point such that $x - y' \in V^\perp$, then $y' = y$.
-
-$$
-\|y - y'\|^2 = (y - y', y - y')
+We claim that $(\phi_n)_{n \in \mathbb{N}}$ satisfies the conditions of Arzelà-Ascoli,
+$$ 
+\begin{aligned}
+|\phi_n(y_1) - \phi_n(y_2)| &\le \|\Phi_n\|_{Y^*} \|y_1 - y_2\|_Y \\
+&\le \|y_1 - y_2\|_Y \quad \forall y_1, y_2 \in Y.
+\end{aligned}
 $$
 
-$$
-= (y - y', x - y') - (y - y', x - y) = 0
-$$
+$\implies$ uniform equicontinuity of $(\phi_n)_{n \in \mathbb{N}}$.
 
-$\Rightarrow y' = y$.
-
-$$
-\exists! y \in V, z \in V^\perp \text{ such that } x = y + z
-$$
-
-$$
-y = P_V x, \quad z = P_{V^\perp} x
-$$
+$$ \sup_{y \in E} \|y\|_Y = \sup_{\|x\| \le 1} \|\mathcal{L}x\|_Y = \|\mathcal{L}\| $$
+$$ \phi_n : E \to \mathbb{K}. $$
 
 ---
 
-**Step 4:** We show that $P_V$ and $P_{V^\perp}$ are linear and $\|P_V\| \le 1, \|P_{V^\perp}\| \le 1$.
-Suppose $x, x' \in H, \alpha, \alpha' \in \mathbb{K}$,
-$y = P_V x, y' = P_V x'$
-$\alpha y + \alpha' y' \in V$
-$\alpha x + \alpha' x' - \alpha y - \alpha' y' = \alpha(x - y) + \alpha'(x' - y') \in V^\perp$ (Since $V^\perp$ is a subspace)
+$$ |\phi_n(y)| \le \|\Phi_n\|_{Y^*} \|y\|_Y \le \|y\|_Y \le \sup_{y \in E} \|y\| = \|\mathcal{L}\| \quad \forall y \in E. $$
+$\implies (\phi_n)$ is uniformly bounded on $E$.
 
-By Step 3, $\alpha y + \alpha' y' = P_V(\alpha x + \alpha' x')$.
+By [[Lecture 24#Arzelà-Ascoli Theorem|Ascoli-Arzelà]], $\exists$ a subsequence $(\phi_{n_k})_{k \in \mathbb{N}}$ which cgs uniform on $E$..,
 
 $$
-P_V(\alpha x + \alpha' x') = \alpha P_V x + \alpha' P_V x'
+\begin{aligned}
+\|\mathcal{L}^* \Phi_{n_k} - \mathcal{L}^* \Phi_{n_l}\|_{X^*} &= \sup_{\|x\|_X \le 1} | {}_{X^*} \langle \mathcal{L}^* \Phi_{n_k} - \mathcal{L}^* \Phi_{n_l}, x \rangle_X | \\
+&= \sup_{\|x\|_X \le 1} | {}_{Y^*} \langle \Phi_{n_k} - \Phi_{n_l}, \mathcal{L}x \rangle_Y | \\
+&= \sup_{\|x\|_X \le 1} | \Phi_{n_k}(\mathcal{L}x) - \Phi_{n_l}(\mathcal{L}x) | \to 0 \quad \text{as } k,l \to \infty \ ((\phi_{n_k}) \text{ cgs uniform on } E)
+\end{aligned}
 $$
 
-$\Rightarrow$ linearity of $P_V$.
+$\therefore (\mathcal{L}^* \Phi_{n_k})_{k \in \mathbb{N}}$ is Cauchy in $X^*$ and hence it cgs.
 
-$$
-x = y + z = P_V x + P_{V^\perp} x
-$$
+---
 
-or $P_{V^\perp} x = x - P_V x = (I - P_V)x$.
-$P_{V^\perp}$ is also linear.
+## Integral operator on $C[a,b]$ :
 
-$$
-x = P_V x + P_{V^\perp} x
-$$
+Suppose $K : [a,b] \times [a,b] \to \mathbb{R}$ is a continuous function. Define $\mathcal{L} : C[a,b] \to C[a,b]$
+as 
+$$ \mathcal{L}(f)(x) := \int_a^b K(x,y) f(y) dy $$
 
-$$
-\|x\|^2 = \|P_V x + P_{V^\perp} x\|^2 = \|P_V x\|^2 + \|P_{V^\perp} x\|^2
-$$
+Then, $\mathcal{L}$ is a compact operator.
 
-$$
-\|P_V x\|^2 = \|x\|^2 - \|P_{V^\perp} x\|^2 \le \|x\|^2
-$$
+Let $B := \{ f \in C[a,b] : \|f\|_\infty \le 1 \}$ be the closed unit ball of $C[a,b]$.
+We ST $\mathcal{L}(B)$ is relatively compact.
+i.e., To Show That: $\mathcal{L}(B)$ is uniform bounded & equicontinuous.
+Since $K$ is continuous on $[a,b] \times [a,b]$, it is bounded:
+$$ |K(x,y)| \le M \quad \forall (x,y) \in [a,b] \times [a,b] $$
 
+If $f \in B$,
 $$
-\|P_V x\| \le \|x\| \Rightarrow \|P_V\|_{\mathcal{L}(H,H)} \le 1
-$$
-
-Similarly, $\|P_{V^\perp}\|_{\mathcal{L}(H,H)} \le 1$.
-
-If $V \neq \{0\}$, then $\|P_V\| = 1$.
-Choose $v \in V$ such that $\|v\| = 1$.
-Then $P_V(v) = v$.
-
-$$
-1 = \|v\| = \|P_V(v)\| \le \sup_{\|u\|=1} \|P_V(u)\| = \|P_V\|
+\begin{aligned}
+|\mathcal{L}(f)(x)| &= \left| \int_a^b K(x,y) \cdot f(y) dy \right| \\
+&\le \int_a^b M \cdot \sup_{y \in [a,b]} |f(y)| dy \\
+&= M \|f\|_\infty (b-a) \le M(b-a)
+\end{aligned}
 $$
 
-$\Rightarrow \|P_V\|_{\mathcal{L}(H,H)} \ge 1$.
-$\Rightarrow \|P_V\| = 1 = \|P_{V^\perp}\|_{\mathcal{L}(H,H)}$.
+$\implies \|\mathcal{L}(f)\|_\infty = \sup_{x \in [a,b]} |\mathcal{L}(f)(x)| \le M(b-a) \quad \forall f \in B$
+$\implies \mathcal{L}(B)$ is uniormf bounded.
+
+Since $K$ is uniform continuous, given any $\varepsilon > 0, \exists \delta > 0$ s.t
+$$ |K(x,y) - K(x',y)| < \varepsilon \quad \forall (x,y), (x',y) \in [a,b] \times [a,b] $$
+satisfying $|x - x'| + |y - y'| < \delta$.
+
+---
+
+Let $\varepsilon > 0$ given.
+$$
+\begin{aligned}
+|\mathcal{L}(f)(x) - \mathcal{L}(f)(x')| &\le \int_a^b |K(x,y) - K(x',y)| \cdot |f(y)| dy \\
+&\le \int_a^b \varepsilon \cdot \|f\|_\infty dy \\
+&\le \varepsilon(b-a).
+\end{aligned}
+$$
+
+$\forall (x,y), (x',y) \in [a,b] \times [a,b]$ with $|x - x'| < \delta$
+
+$\implies \mathcal{L}(B)$ is uniform  equicontinuous.

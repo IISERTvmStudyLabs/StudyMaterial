@@ -1,106 +1,115 @@
 ---
 course: Functional Analysis
 Lecture:
-date: 2026-11-05
+date: 2026-10-29
 ---
-**Point Spectrum:** 
+5. $$
+\dim \ker (I-K) = \dim \ker (I-K^*)
 $$
-\sigma_p(L) = \{\lambda \in \mathbb{K} : \lambda I - L \text{ is not injective}\}
 $$
+N = \ker (I-K), \quad M = \ker (I-K^*)
+$$
+By step 1, (Statement (1)), both $N$ and $M$ are finite dim.
 
-**Residual Spectrum:**
+**Step 7:** 
 $$
-\sigma_r(L) = \{\lambda \in \mathbb{K} : \lambda I - L \text{ is injective and Range}(\lambda I - L) \text{ is not dense}\}
+\dim N \ge \dim M
 $$
+Suppose not, i.e. $\dim N < \dim M$. Define an injective map $A_0 : N \to M$ that is not surjective. Extend it to $H$ by $A = A_0 P_N$ then $A \equiv 0$ on $N^\perp$, it is bdd and range $A$ is finite dim.
+Hence $A$ is cpt. Define $S = (I-K) - A = I - (K+A)$
+We show that $S$ is injective but not surjective, contradicting steps 5 and 6 ($K+A$ is cpt). Fix $u \in N$, $u = u_1 + u_2$ where $u_1 \in N$ and $u_2 \in N^\perp$, then
+$$
+S_u = ((I-K)-A)(u_1+u_2)
+$$
+$$
+= (I-K)(u_1+u_2) - A(u_1+u_2)
+$$
+$$
+= (I-K)u_2 - A u_1 \in R \quad (\in M - R^\perp)
+$$
+$\therefore S_u = 0 \implies$ by orthogonality $(I-K)u_2 = 0$ and $Au_1 = 0$
+$\implies u_2 \in N \cap N^\perp$ and $Au_1 = A_0 P_N u_1 = A_0 u_1 = 0 \implies u_1 = 0$ ($A_0$ is inject)
+$\therefore u_2 = 0$ and $u_1 = 0$ or $u=0$
+$\implies S$ is injective
 
-**Continuous Spectrum:** 
+Range $A \subsetneq M$ and choose $w \in M \setminus \text{Range } A$.
+Suppose $Su = w$. Write $u = u_1 + u_2, \quad u_1 \in N, \quad u_2 \in N^\perp$
 $$
-\sigma_c(L) = \{\lambda \in \mathbb{K} : \lambda I - L \text{ is injective and Range}(\lambda I - L) \text{ is dense}\}
+w = Su
 $$
-___
+$$
+= (I-K)u_2 - A u_1 \quad (\text{where } (I-K)u_2 \in R, \quad Au_1 \in M)
+$$
+$$
+= 0 - A u_1
+$$
+Thus $-Au_1 = w$, this is not possible as $w \in M \setminus \text{Range } A$.
+Hence $S$ can't be surjective.
+
+A contradiction to step 5 & 6 ($K+A$ is cpt) : $\dim N \ge \dim M$.
+
+**Step 8:** Reverse the inequality, apply step 7 to $K^*$.
+$$
+(I-K^*)^* = (I-K)
+$$
+By step 7, $\dim M \ge \dim N$.
+$\implies \dim N = \dim M$, proves statement (v).
+
+---
+
+# Spectral Theory of Compact Operators:
+
+# Definition: Invertible
+Let $X$ be Banach and $L \in \mathcal{L}(X)$. We say that $L$ is invertible if $\exists M \in \mathcal{L}(X)$ such that. $LM = ML = I$, the identity on $X$.
+* $M$ must be unique.
+* Denote it by $L^{-1}$.
+* $L$ is invertible $\iff$ $L$ is bijective.
+
+$L$ is invertible $\implies L$ is bijective, clear.
+$L$ is bijective $\implies$ set theoretic inverse $L^{-1} : X \to X$ exists.
+$L$ is bijective and $L$ is linear $\implies L^{-1}$ is linear.
+Bounded inverse (open mapping theorem) gives the boundedness of $L^{-1}$.
+
 ## Proposition
-Let $H$ be Hilbert, $L \in \mathcal{L}(H)$. Then
-$$
-[\text{Range}(\lambda I - L)]^\perp = \ker(\overline{\lambda} I - L^*)
-$$
-If $L$ is self adjoint ($L=L^*$), then its eigenvalues are real and eigenvectors corresponding to distinct eigenvalues are orthogonal. The residual spectrum $\sigma_r(L) = \emptyset$ (empty).
+Let $X$ be Banach, $L \in \mathcal{L}(X)$ and $\|L\|_{\mathcal{L}(X)} < 1$, then,
+1. $I-L$ is invertible
+2. $(I-L)^{-1} = \sum_{n=0}^{\infty} L^n$ (This series is called Neumann series)
+($\frac{1}{1-x} = 1 + x + \cdots, |x|<1 \to \text{Not Von Neumann}$)
 
-**Proof:**
-Let $y \in [\text{Range}(\lambda I - L)]^\perp \iff ((\lambda I - L)x, y) = 0 \quad \forall x \in H.$
+**Proof:** 
 $$
-\iff (x, (\overline{\lambda} I - L^*)y) = 0 \quad \forall x \in H.
+L^0 = I. \quad S_n = I + L + \cdots + L^n, \quad n \in \mathbb{N}.
 $$
+We show that $(S_n)_{n \in \mathbb{N}}$ is Cauchy in $\mathcal{L}(X)$.
 $$
-\iff (\overline{\lambda} I - L^*)y = 0 \implies y \in \ker(\overline{\lambda} I - L^*)
-$$
-
-Let $L=L^*$ and let $\lambda$ be an eigenvalue of $L$ with eigenvector $x$. 
-$$
-L x = \lambda x \implies (\lambda x, x) = (L x, x) = (x, L^* x) = (x, L x) = (x, \lambda x)
+\|L^n\|_{\mathcal{L}(X)} \le \|L\|^n_{\mathcal{L}(X)}
 $$
 $$
-\implies \lambda(x,x) = \overline{\lambda}(x,x)
+\|L^2 x\| = \|L(Lx)\| \le \|L\| \cdot \|Lx\| \le \|L\|^2 \cdot \|x\|
 $$
-Since $x \neq 0$, $\lambda = \overline{\lambda} \implies \lambda \in \mathbb{R}$.
-
-Let $L x_1 = \lambda_1 x_1, \quad L x_2 = \lambda_2 x_2 \implies \lambda_1 \neq \lambda_2$.
+Since $\|L\| < 1$, for $n > m$,
 $$
-\lambda_1(x_1, x_2) = (\lambda_1 x_1, x_2) = (L x_1, x_2) = (x_1, L x_2) = (x_1, \lambda_2 x_2) = \lambda_2(x_1, x_2) \quad (\text{since } \lambda_2 \text{ is real})
+\|S_n - S_m\| = \|L^{m+1} + \cdots + L^n\|_{\mathcal{L}(X)}
 $$
 $$
-\implies (\lambda_1 - \lambda_2)(x_1, x_2) = 0 \implies (x_1, x_2) = 0
+\le \|L\|^{m+1}_{\mathcal{L}(X)} + \cdots + \|L\|^n_{\mathcal{L}(X)} \to 0 \quad \text{as } n,m \to \infty
+$$
+$\implies (S_n)_{n \in \mathbb{N}}$ is Cauchy in $\mathcal{L}(X)$ and hence $S_n \to M \in \mathcal{L}(X)$.
+$$
+M = \sum_{n=0}^{\infty} L^n
 $$
 
-Finally, let $\lambda \in \mathbb{R}$ s.t Range$(\lambda I - L)$ is not dense. 
-Since Range$(\lambda I - L)$ is not dense:
+For $n \in \mathbb{N}$,
 $$
-[\text{Range}(\lambda I - L)]^\perp = \ker(\overline{\lambda} I - L^*) = \ker(\lambda I - L) \neq \{0\}
+L S_n = S_n L = S_{n+1} - I
 $$
+Now, $n \to \infty \implies$
 $$
-\implies \lambda \in \sigma_p(L)
-$$
-Hence $\lambda \notin \sigma_r(L)$. Thus $\sigma_r(L) = \emptyset$.
-___
-## Theorem: (Spectral theorem for compact operators in Hilbert Spaces):
-Let $H$ be an infinite dimensional Hilbert space and $K \in \mathcal{L}(H)$ be compact. Then:
-1. $0 \in \sigma(K)$.
-2. $\sigma(K) \setminus \{0\} = \sigma_p(K) \setminus \{0\}$, and every nonzero eigenvalue has finite multiplicity.
-3. Either $\sigma_p(K)$ is finite or $0$ is the only accumulation point ($\lim_{n \to \infty} \lambda_n = 0$). $\sigma_p(K) = \{\lambda_n : n \in \mathbb{N}\}$.
-
-**Proof:**
-1. Suppose $0 \notin \sigma(K) \implies 0 \cdot I - K = -K$ is invertible. 
-$$
-\implies I = K K^{-1}
-$$
-$I$ is a compact operator. Not possible, as $H$ is infinite dimensional. $\implies 0 \in \sigma(K)$.
-
-2. If $\lambda \in \sigma(K)$, then $\lambda \in \sigma_p(K)$ for $\lambda \neq 0$.
-Let $\lambda \neq 0$, then $\lambda I - K = \lambda(I - K/\lambda)$.
-$I - K/\lambda$ is injective $\iff$ it is bijective (by Fredholm).
-Conversely, if it is not injective:
-$$
-\implies \ker(I - K/\lambda) \neq \{0\} \implies \ker(\lambda I - K) \neq \{0\} \implies \lambda \text{ is an eigenvalue.}
-$$
-Hence $\lambda I - K$ is not invertible $\iff \ker(\lambda I - K) \neq \{0\}$.
-$$
-\sigma(K) \setminus \{0\} = \sigma_p(K) \setminus \{0\}
+L M = M L = M - I
 $$
 $$
-\dim \ker(\lambda I - K) = \dim \ker(I - K/\lambda) < \infty \quad (\text{Fredholm statement 1})
-$$
-
-3.  Every eigenvalue satisfies $|\lambda| \le \|K\|$.
-If $(\lambda_n)$ is a sequence of distinct eigenvalues, $\lambda_n \to \lambda$.
-Let $K x_n = \lambda_n x_n$. Let $H_n := \text{span}\{x_1, x_2, \dots, x_n\}$. $H_n$ are closed.
-$(x_n)$ are linearly independent. Choose $e_n \in H_n \cap H_{n-1}^\perp$, $\|e_n\| = 1$.
-Now $K H_n \subset H_n$ and $(\lambda I - K)H_n \subset H_{n-1}$.
-For $m < n$:
-$$
-K e_n - K e_m = \lambda_n e_n + K e_n - \lambda_n e_n - K e_m = \lambda_n e_n + (\dots \in H_{n-1})
+\implies M(I-L) = (I-L)M = I
 $$
 $$
-\implies \|K e_n - K e_m\| \ge |\lambda_n|
+\text{or } M = (I-L)^{-1} = \sum_{n=0}^{\infty} L^n
 $$
-If $\lambda_n \to \lambda \neq 0$, then for $n$ large enough $|\lambda_n| > |\lambda|/2$. $(K e_n)$ can't be Cauchy.
-
----

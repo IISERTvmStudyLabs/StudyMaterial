@@ -1,177 +1,91 @@
 ---
 course: Functional Analysis
 Lecture:
-date: 5 October
+date: 2026-09-29
 ---
+$\mathcal{L}: X \to Y$ is bounded linear
+$\mathcal{L}^*: Y^* \to X^*, \quad {}_{X^*} \langle \mathcal{L}^* \phi, x \rangle_X = {}_{Y^*} \langle \phi, \mathcal{L}x \rangle_Y, \quad  x \in X \;, \phi \in Y^*, \text{ the adjoint of } \mathcal{L}.$
 
-$B_{1}=\overline{B_{1}(0)}$ be the closed unit ball of $X$.
+## Adjoint:
 
-Since $L$ is compact, $E=\overline{L B_{1}}$ is compact in $Y$.
+## Theorem 1
+Let $\mathcal{L} \in \mathcal{L}(X, Y)$ and let $\mathcal{L}^*: Y^* \to X^*$ be its adjoint. Then,
+1. $\mathcal{L}^* \in \mathcal{L}(Y^*, X^*)$, $\|\mathcal{L}^*\|_{\mathcal{L}(Y^*, X^*)} = \|\mathcal{L}\|_{\mathcal{L}(X,Y)}$
+2. $\text{Ker } \mathcal{L} = \underbrace{(\text{Range } \mathcal{L}^*)^\perp}_{ \text{ pre-annihilator of Ker }  \mathcal{L}}$  , $\text{Ker } \mathcal{L}^* = \underbrace{(\text{Range } \mathcal{L})^\perp}_{\text{annihilator of Range } \mathcal{L}}$
 
-We claim that $(\phi_n)$ satisfies the conditions of Arzela - Ascoli
-
-
-$$
-|\phi_{n}(y_{1})-\phi_{n}(y_{2})| \le \|\phi_{n}\|_{Y^*}\|y_{1}-y_{2}\|_{Y}
-$$
-
-
-
-$$
-\le \|y_{1}-y_{2}\|_{Y}
-$$
-
-
-$\Rightarrow$ uniform equicontinuity of $(\phi_{n})_{n\in\mathbb{N}}$
-
+**Proof:** 
+1. Clearly, $\mathcal{L}^* \in \mathcal{L}(Y^*, X^*)$
 
 $$
-\sup_{y\in E} |\phi_{n}(y)| \le \sup_{y\in E} \|\phi_n\|_{Y^*} \|y\|_Y \le \sup_{y\in E} \|y\|_Y
+\begin{aligned}
+\|\mathcal{L}^*\|_{\mathcal{L}(Y^*, X^*)} &= \sup_{\substack{\phi \in Y^* \\ \|\phi\|_{Y^*} = 1}} \|\mathcal{L}^* \phi\|_{X^*} \\
+&= \sup_{\substack{\phi \in Y^* \\ \|\phi\|_{Y^*} = 1}} \sup_{\substack{x \in X \\ \|x\|_X = 1}} |{}_{X^*} \langle \mathcal{L}^* \phi, x \rangle_X| \\
+&= \sup_{\substack{\phi \in Y^* \\ \|\phi\|_{Y^*} = 1}} \sup_{\substack{x \in X \\ \|x\|_X = 1}} |{}_{Y^*} \langle \phi, \mathcal{L}x \rangle_Y| \\
+&= \sup_{\substack{x \in X \\ \|x\|_X = 1}} \|\mathcal{L}x\|_Y \\
+&= \|\mathcal{L}\|_{\mathcal{L}(X, Y)} \quad (\text{Pd})
+\end{aligned}
 $$
 
-
-$\phi_{n}:E\rightarrow \mathbb{K}$
-
+2. $\text{Ker } \mathcal{L} = (\text{Range } \mathcal{L}^*)_\perp$
 
 $$
-|\phi_{n}(y)| \le \|\phi_{n}\|_{Y^*}\|y\|_{Y} \le \|y\|_{Y} \le \sup_{y\in E} \|y\|
+\begin{aligned}
+x \in \text{Ker } \mathcal{L} &\iff \mathcal{L}x = 0 \text{ in } Y \\
+&\iff {}_{Y^*} \langle \phi, \mathcal{L}x \rangle_Y = 0 \ \forall \phi \in Y^* \\
+&\iff {}_{X^*} \langle \mathcal{L}^* \phi, x \rangle_X = 0 \ \forall \phi \in Y^* \\
+&\iff x \in (\text{Range } \mathcal{L}^*)_\perp 
+\end{aligned}
 $$
 
-
-$\Rightarrow (\phi_n)$ uniformly bdd on E
-
-By Arzela-Ascoli, $\exists$ a subsequence $(\phi_{n_k})_{k\in\mathbb{N}}$ which converges uniformly on E.
-
+$\text{Ker } \mathcal{L}^* = (\text{Range } \mathcal{L})^\perp$
 
 $$
-|\phi_{n}(y)| \le \|\phi_{n}\|_{Y^*}\|y\|_{Y} \le \|y\|_{Y} \le \sup_{y\in E}\|y\| = M < \infty
+\begin{aligned}
+\phi \in \text{Ker } \mathcal{L}^* &\iff \mathcal{L}^* \phi = 0 \text{ in } X^* \\
+&\iff {}_{X^*} \langle \mathcal{L}^* \phi, x \rangle_X = 0 \ \forall x \in X \\
+&\iff {}_{Y^*} \langle \phi, \mathcal{L}x \rangle_Y = 0 \ \forall x \in X \\
+&\iff \phi \in (\text{Range } \mathcal{L})^\perp 
+\end{aligned}
 $$
 
+---
+# Compact Operators:
 
-$\Rightarrow (\phi_n)$ is uniformly bdd on E.
+$\overline{B_1(0)}$ can't be compact in an infinite dimensional Banach space $X$. 
+e.g. $X = l_2, \ (e_n)_{n \in \mathbb{N}}$
 
-By Arzela-Ascoli on E $\exists$ subsequence $(\phi_{n_k})_{k\in\mathbb{N}}$ which converge uniformly
+## Compact Linear Operator
+Let $X$ and $Y$ be Banach. A bounded linear map $\mathcal{L}: X \to Y$ is called compact if, $\forall$ bounded sequence $(x_n)_{n \in \mathbb{N}} \subset X$, $\exists$ subsequence $(x_{n_k})_{k \in \mathbb{N}}$ such that. $(\mathcal{L}x_{n_k})_{k \in \mathbb{N}}$ cgs in $Y$.
 
+$\mathcal{L} \text{ is compact} \iff \text{for every bounded } U \subset X, \ \overline{\mathcal{L}(U)} \text{ is compact in } Y.$
 
-$$
-\|L^*\phi_{n_k} - L^*\phi_{n_l}\|_{X^*} = \sup_{\|x\|_X \le 1} |\langle L^*\phi_{n_k} - L^*\phi_{n_l}, x \rangle|
-$$
+**Proof:**
+($\impliedby$) clear
 
+($\implies$) Let $U \subset X$ be bounded. TST $\overline{\mathcal{L}(U)}$ is compact, i.e., every sequence in $\overline{\mathcal{L}(U)}$ has a subsequence that cgs in $\overline{\mathcal{L}(U)}$.
 
+Let $(y_n)_{n \in \mathbb{N}} \subset \overline{\mathcal{L}(U)}$. By the defintion of closure, $\exists z_n \in \mathcal{L}(U)$ such that. 
 
-$$
-= \sup_{\|x\|_X \le 1} |\phi_{n_k}(Lx) - \phi_{n_l}(Lx)|
-$$
+$$ \|y_n - z_n\|_Y < 1/n \ \forall n $$
 
+Since $z_n \in \mathcal{L}(U)$, $z_n = \mathcal{L}x_n$ for $x_n \in U \implies (x_n)_{n \in \mathbb{N}} \subset U$ & $U$ is bounded. 
+Hence $(x_n)$ is bounded.
 
-$Lx \in E$
+Since $\mathcal{L}: X \to Y$ is compact, $(x_n)$ has a subsequence $(x_{n_k})$ such that. 
+$(z_{n_k}) = (\mathcal{L}x_{n_k})$ cgs to $y \in Y$.
 
-
-$$
-= \sup_{\|x\|_X \le 1} |\phi_{n_k}(Lx) - \phi_{n_l}(Lx)|
-$$
-
-
-
-$$
-\rightarrow 0 \quad \text{as } k, l \rightarrow \infty
-$$
-
-
-$(\phi_{n_k})$ converges uniformly on E.
-
-$(\phi_{n_k})$ is Cauchy in $X^*$ and hence it converges.
-
-Integral Operator
-
-$C[a,b]$
-
-Suppose $k : [a,b] \times [a,b] \rightarrow \mathbb{R}$ is a cont. fn.
-
-Define $L : C[a,b] \rightarrow C[a,b]$ as
-
+Now, 
 
 $$
-L(f)(x) := \int_{a}^{b} k(x,y) f(y) dy
+\begin{aligned}
+\|y_{n_k} - y\|_Y &\le \|y_{n_k} - z_{n_k}\|_Y + \|z_{n_k} - y\|_Y \\
+&< 1/n_k + \|z_{n_k} - y\|_Y \\
+&\to 0 \text{ as } k \to \infty
+\end{aligned}
 $$
 
+$z_{n_k} \to y \text{ as } k \to \infty$ & $z_{n_k} \in \mathcal{L}(U)$
 
-Then $L$ is a compact operator.
+Hence, $y \in \overline{\mathcal{L}(U)}$.
 
-Let $B := \{f \in C[a,b] : \|f\|_\infty \le 1\}$ be the closed unit ball of $C[a,b]$.
-
-We show that $L(B)$ is relatively compact -
-
-i.e. to show that $L(B)$ is uniformly bdd. and equicont.
-
-Since $k$ is cont. on $[a,b] \times [a,b]$, $k$ is bdd:
-
-
-$$
-|k(x,y)| \le M \quad \forall (x,y) \in [a,b] \times [a,b]
-$$
-
-
-If $f \in B$,
-
-
-$$
-|L(f)(x)| \le \int_{a}^{b} |k(x,y)| \cdot |f(y)| dy
-$$
-
-
-
-$$
-\le \int_{a}^{b} M \cdot \sup_{y\in[a,b]} |f(y)| dy
-$$
-
-
-
-$$
-= M \|f\|_\infty (b-a) \le M(b-a)
-$$
-
-
-
-$$
-\Rightarrow \|L(f)\|_\infty = \sup_{x\in[a,b]} |L(f)(x)| \le M(b-a)
-$$
-
-
-
-$$
-\Rightarrow L(B) \text{ is uniformly bdd.}
-$$
-
-
-Since $k$ is uniformly cont., given any $\epsilon > 0$, $\exists \delta > 0$ s.t.
-
-
-$$
-|k(x,y) - k(x',y')| < \frac{\epsilon}{b-a} \quad \forall (x,y), (x',y') \in [a,b] \times [a,b] \text{ satisfying } |x - x'| + |y - y'| < \delta
-$$
-
-
-Let $\epsilon > 0$ be given
-
-
-$$
-|L(f)(x) - L(f)(x')| \le \int_{a}^{b} |k(x,y) - k(x',y)| |f(y)| dy
-$$
-
-
-
-$$
-\le \int_{a}^{b} \frac{\epsilon}{b-a} \cdot \|f\|_\infty dy
-$$
-
-
-
-$$
-\le \epsilon
-$$
-
-
-$\forall f \in B$ for $(x,y), (x',y) \in [a,b] \times [a,b]$ with $|x - x'| < \delta$
-
-$\Rightarrow L(B)$ is uniformly equicont.
+$$ \therefore \overline{\mathcal{L}(U)} \text{ is compact} $$

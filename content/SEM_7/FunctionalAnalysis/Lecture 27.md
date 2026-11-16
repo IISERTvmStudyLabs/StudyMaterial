@@ -1,158 +1,59 @@
 ---
 course: Functional Analysis
-Lecture: "27"
-date: 2028-10-15
+Lecture:
+date: 2026-10-08
 ---
-## Corollary: Every Hilbert space is reflexive.
-Let $\Phi \in H^{**}$. Show that $\exists x \in H$ such that $\Phi(\phi) = \phi(x)$
-or $J(H) = H^{**}$
-$J(x) = J_x = \Phi$
-
-Recall the def$^n$ of the adjoint.
-If $L \in \mathcal{L}(X,Y)$, $X,Y$ - Banach, the adjoint $L^* \in \mathcal{L}(Y^*,X^*)$ satisfies
+We say that $x, y$ are orthogonal if $(x, y) = 0$.
+For $S \subset H$, the orthogonal complement $S^\perp$ is defined by
 
 $$
-\langle L^* \phi, x \rangle_{X^*, X} = \langle \phi, L x \rangle_{Y^*, Y} \quad \forall x \in X, \phi \in Y^*
+S^\perp = \{y \in H : (y, x) = 0, \forall x \in S\}
 $$
 
-Suppose $X$ and $Y$ are Hilbert, $\Psi_X : X^* \rightarrow X$ and $\Psi_Y : Y^* \rightarrow Y$ are the F. Riesz isometries on $X$ and $Y$ resp. (conjugate linear)
-
-Define $L' : Y \rightarrow X$
-
-$$
-L' := \Psi_X \circ L^* \circ \Psi_Y^{-1}
-$$
-
-$L'$ is bdd, linear. $\|L'\|_{\mathcal{L}(Y,X)} = \|L\|_{\mathcal{L}(X,Y)}$
-
-Claim:
+Is $S^\perp$ a closed subspace?
+If $(y_n) \subset S^\perp$ and if $y_n \rightarrow y$, then for any $x \in S$:
 
 $$
-(Lx, y)_Y = (x, L'y)_X \quad \forall x \in X \quad \forall y \in Y.
+|(y, x)| = |(y - y_n + y_n, x)| \le |(y - y_n, x)| + |(y_n, x)| \le \|y - y_n\| \|x\| \rightarrow 0
 $$
 
-Let $y \in Y$ and let $\phi_y = \Psi_Y^{-1}(y) \in Y^*$
-where $\phi_y(z) = (z, y) \quad \forall z \in Y.$
 
-$$
-L'y = (\Psi_X \circ L^* \circ \Psi_Y^{-1})(y)
-$$
+# Theorem (Orthogonal Projection)
 
+Let $H$ be a Hilbert space and let $V$ be a closed subspace. Then:
+1. $H = V \oplus V^\perp$, that is, $\forall x \in H, \exists! y \in V \text{ and } z \in V^\perp \text{ such that } x = y + z$
+2. $y$ is the unique element of $V$ having minimal distance from $x$; $y = P_V(x)$
+3. $z$ is the unique element of $V^\perp$ having minimal distance from $x$; $z = P_{V^\perp}(x)$
+4. The orthogonal projections $x \mapsto P_V(x)$ and $x \mapsto P_{V^\perp}(x)$ are bounded linear maps with norms $\le 1$. In fact, if $V \neq \{0\}$ (non-trivial), then
 $$
-= (\Psi_X \circ L^*)(\Psi_Y^{-1}(y))
+\|P_V\|_{\mathcal{L}(H,H)} = \|P_{V^\perp}\|_{\mathcal{L}(H)} = 1
 $$
-
+## Proof
+**Step 1:** Let $x \in H$ be arbitrary, but fixed. Let $d = \text{dist}(x, V) = \inf_{y \in V} \|x - y\|$. Let $(y_n) \subset V$ such that $\lim_{n \rightarrow \infty} \|x - y_n\|_H = d$.
+We know that $(y_n)$ is Cauchy and since $V$ is closed,
 $$
-= (\Psi_X \circ L^*)(\phi_y)
+y = \lim_{n \rightarrow \infty} y_n \in V
 $$
-
+$\exists y \in V$ such that $y_n \rightarrow y$ and $\|x - y\| = d$. To show that $(y_n)$ is Cauchy:
+By parallelogram identity,
 $$
-= \Psi_X(L^* \phi_y)
+\|u + v\|_H^2 + \|u - v\|_H^2 = 2\|u\|_H^2 + 2\|v\|_H^2
 $$
-
-$L^* \phi_y \in X^*$ and $L'y = \Psi_X(L^* \phi_y)$, shows that $L'y$ is the unique element in $X$ representing $L^* \phi_y \in X^*$ (by F. Riesz)
-
+Let $u = x - y_n, v = x - y_m$,
 $$
-\langle L^* \phi_y, x \rangle_X = (x, L'y)_X \quad (\#)
+\|2x - y_n - y_m\|_H^2 + \|y_n - y_m\|_H^2 = 2\|x - y_n\|_H^2 + 2\|x - y_m\|_H^2
 $$
-
-$\rightarrow$ But
-
 $$
-\langle L^* \phi_y, x \rangle_X = \langle \phi_y, Lx \rangle_Y \quad (\#\#)
+\|y_n - y_m\|_H^2 = 2\|x - y_n\|_H^2 + 2\|x - y_m\|_H^2 - 4\left\|x - \frac{y_n + y_m}{2}\right\|_H^2
 $$
-
+Since $y_n, y_m \in V$, $\frac{y_n + y_m}{2} \in V$ and
 $$
-= \phi_y(Lx)
+\left\|x - \frac{y_n + y_m}{2}\right\|^2 \ge d^2
 $$
-
 $$
-= (Lx, y)_Y
+\|y_n - y_m\|^2 \le 2\|x - y_n\|^2 + 2\|x - y_m\|^2 - 4d^2
 $$
-
-From $(\#)$ and $(\#\#)$
-
 $$
-(Lx, y)_Y = (x, L'y)_X \quad \forall x \in X, y \in Y
+\le 2d^2 + 2d^2 - 4d^2 = 0 \quad \text{as } n, m \rightarrow \infty
 $$
-
-$L'$ - Hilbert adjoint whereas $L^*$ - Banach adjoint.
-We will still denote $L'$ by $L^*$ and $L^*$ by $L^*$, hence, the adjoint $L^* \in \mathcal{L}(Y,X)$ defined by
-
-$$
-(Lx, y)_Y = (x, L^* y)_X
-$$
-
-Weak convergence in Hilbert Spaces
-Recall
-$x_n \rightharpoonup x$ means
-
-$$
-\phi(x_n) \rightarrow \phi(x) \quad \forall \phi \in X^*
-$$
-
-$$
-\Leftrightarrow (x_n, y)_X \rightarrow (x, y)_X \quad \forall y \in X.
-$$
-
-# Theorem: (Weak convergence and compact operators)
-Let $H$ be Hilbert, $x_n \rightharpoonup x$ in $H$, and $L \in \mathcal{L}(H,H)$ be compact. Then
-
-$$
-\lim_{n\rightarrow\infty} \|L x_n - L x\|_H \rightarrow 0 \quad \text{or } L x_n \rightarrow L x \text{ (strong).}
-$$
-
-Proof:
-Since $x_n \rightharpoonup x$ in $H$, by Banach-Steinhaus $(x_n)_{n\in\mathbb{N}}$ is bdd. Since $L$ is compact, $\exists$ a subseq $(x_{n_k})_k \subset (x_n)_{n\in\mathbb{N}}$ s.t. $(L x_{n_k})$ converges in $H$.
-Let $L x_{n_k} \rightarrow y \in H$.
-
-By the def$^n$ of the adjoint:
-
-$$
-(L x_n - L x, z)_H = (L(x_n - x), z)_H
-$$
-
-$$
-= (x_n - x, L^* z)_H \rightarrow 0 \quad \forall z \in H.
-$$
-
-Since $x_n \rightharpoonup x$ in $H$.
-But $L x_{n_k} \rightarrow y$.
-By the uniqueness of weak limit $Lx = y$.
-For any subseq $(x_{n_k})$ of $(x_n)$ s.t. $L x_{n_k} \rightarrow L x$ as $k \rightarrow \infty$.
-
-We show that the entire seq $(L x_n)$ converges strongly to $L x$.
-If not (then there is a subseq which doesn't converge)
-$\exists \epsilon_0 > 0$ and a subseq $(x_{n_l})$ of $(x_n)$ s.t.
-
-$$
-\|L x_{n_l} - L x\|_H \ge \epsilon_0 \quad \forall l \in \mathbb{N}. \quad (\#\#)
-$$
-
-Now $(x_{n_l})$ is a bdd seq and $L$ is compact.
-As before we can extract a subseq (still denoted by $(x_{n_l})$) so that $L x_{n_l} \rightarrow z$.
-But then $z = L x$.
-Not possible bc of $(\#\#)$.
-
-Eg:
-Let $H = L^2(0,\pi)$ and $f_n(x) = \sin^2 n x$.
-$f_n \rightharpoonup \frac{1}{2}$ in $L^2(0,\pi)$ (Highly oscillatory)
-Means that
-
-$$
-(f_n, g)_2 \rightarrow (1/2, g)_2 \quad \forall g \in L^2(0,\pi)
-$$
-
-$$
-\int_0^\pi f_n(x) g(x) dx \rightarrow \int_0^\pi \frac{1}{2} g(x) dx
-$$
-
-$g = \chi_{[a,b]} \quad [a,b] \subset (0,\pi)$
-$g = s$ a simple fn
-
-$L : L^2(0,\pi) \rightarrow L^2(0,\pi)$ integral operator
-
-$$
-L(f)(x) := \int_0^\pi f(y) dy \quad \forall f \in L^2(0,\pi)
-$$
-_______
+y$\Rightarrow (y_n)$ is Cauchy.

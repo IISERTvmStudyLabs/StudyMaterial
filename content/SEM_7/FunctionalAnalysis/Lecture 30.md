@@ -1,115 +1,158 @@
 ---
 course: Functional Analysis
-Lecture:
-date: 2026-10-29
+Lecture: "27"
+date: 2028-10-15
 ---
-5. $$
-\dim \ker (I-K) = \dim \ker (I-K^*)
-$$
-$$
-N = \ker (I-K), \quad M = \ker (I-K^*)
-$$
-By step 1, (Statement (1)), both $N$ and $M$ are finite dim.
+## Corollary: Every Hilbert space is reflexive.
+Let $\Phi \in H^{**}$. Show that $\exists x \in H$ such that $\Phi(\phi) = \phi(x)$
+or $J(H) = H^{**}$
+$J(x) = J_x = \Phi$
 
-**Step 7:** 
-$$
-\dim N \ge \dim M
-$$
-Suppose not, i.e. $\dim N < \dim M$. Define an injective map $A_0 : N \to M$ that is not surjective. Extend it to $H$ by $A = A_0 P_N$ then $A \equiv 0$ on $N^\perp$, it is bdd and range $A$ is finite dim.
-Hence $A$ is cpt. Define $S = (I-K) - A = I - (K+A)$
-We show that $S$ is injective but not surjective, contradicting steps 5 and 6 ($K+A$ is cpt). Fix $u \in N$, $u = u_1 + u_2$ where $u_1 \in N$ and $u_2 \in N^\perp$, then
-$$
-S_u = ((I-K)-A)(u_1+u_2)
-$$
-$$
-= (I-K)(u_1+u_2) - A(u_1+u_2)
-$$
-$$
-= (I-K)u_2 - A u_1 \in R \quad (\in M - R^\perp)
-$$
-$\therefore S_u = 0 \implies$ by orthogonality $(I-K)u_2 = 0$ and $Au_1 = 0$
-$\implies u_2 \in N \cap N^\perp$ and $Au_1 = A_0 P_N u_1 = A_0 u_1 = 0 \implies u_1 = 0$ ($A_0$ is inject)
-$\therefore u_2 = 0$ and $u_1 = 0$ or $u=0$
-$\implies S$ is injective
+Recall the def$^n$ of the adjoint.
+If $L \in \mathcal{L}(X,Y)$, $X,Y$ - Banach, the adjoint $L^* \in \mathcal{L}(Y^*,X^*)$ satisfies
 
-Range $A \subsetneq M$ and choose $w \in M \setminus \text{Range } A$.
-Suppose $Su = w$. Write $u = u_1 + u_2, \quad u_1 \in N, \quad u_2 \in N^\perp$
 $$
-w = Su
-$$
-$$
-= (I-K)u_2 - A u_1 \quad (\text{where } (I-K)u_2 \in R, \quad Au_1 \in M)
-$$
-$$
-= 0 - A u_1
-$$
-Thus $-Au_1 = w$, this is not possible as $w \in M \setminus \text{Range } A$.
-Hence $S$ can't be surjective.
-
-A contradiction to step 5 & 6 ($K+A$ is cpt) : $\dim N \ge \dim M$.
-
-**Step 8:** Reverse the inequality, apply step 7 to $K^*$.
-$$
-(I-K^*)^* = (I-K)
-$$
-By step 7, $\dim M \ge \dim N$.
-$\implies \dim N = \dim M$, proves statement (v).
-
----
-
-# Spectral Theory of Compact Operators:
-
-# Definition: Invertible
-Let $X$ be Banach and $L \in \mathcal{L}(X)$. We say that $L$ is invertible if $\exists M \in \mathcal{L}(X)$ such that. $LM = ML = I$, the identity on $X$.
-* $M$ must be unique.
-* Denote it by $L^{-1}$.
-* $L$ is invertible $\iff$ $L$ is bijective.
-
-$L$ is invertible $\implies L$ is bijective, clear.
-$L$ is bijective $\implies$ set theoretic inverse $L^{-1} : X \to X$ exists.
-$L$ is bijective and $L$ is linear $\implies L^{-1}$ is linear.
-Bounded inverse (open mapping theorem) gives the boundedness of $L^{-1}$.
-
-## Proposition
-Let $X$ be Banach, $L \in \mathcal{L}(X)$ and $\|L\|_{\mathcal{L}(X)} < 1$, then,
-1. $I-L$ is invertible
-2. $(I-L)^{-1} = \sum_{n=0}^{\infty} L^n$ (This series is called Neumann series)
-($\frac{1}{1-x} = 1 + x + \cdots, |x|<1 \to \text{Not Von Neumann}$)
-
-**Proof:** 
-$$
-L^0 = I. \quad S_n = I + L + \cdots + L^n, \quad n \in \mathbb{N}.
-$$
-We show that $(S_n)_{n \in \mathbb{N}}$ is Cauchy in $\mathcal{L}(X)$.
-$$
-\|L^n\|_{\mathcal{L}(X)} \le \|L\|^n_{\mathcal{L}(X)}
-$$
-$$
-\|L^2 x\| = \|L(Lx)\| \le \|L\| \cdot \|Lx\| \le \|L\|^2 \cdot \|x\|
-$$
-Since $\|L\| < 1$, for $n > m$,
-$$
-\|S_n - S_m\| = \|L^{m+1} + \cdots + L^n\|_{\mathcal{L}(X)}
-$$
-$$
-\le \|L\|^{m+1}_{\mathcal{L}(X)} + \cdots + \|L\|^n_{\mathcal{L}(X)} \to 0 \quad \text{as } n,m \to \infty
-$$
-$\implies (S_n)_{n \in \mathbb{N}}$ is Cauchy in $\mathcal{L}(X)$ and hence $S_n \to M \in \mathcal{L}(X)$.
-$$
-M = \sum_{n=0}^{\infty} L^n
+\langle L^* \phi, x \rangle_{X^*, X} = \langle \phi, L x \rangle_{Y^*, Y} \quad \forall x \in X, \phi \in Y^*
 $$
 
-For $n \in \mathbb{N}$,
+Suppose $X$ and $Y$ are Hilbert, $\Psi_X : X^* \rightarrow X$ and $\Psi_Y : Y^* \rightarrow Y$ are the F. Riesz isometries on $X$ and $Y$ resp. (conjugate linear)
+
+Define $L' : Y \rightarrow X$
+
 $$
-L S_n = S_n L = S_{n+1} - I
+L' := \Psi_X \circ L^* \circ \Psi_Y^{-1}
 $$
-Now, $n \to \infty \implies$
+
+$L'$ is bdd, linear. $\|L'\|_{\mathcal{L}(Y,X)} = \|L\|_{\mathcal{L}(X,Y)}$
+
+Claim:
+
 $$
-L M = M L = M - I
+(Lx, y)_Y = (x, L'y)_X \quad \forall x \in X \quad \forall y \in Y.
 $$
+
+Let $y \in Y$ and let $\phi_y = \Psi_Y^{-1}(y) \in Y^*$
+where $\phi_y(z) = (z, y) \quad \forall z \in Y.$
+
 $$
-\implies M(I-L) = (I-L)M = I
+L'y = (\Psi_X \circ L^* \circ \Psi_Y^{-1})(y)
 $$
+
 $$
-\text{or } M = (I-L)^{-1} = \sum_{n=0}^{\infty} L^n
+= (\Psi_X \circ L^*)(\Psi_Y^{-1}(y))
 $$
+
+$$
+= (\Psi_X \circ L^*)(\phi_y)
+$$
+
+$$
+= \Psi_X(L^* \phi_y)
+$$
+
+$L^* \phi_y \in X^*$ and $L'y = \Psi_X(L^* \phi_y)$, shows that $L'y$ is the unique element in $X$ representing $L^* \phi_y \in X^*$ (by F. Riesz)
+
+$$
+\langle L^* \phi_y, x \rangle_X = (x, L'y)_X \quad (\#)
+$$
+
+$\rightarrow$ But
+
+$$
+\langle L^* \phi_y, x \rangle_X = \langle \phi_y, Lx \rangle_Y \quad (\#\#)
+$$
+
+$$
+= \phi_y(Lx)
+$$
+
+$$
+= (Lx, y)_Y
+$$
+
+From $(\#)$ and $(\#\#)$
+
+$$
+(Lx, y)_Y = (x, L'y)_X \quad \forall x \in X, y \in Y
+$$
+
+$L'$ - Hilbert adjoint whereas $L^*$ - Banach adjoint.
+We will still denote $L'$ by $L^*$ and $L^*$ by $L^*$, hence, the adjoint $L^* \in \mathcal{L}(Y,X)$ defined by
+
+$$
+(Lx, y)_Y = (x, L^* y)_X
+$$
+
+Weak convergence in Hilbert Spaces
+Recall
+$x_n \rightharpoonup x$ means
+
+$$
+\phi(x_n) \rightarrow \phi(x) \quad \forall \phi \in X^*
+$$
+
+$$
+\Leftrightarrow (x_n, y)_X \rightarrow (x, y)_X \quad \forall y \in X.
+$$
+
+# Theorem: (Weak convergence and compact operators)
+Let $H$ be Hilbert, $x_n \rightharpoonup x$ in $H$, and $L \in \mathcal{L}(H,H)$ be compact. Then
+
+$$
+\lim_{n\rightarrow\infty} \|L x_n - L x\|_H \rightarrow 0 \quad \text{or } L x_n \rightarrow L x \text{ (strong).}
+$$
+
+Proof:
+Since $x_n \rightharpoonup x$ in $H$, by Banach-Steinhaus $(x_n)_{n\in\mathbb{N}}$ is bdd. Since $L$ is compact, $\exists$ a subseq $(x_{n_k})_k \subset (x_n)_{n\in\mathbb{N}}$ s.t. $(L x_{n_k})$ converges in $H$.
+Let $L x_{n_k} \rightarrow y \in H$.
+
+By the def$^n$ of the adjoint:
+
+$$
+(L x_n - L x, z)_H = (L(x_n - x), z)_H
+$$
+
+$$
+= (x_n - x, L^* z)_H \rightarrow 0 \quad \forall z \in H.
+$$
+
+Since $x_n \rightharpoonup x$ in $H$.
+But $L x_{n_k} \rightarrow y$.
+By the uniqueness of weak limit $Lx = y$.
+For any subseq $(x_{n_k})$ of $(x_n)$ s.t. $L x_{n_k} \rightarrow L x$ as $k \rightarrow \infty$.
+
+We show that the entire seq $(L x_n)$ converges strongly to $L x$.
+If not (then there is a subseq which doesn't converge)
+$\exists \epsilon_0 > 0$ and a subseq $(x_{n_l})$ of $(x_n)$ s.t.
+
+$$
+\|L x_{n_l} - L x\|_H \ge \epsilon_0 \quad \forall l \in \mathbb{N}. \quad (\#\#)
+$$
+
+Now $(x_{n_l})$ is a bdd seq and $L$ is compact.
+As before we can extract a subseq (still denoted by $(x_{n_l})$) so that $L x_{n_l} \rightarrow z$.
+But then $z = L x$.
+Not possible bc of $(\#\#)$.
+
+Eg:
+Let $H = L^2(0,\pi)$ and $f_n(x) = \sin^2 n x$.
+$f_n \rightharpoonup \frac{1}{2}$ in $L^2(0,\pi)$ (Highly oscillatory)
+Means that
+
+$$
+(f_n, g)_2 \rightarrow (1/2, g)_2 \quad \forall g \in L^2(0,\pi)
+$$
+
+$$
+\int_0^\pi f_n(x) g(x) dx \rightarrow \int_0^\pi \frac{1}{2} g(x) dx
+$$
+
+$g = \chi_{[a,b]} \quad [a,b] \subset (0,\pi)$
+$g = s$ a simple fn
+
+$L : L^2(0,\pi) \rightarrow L^2(0,\pi)$ integral operator
+
+$$
+L(f)(x) := \int_0^\pi f(y) dy \quad \forall f \in L^2(0,\pi)
+$$
+_______
