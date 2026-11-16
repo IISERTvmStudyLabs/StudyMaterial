@@ -7,22 +7,22 @@ date: 2026-10-13
 
 ## Theorem (F. Riesz)
 Let $H$ be a Hilbert space. Then:
-(i) For every $x \in H$, the map
+1. For every $x \in H$, the map
 
 $$
 y \mapsto (y, x)_H \in \mathbb{K}
 $$
 
-is a bdd linear functional.
-(ii) For every $\phi \in H^*$, $\exists! x \in H$ s.t.
+is a bounded linear functional.
+2. For every $\phi \in H^*$, $\exists! x \in H$ such that.
 
 $$
 \langle \phi, y \rangle_H = \phi(y) = (y, x)_H, \quad \forall y \in H
 $$
 
 
-Proof:
-i) Follows easily from Cauchy-Schwarz:
+**Proof**:
+1. Follows easily from [[Lecture 26#Theorem (Two basic inequalities)|Cauchy-Schwarz]]:
 Let $\phi_x(y) = (y, x)$, ($x$ is fixed).
 
 $$
@@ -40,9 +40,9 @@ $$
 $$
 
 
-ii) If $\phi$ is the zero functional, take $x = 0$.
+2. If $\phi$ is the zero functional, take $x = 0$.
 Suppose $\phi$ is non-trivial. Since $\phi$ is continuous, $V = \ker \phi$ is a closed subspace of $H$.
-Choose $x_0 \in H$ s.t. $\phi(x_0) \neq 0$.
+Choose $x_0 \in H$ such that. $\phi(x_0) \neq 0$.
 Let
 
 $$
@@ -99,10 +99,10 @@ a = \frac{\overline{\phi(z)}}{\|z\|^2} z \in H
 $$
 
 
-Given $\phi \in H^*$, $\exists a \in H$ s.t.
+Given $\phi \in H^*$, $\exists a \in H$ such that.
 $\phi(x) = (x, a), \forall x \in H$.
 
-If $\exists a' \in H$ s.t. $\phi(x) = (x, a'), \forall x \in H$, then:
+If $\exists a' \in H$ such that. $\phi(x) = (x, a'), \forall x \in H$, then:
 
 $$
 (x, a) = (x, a'), \quad \forall x \in H
@@ -119,8 +119,8 @@ $$
 (a - a', a - a') = \|a - a'\|^2 = 0 \Rightarrow a = a'
 $$
 
-
-## Corollary
+---
+## Corollary 1
 Let $H$ be Hilbert. Define $\Psi : H^* \rightarrow H$ by $\Psi(\phi) = a$ where $\phi(x) = (x, a)$ as above.
 
 Suppose $\phi_1$ and $\phi_2$ give the same element $a$.
@@ -190,9 +190,10 @@ $$
 
 $\Psi : H^* \rightarrow H$, $\Psi(\phi) = a$, given by F. Riesz is a bijective isometry. And is called F. Riesz isometry.
 
-## Corollary
+---
+## Corollary 2
 Every Hilbert Space is Reflexive.
-Let $\Phi \in H^{**}$. Show that $\exists x \in H$ s.t. $J(x) = J_x = \Phi$, or $J(H) = H^{**}$.
+Let $\Phi \in H^{**}$. Show that $\exists x \in H$ such that. $J(x) = J_x = \Phi$, or $J(H) = H^{**}$.
 
 $$
 \Phi(\phi) = \phi(x), \quad \forall \phi \in H^*

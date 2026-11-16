@@ -1,8 +1,9 @@
 ---
 course: Functional Analysis
 Lecture:
-date: 12 October
+date: 2026-10-12
 ---
+[[Lecture 27#Theorem (Orthogonal Projection)|Theorem]]
 ### Proof (cont.)
 
 **Step 2:**

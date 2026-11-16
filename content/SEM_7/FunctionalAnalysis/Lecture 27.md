@@ -3,6 +3,62 @@ course: Functional Analysis
 Lecture:
 date: 2026-10-08
 ---
+# The Parallelogram Identity
+
+$$
+\|x+y\|_H^2 + \|x-y\|_H^2 = 2\|x\|^2 + 2\|y\|_H^2 \quad \forall x,y \in H 
+$$
+
+$$ 
+\begin{aligned}
+\|x+y\|_H^2 &= (x+y, x+y) \\
+&= \|x\|^2 + 2\text{Re}(x,y) + \|y\|^2
+\end{aligned}
+$$
+
+![[vector_parallelogram (1).png|377]]
+
+---
+
+**Remark:** (A result due to *von Neumann*)
+Suppose $(X, \|\cdot\|)$ is Banach and suppose the parallelogram identity holds for every pair of elements $x,y \in X$. Then, the norm $\|\cdot\|$ must come from an inner product.
+
+**Example**., Let $X = L^\infty[0,1]$
+
+$$
+f(x) = 1 \qquad g(x) = x 
+$$
+$$
+\|f\|_\infty = 1 \qquad \|g\|_\infty = 1 
+$$
+
+$$
+\|f+g\|_\infty = 2 \qquad \|f-g\|_\infty = 1 
+$$
+$$
+\|f+g\|_\infty^2 + \|f-g\|_\infty^2 = 4 + 1 = 5 
+$$
+$$
+2\|f\|_\infty^2 + 2\|g\|_\infty^2 = 2 + 2 = 4 
+$$
+
+$$
+\therefore \|\cdot\|_\infty \text{ cannot be induced by an inner product.} 
+$$
+
+---
+
+## Orthogonality
+ Let $S \subset H$, $\text{Span}(S) = \left\{ \sum_{i=1}^N \alpha_i x_i : N \in \mathbb{N}, \alpha_i \in \mathbb{K}, x_i \in S \right\}$
+$\text{Span}(S)$ is a subspace of $H$, but it needs not to be closed always.
+
+$H = l_2, \quad S = \{e_1, e_2, \dots \}$
+$\text{Span}(S) = \text{set of all seq with finitely many non-zero terms.}$
+
+Let $V = \text{Span}(S)$. If $\overline{V} = H$, then we say that $S$ is total in $H$, i.e., $S$ is total if $\forall x \in H$, $\exists$ a sequence $(x_n) \subset \text{Span}(S)$ s.t
+$$ \|x_n - x\|_H \to 0 \text{ as } n \to \infty $$
+
+
 We say that $x, y$ are orthogonal if $(x, y) = 0$.
 For $S \subset H$, the orthogonal complement $S^\perp$ is defined by
 
@@ -17,7 +73,7 @@ $$
 |(y, x)| = |(y - y_n + y_n, x)| \le |(y - y_n, x)| + |(y_n, x)| \le \|y - y_n\| \|x\| \rightarrow 0
 $$
 
-
+----
 # Theorem (Orthogonal Projection)
 
 Let $H$ be a Hilbert space and let $V$ be a closed subspace. Then:
@@ -28,7 +84,7 @@ Let $H$ be a Hilbert space and let $V$ be a closed subspace. Then:
 $$
 \|P_V\|_{\mathcal{L}(H,H)} = \|P_{V^\perp}\|_{\mathcal{L}(H)} = 1
 $$
-## Proof
+**Proof**
 **Step 1:** Let $x \in H$ be arbitrary, but fixed. Let $d = \text{dist}(x, V) = \inf_{y \in V} \|x - y\|$. Let $(y_n) \subset V$ such that $\lim_{n \rightarrow \infty} \|x - y_n\|_H = d$.
 We know that $(y_n)$ is Cauchy and since $V$ is closed,
 $$
