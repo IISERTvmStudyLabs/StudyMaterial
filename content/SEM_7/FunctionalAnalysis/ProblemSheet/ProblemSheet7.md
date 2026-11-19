@@ -13,6 +13,7 @@ $$
 **Definitions**:-
 > [!note] Hilbert Space
 > A **Hilbert space** is a real or complex vector space equipped with an inner product that is complete with respect to the distance metric induced by that inner product.
+> 
 > **Formally:**
 > A vector space $H$ over the field $\mathbb{F}$ (where $\mathbb{F} = \mathbb{R}$ or $\mathbb{C}$) is a Hilbert space if it satisfies the following conditions:
 > 1. **Inner Product:** Equipped with an inner product $\langle \cdot, \cdot \rangle : H \times H \to \mathbb{F}$ satisfying for all $x, y, z \in H$ and scalars $\alpha, \beta \in \mathbb{F}$:
@@ -23,17 +24,15 @@ $$
 >     The inner product induces a norm $\Vert{}x\Vert{} = \sqrt{\langle x, x \rangle}$ and a distance metric $d(x, y) = \Vert{}x - y\Vert{}$.
 > 3. **Completeness:**
 >     The metric space $(H, d)$ is complete: every Cauchy sequence $(x_n)_{n=1}^\infty \subset H$ converges to a limit $x \in H$.
+> 
 > **Key Properties & Examples:**
 > - **Relation to Banach Spaces:** Every Hilbert space is a Banach space, but a Banach space is a Hilbert space if and only if its norm satisfies the **parallelogram identity**:
->     
-$$
-\Vert{}x + y\Vert{}^2 + \Vert{}x - y\Vert{}^2 = 2\Vert{}x\Vert{}^2 + 2\Vert{}y\Vert{}^2 \quad \forall x, y \in H
-$$
-
+>     $$
+>     \Vert{}x + y\Vert{}^2 + \Vert{}x - y\Vert{}^2 = 2\Vert{}x\Vert{}^2 + 2\Vert{}y\Vert{}^2 \quad \forall x, y \in H
+>     $$
 > - **Standard Examples:**
 >     - **$\mathbb{R}^n$ or $\mathbb{C}^n$:** Finite-dimensional Euclidean/unitary spaces with the standard dot product.
 >     - **$\ell^2$:** The space of square-summable sequences with inner product $\langle x, y \rangle = \sum_{n=1}^\infty x_n \overline{y_n}$.
->         
 >     - **$L^2(\Omega)$:** The space of square-integrable functions with inner product $\langle f, g \rangle = \int_\Omega f(x) \overline{g(x)} \, dx$.
 
 ---------------
