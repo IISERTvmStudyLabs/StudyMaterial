@@ -5,12 +5,25 @@ date: 2026-09-07
 ---
 ### The "Three Great Theorems" of FA
 
-$$\text{Topology} \xleftrightarrow{\text{connects}} \text{Linear Algebra}$$
+
+$$
+\text{Topology} \xleftrightarrow{\text{connects}} \text{Linear Algebra}
+$$
+
 
 Let $X$ be finite dimensional, $B = \{e_1, \dots, e_N\}$ basis, and $L: X \rightarrow Y$ linear.
-$$x = \alpha_1 e_1 + \dots + \alpha_N e_N$$
-$$|\alpha_1| + \dots + |\alpha_N| = \|x\|_1 \quad \text{norm, equivalent to any other norm on } X.$$
+
+$$
+x = \alpha_1 e_1 + \dots + \alpha_N e_N
+$$
+
+
+$$
+|\alpha_1| + \dots + |\alpha_N| = \|x\|_1 \quad \text{norm, equivalent to any other norm on } X.
+$$
+
 *(Since the space is finite dim $\implies$ any 2 norms are equivalent.)*
+
 
 $$
 \begin{aligned}
@@ -18,6 +31,8 @@ Lx &= L(\alpha_1 e_1 + \dots + \alpha_N e_N) \\
 &= \alpha_1 Le_1 + \dots + \alpha_N Le_N
 \end{aligned}
 $$
+
+
 $$
 \begin{aligned}
 \|Lx\| &\leq \|\alpha_1 Le_1\| + \dots + \|\alpha_N Le_N\| \\
@@ -27,7 +42,12 @@ $$
 &\leq C \|x\|
 \end{aligned}
 $$
-$$\therefore L \text{ is bounded}$$
+
+
+$$
+\therefore L \text{ is bounded}
+$$
+
 
 This is **not** true when $X$ is infinite dim.
 
@@ -49,15 +69,27 @@ This is **not** true when $X$ is infinite dim.
  2. $\operatorname{diam}(A_n) \rightarrow 0$ as $n \rightarrow \infty$
 
  Then $\exists! \, x \in X$ such that.
- $$\bigcap_{n \in \mathbb{N}} A_n = \{x\}$$
+ 
+$$
+\bigcap_{n \in \mathbb{N}} A_n = \{x\}
+$$
+
 ---
 
 # Theorem (Baire Category Theorem)
  Let $X$ be a complete metric space. Then the following 2 equivalent statements hold:
  1. Let $(C_n)_{n \in \mathbb{N}}$ be a sequence of closed subsets such that. $\operatorname{Int}(C_n) = \emptyset \quad \forall n \in \mathbb{N}$ (nowhere dense).Then:
- $$\operatorname{Int}\left(\bigcup_{n \in \mathbb{N}} C_n\right) = \emptyset$$
+ 
+$$
+\operatorname{Int}\left(\bigcup_{n \in \mathbb{N}} C_n\right) = \emptyset
+$$
+
  2. Let $(O_n)_{n \in \mathbb{N}}$ be a sequence of open sets such that. $\overline{O_n} = X$. Then:
-    $$\overline{\bigcap_{n \in \mathbb{N}} O_n} = X$$
+    
+$$
+\overline{\bigcap_{n \in \mathbb{N}} O_n} = X
+$$
+
 
 ---
 
@@ -71,7 +103,15 @@ This is **not** true when $X$ is infinite dim.
 # Definition: Hamel Basis
  Let $X$ be a nontrivial vector space ($X \neq \{0\}$). An arbitrary collection (family) of vectors $(e_i)_{i \in I}$ in $X$ is called a **Hamel basis** in $X$ if:
  1. $(e_i)_{i \in I}$ is linearly independent in the sense that $\forall$ **finite** subfamily $\{e_i\}_{i \in J}$, $J \subset I$, and for scalars $(\alpha_i)_{i \in J}$:
-    $$\sum_{i \in J} \alpha_i e_i = 0 \implies \alpha_i = 0 \quad \forall i \in J$$
+    
+$$
+\sum_{i \in J} \alpha_i e_i = 0 \implies \alpha_i = 0 \quad \forall i \in J
+$$
+
  2. $\operatorname{Span}\{e_i \mid i \in I\} = X$ in the sense that $\forall x \in X$, $\exists$ a finite family $J(x) \subset I$ and scalars $(\alpha_j)_{j \in J(x)}$ such that.:
-    $$x = \sum_{j \in J(x)} \alpha_j e_j$$
+    
+$$
+x = \sum_{j \in J(x)} \alpha_j e_j
+$$
+
 **Example:** $X = \mathcal{P}(\mathbb{R})$, polynomials in $\mathbb{R}$, i.e., $\{1, x, x^2, \dots\}$.

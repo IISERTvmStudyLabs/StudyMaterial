@@ -9,17 +9,21 @@ date: 3 September
  $X$  is separable banach  $(\phi_n)_{n \in \mathbb{N}} \subset X^*$  is uniformly bold
 
 
+
 $$
 \sup \|\phi_n\|_X \leq C < \infty
 $$
 
 
+
 Then  $\exists (\phi_{n_j})_{j \in \mathbb{N}} \subseteq (\phi_n)_{n \in \mathbb{N}}$  s.t.
+
 
 
 $$
 \phi_{n_j}(x) \rightarrow \phi(x) \quad \forall x \in X, \text{ for some } \phi \in X^*
 $$
+
 
 
 [Bolzano Weistrass on  $X^*$  (infinite dimensional)]
@@ -29,9 +33,11 @@ Proof:
 Let  $(\phi_n)_{n \in \mathbb{N}} \subset X^*$  be s.t.
 
 
+
 $$
 \sup_{n \in \mathbb{N}} \|\phi_n\|_{X^*} \leq C < \infty
 $$
+
 
 
 Let  $S = \{x_k \mid k \in \mathbb{N}\}$  be a countable dense subset of  $X$ .
@@ -39,9 +45,11 @@ Let  $S = \{x_k \mid k \in \mathbb{N}\}$  be a countable dense subset of  $X$ .
 We construct a subsequence  $(\phi_{n_j})_{j \in \mathbb{N}}$  of  $(\phi_n)_{n \in \mathbb{N}}$  s.t.
 
 
+
 $$
 \phi_{n_j}(x_k) \rightarrow \phi(x_k) \quad \forall k \text{ and for some } \phi \in X^*
 $$
+
 
 
 We apply a diagonal argument
@@ -57,9 +65,12 @@ Choose  $x_1 < x_2 < \dots$  where  $x_j \in I_j$  so that  $\phi_{n_j}(x_k) \ri
 Claim:  $\phi: S \rightarrow K$  is lipschitz continuous.
 
 
+
 $$
 |\phi(x_k) - \phi(x_l)| = \lim_{j \rightarrow \infty} |\phi_{nj}(x_k) - \phi_{nj}(x_l)|
 $$
+
+
 
 
 
@@ -69,9 +80,12 @@ $$
 
 
 
+
+
 $$
 \leq C \|x_k - x_l\|_{X^*}
 $$
+
 
 
  $\Rightarrow \phi$  can be uniquely extended to  $\bar{S} = X$ .
@@ -79,17 +93,22 @@ $$
 Next, we show that  $\phi_{nj}(x) \rightarrow \phi(x) \forall x \in X$  i.e.
 
 
+
 $$
 \phi_{nj} \xrightarrow{*} \phi \text{ in } X^*
 $$
 
 
+
 Let  $x \in X, \varepsilon > 0$ . Choose  $x_k$  so that  $\|x_k - x\| < \varepsilon$ 
+
 
 
 $$
 |\phi_{nj}(x) - \phi(x)| \leq |\phi_{nj}(x) - \phi_{nj}(x_k)|
 $$
+
+
 
 
 
@@ -99,9 +118,12 @@ $$
 
 
 
+
+
 $$
 \rightarrow 0 \quad \text{as } j \rightarrow \infty
 $$
+
 
 
 ( $x_k \rightarrow x \quad \phi_{nj} \in \phi^{\text{assoc}} \text{ and } \phi_{nj}(x_k) \rightarrow \phi(x_k)$ )
@@ -113,9 +135,12 @@ Since  $\phi$  is the pointwise limit of  $\phi_{nj}$ 's it is also linear & bad
 Let  $X$  be a reference Banach space. Then the unit ball  $\overline{B_j(0)}$  is weakly requestively compact.
 
 
+
 $$
 (x_n)_{n \in \mathbb{N}} \subset \overline{B_j(0)} \text{ then } (x_{n_k})_{k \in \mathbb{N}} \subset (x_n)_{n \in \mathbb{N}} \text{ s.t.}
 $$
+
+
 
 
 
@@ -124,14 +149,18 @@ x_{n_k} \rightarrow x \in \overline{B_j(0)} \quad \phi(x_{n_k}) \rightarrow \phi
 $$
 
 
+
 → Lemma 1: Every closed subspace of a reflexive Banach space is also reflexive
 
 → Lemma 2: Let  $X$  be Banach if  $X^*$  is separable then  $X$  is separable.
 
 
+
 $$
 X^* \text{ separable} \Rightarrow X \text{ is separable}
 $$
+
+
 
 
 
@@ -141,12 +170,16 @@ $$
 
 
 
+
+
 $$
 l' \quad l \text{ also is not separable.}
 $$
 
 
+
 Proof (Theorem):
+
 
 
 $$
@@ -154,14 +187,17 @@ $$
 $$
 
 
+
 Let  $Y = \overline{\text{span}\{x_k \mid k \in \mathbb{N}\}}$ , so that  $Y$  is a closed subspace of  $X$ ,  $Y$  is also reflexive.
 
 By defn of  $Y$  it is separable.
 
 
+
 $$
 Y^* = J(Y), \quad Y \text{ - reflexive}
 $$
+
 
 
  $J$  is isometric isomorphism  $\Rightarrow Y^* = (Y^*)^*$  is also separable
@@ -171,9 +207,11 @@ $$
 we see that, upto a subseq,
 
 
+
 $$
 J_{x_k} \xrightarrow{*} y^{**} \in Y^*
 $$
+
 
 
 Take  $x_i = J^{-1}(y^{**}) \in X$ , (incomplete)

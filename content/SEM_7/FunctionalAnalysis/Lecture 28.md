@@ -11,17 +11,23 @@ If $y' \in V$ is any other point such that $\|x - y'\| = \inf_{z \in V} \|x - z\
 
 In [[Lecture 27#The Parallelogram Identity|parallelogram identity]], take $u = x - y, v = x - y'$.
 
+
 $$
 \|y - y'\|^2 = 2\|x - y\|^2 + 2\|x - y'\|^2 - 4\left\|x - \frac{y + y'}{2}\right\|^2
 $$
+
+
 
 $$
 \le 2d^2 + 2d^2 - 4d^2 = 0
 $$
 
+
+
 $$
 y = y'
 $$
+
 
 $\exists! y \in V$ such that $d = \|x - y\| = \min_{z \in V} \|x - z\|$.
 
@@ -34,13 +40,17 @@ First we show that $x - y \in V^\perp$, that is, $(x - y, v) = 0, \forall v \in 
 
 Let $v \in V$ be arbitrary. Consider the map $t \in \mathbb{R} \mapsto \|x - (y + tv)\|^2 \in \mathbb{R}$.
 
+
 $$
 f(t) = \|x - (y + tv)\|^2
 $$
 
+
+
 $$
 = \|x - y\|^2 - 2t \text{Re}(x - y, v) + t^2 \|v\|^2
 $$
+
 
 Since $\|x - y\| = d(x, V)$, the function $f$ attains the minimum at $t = 0$.
 $\Rightarrow f'(0) = 0$
@@ -51,23 +61,31 @@ $\Rightarrow x - y \in V^\perp$.
 
 If $y' \in V$ is any other point such that $x - y' \in V^\perp$, then $y' = y$.
 
+
 $$
 \|y - y'\|^2 = (y - y', y - y')
 $$
+
+
 
 $$
 = (y - y', x - y') - (y - y', x - y) = 0
 $$
 
+
 $\Rightarrow y' = y$.
+
 
 $$
 \exists! y \in V, z \in V^\perp \text{ such that } x = y + z
 $$
 
+
+
 $$
 y = P_V x, \quad z = P_{V^\perp} x
 $$
+
 
 ---
 
@@ -79,34 +97,46 @@ $\alpha x + \alpha' x' - \alpha y - \alpha' y' = \alpha(x - y) + \alpha'(x' - y'
 
 By Step 3, $\alpha y + \alpha' y' = P_V(\alpha x + \alpha' x')$.
 
+
 $$
 P_V(\alpha x + \alpha' x') = \alpha P_V x + \alpha' P_V x'
 $$
 
+
 $\Rightarrow$ linearity of $P_V$.
+
 
 $$
 x = y + z = P_V x + P_{V^\perp} x
 $$
 
+
 or $P_{V^\perp} x = x - P_V x = (I - P_V)x$.
 $P_{V^\perp}$ is also linear.
+
 
 $$
 x = P_V x + P_{V^\perp} x
 $$
 
+
+
 $$
 \|x\|^2 = \|P_V x + P_{V^\perp} x\|^2 = \|P_V x\|^2 + \|P_{V^\perp} x\|^2
 $$
+
+
 
 $$
 \|P_V x\|^2 = \|x\|^2 - \|P_{V^\perp} x\|^2 \le \|x\|^2
 $$
 
+
+
 $$
 \|P_V x\| \le \|x\| \Rightarrow \|P_V\|_{\mathcal{L}(H,H)} \le 1
 $$
+
 
 Similarly, $\|P_{V^\perp}\|_{\mathcal{L}(H,H)} \le 1$.
 
@@ -114,9 +144,11 @@ If $V \neq \{0\}$, then $\|P_V\| = 1$.
 Choose $v \in V$ such that $\|v\| = 1$.
 Then $P_V(v) = v$.
 
+
 $$
 1 = \|v\| = \|P_V(v)\| \le \sup_{\|u\|=1} \|P_V(u)\| = \|P_V\|
 $$
+
 
 $\Rightarrow \|P_V\|_{\mathcal{L}(H,H)} \ge 1$.
 $\Rightarrow \|P_V\| = 1 = \|P_{V^\perp}\|_{\mathcal{L}(H,H)}$.

@@ -7,7 +7,11 @@ date: 2026-10-01
 > Let $X$ and $Y$ be normed spaces. A linear operator $L: X \to Y$ is **compact** if for every bounded sequence $(x_n)_{n \in \mathbb{N}} \subset X$, there exists a subsequence $(x_{n_k})_{k \in \mathbb{N}}$ such that $(Lx_{n_k})$ converges in $Y$.
 >
 > Equivalently:
-> $$\text{For every bounded set } U \subset X, \text{ the closure } \overline{L(U)} \text{ is compact in } Y$$
+> 
+$$
+\text{For every bounded set } U \subset X, \text{ the closure } \overline{L(U)} \text{ is compact in } Y
+$$
+
 > (i.e., $L(U)$ is relatively compact in $Y$).
 
 - which operators are compact?
@@ -24,9 +28,11 @@ Then $L$ is compact, i.e., the set of all compact operators is closed in $\mathc
 
 2. Let $(x_n)_{n \in \mathbb{N}}$ be bounded in $X$, i.e.
     
-    $$
-    \exists M \gt 0 \quad \text{such that} \quad \sup_{n \in \mathbb{N}} \Vert{}x_n\Vert{} \le M.
-    $$
+    
+$$
+\exists M \gt 0 \quad \text{such that} \quad \sup_{n \in \mathbb{N}} \Vert{}x_n\Vert{} \le M.
+$$
+
     
     Since $(x_n)$ is bounded and $L_1$ is compact, $\exists$ a subsequence $(x_{1, n})_{n \in \mathbb{N}}$ such that $(L_1 x_{1, n})$ converges in $Y$. Since $(x_{1, n})_{n \in \mathbb{N}}$ is a bounded sequence in $X$ and $L_2$ is compact, $\exists$ a subsequence $(x_{2, n})_{n \in \mathbb{N}}$ of $(x_{1, n})$ such that $(L_2 x_{2, n})$ converges in $Y$. Continuing inductively for each $L_m$, we get nested subsequences $(x_{m, n})_{n \in \mathbb{N}}$ such that $(L_m x_{m, n})$ converges in $Y$.
     
@@ -37,35 +43,47 @@ Denote $y_n = x_{n, n}, \ n \in \mathbb{N}$. For every $m \in \mathbb{N}$, $(y_n
 
 Then $\forall k, \ell \ge N_0$:
 
+
 $$
 \Vert{}L y_k - L y_\ell\Vert{}_Y \le \Vert{}L y_k - L_m y_k\Vert{}_Y + \Vert{}L_m y_k - L_m y_\ell\Vert{}_Y + \Vert{}L_m y_\ell - L y_\ell\Vert{}_Y
 $$
+
+
 
 $$
 \le \Vert{}L - L_m\Vert{}_{\mathcal{L}(X,Y)} \Vert{}y_k\Vert{}_X + \Vert{}L_m y_k - L_m y_\ell\Vert{}_Y + \Vert{}L_m - L\Vert{}_{\mathcal{L}(X,Y)} \Vert{}y_\ell\Vert{}_X
 $$
 
+
+
 $$
 \lt \frac{\epsilon}{3M} \cdot M + \frac{\epsilon}{3} + \frac{\epsilon}{3M} \cdot M = \epsilon.
 $$
+
 
 Since $Y$ is Banach (complete), $(L y_n)_{n \in \mathbb{N}}$ converges in $Y$. Since $(y_n)$ is a subsequence of $(x_n)$, $L$ is compact.
 
 ----
 # Arzelà-Ascoli Theorem
 $K$ compact metric space (e.g., $K \subset \mathbb{R}^N$ compact), and $C(K, \mathbb{R})$ equipped with 
+
 $$
 \Vert{}f\Vert{}_\infty = \sup_{x \in K} \vert{}f(x)\vert{}
 $$
+
 Let $H \subset C(K, \mathbb{R})$.
 1. **Uniformly bounded:** 
-   $$
-   \sup_{f \in H} \sup_{x \in K} \vert{}f(x)\vert{} < \infty
-   $$ 
+   
+$$
+\sup_{f \in H} \sup_{x \in K} \vert{}f(x)\vert{} < \infty
+$$
+ 
 2. **Equicontinuous:** For any $\epsilon > 0$, $\exists \delta > 0$ such that
-   $$
-   \sup_{f \in H} \vert{}f(x) - f(y)\vert{} < \epsilon, \quad \forall x, y \in K \text{ with } d(x,y) < \delta
-   $$
+   
+$$
+\sup_{f \in H} \vert{}f(x) - f(y)\vert{} < \epsilon, \quad \forall x, y \in K \text{ with } d(x,y) < \delta
+$$
+
 Then:
 - **$H$ is relatively compact ($\overline{H}$ is compact)** $\iff H$ is uniformly bounded and equicontinuous $\iff \forall (f_n)_{n \in \mathbb{N}} \subset H, \exists$ a uniformly convergent subsequence in $C(K, \mathbb{R})$.
 - **$H$ is compact** $\iff H$ is **closed**, uniformly bounded, and equicontinuous.
@@ -82,22 +100,38 @@ Define $K = \overline{L(B_1(0))}$, where $B_1(0) = \{x \in X : \Vert{}x\Vert{}_X
 
 1. **Uniformly bounded:** $\forall n \in \mathbb{N}$ and $\forall y \in K$,
     
-    $$\vert{}f_n(y)\vert{} = \vert{}\phi_n(y)\vert{} \le \Vert{}\phi_n\Vert{}_{Y^*} \Vert{}y\Vert{}_Y \le 1 \cdot \Vert{}L\Vert{}.$$
+    
+$$
+\vert{}f_n(y)\vert{} = \vert{}\phi_n(y)\vert{} \le \Vert{}\phi_n\Vert{}_{Y^*} \Vert{}y\Vert{}_Y \le 1 \cdot \Vert{}L\Vert{}.
+$$
+
     
 2. **Equicontinuous:** $\forall n \in \mathbb{N}$ and $\forall y_1, y_2 \in K$,
     
-    $$\vert{}f_n(y_1) - f_n(y_2)\vert{} = \vert{}\phi_n(y_1 - y_2)\vert{} \le \Vert{}\phi_n\Vert{}_{Y^*} \Vert{}y_1 - y_2\Vert{}_Y \le \Vert{}y_1 - y_2\Vert{}_Y.$$
+    
+$$
+\vert{}f_n(y_1) - f_n(y_2)\vert{} = \vert{}\phi_n(y_1 - y_2)\vert{} \le \Vert{}\phi_n\Vert{}_{Y^*} \Vert{}y_1 - y_2\Vert{}_Y \le \Vert{}y_1 - y_2\Vert{}_Y.
+$$
+
     
     Thus, for any $\epsilon \gt 0$, choosing $\delta = \epsilon$ gives $\vert{}f_n(y_1) - f_n(y_2)\vert{} \lt \epsilon$ whenever $\Vert{}y_1 - y_2\Vert{}_Y \lt \delta$, $\forall n \in \mathbb{N}$.
     
 
 By the **Arzelà-Ascoli Theorem**, $\exists$ a subsequence $(f_{n_k})_{k \in \mathbb{N}}$ that converges uniformly on $K$. In particular, $(f_{n_k})$ is uniformly Cauchy on $K$: $\forall \epsilon \gt 0$, $\exists N_0 \in \mathbb{N}$ such that $\forall k, \ell \ge N_0$,
 
-$$\sup_{y \in K} \vert{}\phi_{n_k}(y) - \phi_{n_\ell}(y)\vert{} \lt \epsilon.$$
+
+$$
+\sup_{y \in K} \vert{}\phi_{n_k}(y) - \phi_{n_\ell}(y)\vert{} \lt \epsilon.
+$$
+
 
 Since $L(B_1(0)) \subset K$, we have $\forall k, \ell \ge N_0$:
 
-$$\Vert{}L^* \phi_{n_k} - L^* \phi_{n_\ell}\Vert{}_{X^*} = \sup_{x \in B_1(0)} \vert{}(L^* \phi_{n_k} - L^* \phi_{n_\ell})(x)\vert{} = \sup_{x \in B_1(0)} \vert{}\phi_{n_k}(Lx) - \phi_{n_\ell}(Lx)\vert{} \le \sup_{y \in K} \vert{}\phi_{n_k}(y) - \phi_{n_\ell}(y)\vert{} \lt \epsilon.$$
+
+$$
+\Vert{}L^* \phi_{n_k} - L^* \phi_{n_\ell}\Vert{}_{X^*} = \sup_{x \in B_1(0)} \vert{}(L^* \phi_{n_k} - L^* \phi_{n_\ell})(x)\vert{} = \sup_{x \in B_1(0)} \vert{}\phi_{n_k}(Lx) - \phi_{n_\ell}(Lx)\vert{} \le \sup_{y \in K} \vert{}\phi_{n_k}(y) - \phi_{n_\ell}(y)\vert{} \lt \epsilon.
+$$
+
 
 Hence $(L^* \phi_{n_k})_{k \in \mathbb{N}}$ is Cauchy in $X^*$. Since $X^*$ is Banach, $(L^* \phi_{n_k})$ converges in $X^*$. Therefore, $L^*$ is compact.
 
@@ -107,7 +141,11 @@ For each $x \in X$, define $\hat{x} \in X^{**}$ by $\hat{x}(\psi) = \psi(x)$ for
 
 Notice that for any $x \in X$ and $\phi \in Y^*$:
 
-$$(L^{**}\hat{x})(\phi) = \hat{x}(L^*\phi) = (L^*\phi)(x) = \phi(Lx) = \widehat{Lx}(\phi),$$
+
+$$
+(L^{**}\hat{x})(\phi) = \hat{x}(L^*\phi) = (L^*\phi)(x) = \phi(Lx) = \widehat{Lx}(\phi),
+$$
+
 
 so $L^{**}\hat{x} = \widehat{Lx}$.
 
@@ -115,6 +153,10 @@ Now let $(x_n)_{n \in \mathbb{N}} \subset X$ be bounded. Then $\Vert{}\hat{x}_n\
 
 Thus, as $k, \ell \to \infty$:
 
-$$\Vert{}Lx_{n_k} - Lx_{n_\ell}\Vert{}_Y = \Vert{}\widehat{Lx_{n_k}} - \widehat{Lx_{n_\ell}}\Vert{}_{Y^{**}} \to 0.$$
+
+$$
+\Vert{}Lx_{n_k} - Lx_{n_\ell}\Vert{}_Y = \Vert{}\widehat{Lx_{n_k}} - \widehat{Lx_{n_\ell}}\Vert{}_{Y^{**}} \to 0.
+$$
+
 
 Since $Y$ is Banach, $(Lx_{n_k})$ converges in $Y$. Hence $L$ is compact. $\blacksquare$

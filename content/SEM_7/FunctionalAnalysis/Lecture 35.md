@@ -4,20 +4,28 @@ Lecture:
 date: 2026-11-03
 ---
 Recall 
+
 $$
 \lambda \in \rho(L) \to \lambda I - L \text{ is invertible}
 $$
+
+
 $$
 \implies (\lambda I - L)^{-1} \in \mathcal{L}(X)
 $$
 
+
 $\implies \lambda u - Lu = f$ is uniquely solvable and the solution depends continuously on $f$.
+
 $$
 u = R_\lambda f
 $$
+
+
 $$
 \|u\| \le \|R_\lambda\| \|f\| \le C\|f\|
 $$
+
 
 Continuous dependence of $u$ on $f$
 
@@ -38,26 +46,34 @@ Let $X$ be Banach and $L \in \mathcal{L}(X)$. The spectrum $\sigma(L)$ consists 
 
 1.  The **point spectrum**
 defined by 
+
 $$
 \sigma_p(L) = \{ \lambda \in \mathbb{K} : \lambda I - L \text{ is not injective} \}
 $$
+
 $\lambda \in \sigma_p(L) \implies \exists$ non-zero $x \in X$ such that $(\lambda I - L)x = 0$ or $Lx = \lambda x$
 $\lambda$ is an eigenvalue of $L$ and $x$ is an eigenvector corresponding to $\lambda$
 
 2.  The **residual spectrum**:
+
 $$
 \sigma_r(L) = \{ \lambda \in \mathbb{K} : \lambda I - L \text{ is injective and } \overline{\text{Range}}(\lambda I - L) \neq X \}
 $$
 
+
 3. The **continuous spectrum**
+
 $$
 \sigma_c(L) = \{ \lambda \in \mathbb{K} : \lambda I - L \text{ is injective}, \quad \overline{\text{Range}} = X, \quad \text{but Range}(\lambda I - L) \neq X \}
 $$
 
+
 $\sigma_p, \sigma_r, \sigma_c$ are disjoint and 
+
 $$
 \sigma(L) = \sigma_p(L) \cup \sigma_r(L) \cup \sigma_c(L)
 $$
+
 
 $\lambda I - L$ is injective $\iff \lambda I - L$ is bijective $\to \lambda \in \rho(L)$ resolvent set
 
@@ -81,13 +97,17 @@ Let $x_n \in X$, $\|x_n\| = 1$, $\|(\lambda I - L)x_n\| \to 0$ as $n \to \infty$
 
 To show that $(\lambda I - L)^{-1}$ is unbounded on $\text{Range}(\lambda I - L)$
 Let 
+
 $$
 y_n = \frac{(\lambda I - L)x_n}{\|(\lambda I - L)x_n\|} \in \text{Range}(\lambda I - L)
 $$
 
+
+
 $$
 (\lambda I - L)^{-1} y_n = \frac{x_n}{\| \dots \|} \implies \|(\lambda I - L)^{-1} y_n\| = \frac{1}{\| \dots \|} \to \infty \text{ as } n \to \infty
 $$
+
 
 $\implies (\lambda I - L)^{-1}$ is unbounded on $\text{Range}(\lambda I - L)$
 
@@ -96,6 +116,8 @@ $\implies \exists$ a sequence $\{y_n\} \subset \text{Range}(\lambda I - L)$
 $\|y_n\| = 1$ but $\|(\lambda I - L)^{-1} y_n\| \ge n$
 
 take 
+
 $$
 x_n := \frac{(\lambda I - L)^{-1} y_n}{\|(\lambda I - L)^{-1} y_n\|}
 $$
+

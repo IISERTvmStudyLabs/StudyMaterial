@@ -28,7 +28,8 @@ Let $H$ be Vector Space over $\mathbb{K}$ ($\mathbb{R}/\mathbb{C}$). An inner pr
 Let $y \neq 0$,
 Take $a = (x,x), \ b = (x,y), \ c = (y,y) > 0$
 For any $\lambda \in \mathbb{K}$, we have:
-$$ 
+
+$$
 \begin{aligned}
 0 &\le (x + \lambda y, x + \lambda y) \\
 &= (x, x + \lambda y) + (\lambda y, x + \lambda y) \\
@@ -36,20 +37,28 @@ $$
 &= a + \overline{\lambda}b + \lambda\overline{b} + \lambda\overline{\lambda}c
 \end{aligned}
 $$
+
 Take $\lambda = -b/c$,
+
 $$
 \begin{aligned}
 0 &\le a - b\overline{b}/c - b\overline{b}/c + b\overline{b}/c \\
 &= a - b\overline{b}/c
 \end{aligned}
 $$
+
 $\implies ac - b\overline{b} \ge 0$
 $\implies (x,y)\overline{(x,y)} \le (x,x)(y,y)$
 
-$$ |(x,y)|^2 \le \|x\|^2 \cdot \|y\|^2 $$
+
+$$
+|(x,y)|^2 \le \|x\|^2 \cdot \|y\|^2
+$$
+
 
 2. By $(1)$,
 $\text{Re}(x,y) \le |(x,y)| \le \|x\| \cdot \|y\|.$
+
 $$
 \begin{aligned}
 \|x+y\|^2 &= (x+y, x+y) \\
@@ -61,7 +70,12 @@ $$
 \end{aligned}
 $$
 
-$$ \therefore \|\cdot\| = \sqrt{(\cdot, \cdot)} \text{ is indeed a norm} $$
+
+
+$$
+\therefore \|\cdot\| = \sqrt{(\cdot, \cdot)} \text{ is indeed a norm}
+$$
+
 
 ---
 

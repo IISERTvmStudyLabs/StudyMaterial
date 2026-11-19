@@ -16,6 +16,7 @@ Let $\mathcal{L} \in \mathcal{L}(X, Y)$ and let $\mathcal{L}^*: Y^* \to X^*$ be 
 **Proof:** 
 1. Clearly, $\mathcal{L}^* \in \mathcal{L}(Y^*, X^*)$
 
+
 $$
 \begin{aligned}
 \|\mathcal{L}^*\|_{\mathcal{L}(Y^*, X^*)} &= \sup_{\substack{\phi \in Y^* \\ \|\phi\|_{Y^*} = 1}} \|\mathcal{L}^* \phi\|_{X^*} \\
@@ -26,7 +27,9 @@ $$
 \end{aligned}
 $$
 
+
 2. $\text{Ker } \mathcal{L} = (\text{Range } \mathcal{L}^*)_\perp$
+
 
 $$
 \begin{aligned}
@@ -37,7 +40,9 @@ x \in \text{Ker } \mathcal{L} &\iff \mathcal{L}x = 0 \text{ in } Y \\
 \end{aligned}
 $$
 
+
 $\text{Ker } \mathcal{L}^* = (\text{Range } \mathcal{L})^\perp$
+
 
 $$
 \begin{aligned}
@@ -47,6 +52,7 @@ $$
 &\iff \phi \in (\text{Range } \mathcal{L})^\perp 
 \end{aligned}
 $$
+
 
 ---
 # Compact Operators:
@@ -66,7 +72,11 @@ $\mathcal{L} \text{ is compact} \iff \text{for every bounded } U \subset X, \ \o
 
 Let $(y_n)_{n \in \mathbb{N}} \subset \overline{\mathcal{L}(U)}$. By the defintion of closure, $\exists z_n \in \mathcal{L}(U)$ such that. 
 
-$$ \|y_n - z_n\|_Y < 1/n \ \forall n $$
+
+$$
+\|y_n - z_n\|_Y < 1/n \ \forall n
+$$
+
 
 Since $z_n \in \mathcal{L}(U)$, $z_n = \mathcal{L}x_n$ for $x_n \in U \implies (x_n)_{n \in \mathbb{N}} \subset U$ & $U$ is bounded. 
 Hence $(x_n)$ is bounded.
@@ -76,6 +86,7 @@ $(z_{n_k}) = (\mathcal{L}x_{n_k})$ cgs to $y \in Y$.
 
 Now, 
 
+
 $$
 \begin{aligned}
 \|y_{n_k} - y\|_Y &\le \|y_{n_k} - z_{n_k}\|_Y + \|z_{n_k} - y\|_Y \\
@@ -84,8 +95,12 @@ $$
 \end{aligned}
 $$
 
+
 $z_{n_k} \to y \text{ as } k \to \infty$ & $z_{n_k} \in \mathcal{L}(U)$
 
 Hence, $y \in \overline{\mathcal{L}(U)}$.
 
-$$ \therefore \overline{\mathcal{L}(U)} \text{ is compact} $$
+
+$$
+\therefore \overline{\mathcal{L}(U)} \text{ is compact}
+$$
