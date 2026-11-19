@@ -55,7 +55,7 @@ $$\text{Hence } \|J_x\| = \|x\|_X$$
 
 ![](_page_14_Diagram_20.jpeg)
 
-#### The Canonical Embedding & Reflexivity
+# The Canonical Embedding & Reflexivity
 
 Define $J: X \rightarrow X^{**}$ as:
 $$

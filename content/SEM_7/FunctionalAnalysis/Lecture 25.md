@@ -10,7 +10,7 @@ Let $X, Y$ be Banach and $\mathcal{L} \in \mathcal{L}(X, Y)$. Then, $\mathcal{L}
 **Proof:** Let $\mathcal{L} \in \mathcal{L}(X,Y)$ be compact.
 Let $(\Phi_n)_{n \in \mathbb{N}} \subset Y^*$ be a bounded seq., i.e., $\|\Phi_n\|_{Y^*} \le 1 \ \forall n \in \mathbb{N}$
 To Show That: $\exists$ subsequence $(\Phi_{n_k})_{k \in \mathbb{N}}$ such that. $(\mathcal{L}^* \Phi_{n_k}) \subset X^*$ cgs in $X^*$.
-(or) $(\mathcal{L}^* \Phi_n)_{n \in \mathbb{N}}$ has a cgt subseq.
+(or) $(\mathcal{L}^* \Phi_n)_{n \in \mathbb{N}}$ has a convergent subsequence.
 
 Let $B_1 = \overline{B_1(0)}$ be the closed unit ball of $X$. Since $\mathcal{L}$ is compact, 
 $E := \overline{\mathcal{L}(B_1)}$ is compact in $Y$.

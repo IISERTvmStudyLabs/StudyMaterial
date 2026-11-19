@@ -104,7 +104,7 @@ $$
 $$
 
 $g = \chi_{[a,b]} \quad [a,b] \subset (0,\pi)$
-$g = s$ a simple fn
+$g = s$ a simple function
 
 $L : L^2(0,\pi) \rightarrow L^2(0,\pi)$ integral operator
 

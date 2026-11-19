@@ -9,7 +9,7 @@ date: 2026-10-12
 **Step 2:**
 If $y' \in V$ is any other point such that $\|x - y'\| = \inf_{z \in V} \|x - z\|$, then $y = y'$.
 
-In parallelogram identity, take $u = x - y, v = x - y'$.
+In [[Lecture 27#The Parallelogram Identity|parallelogram identity]], take $u = x - y, v = x - y'$.
 
 $$
 \|y - y'\|^2 = 2\|x - y\|^2 + 2\|x - y'\|^2 - 4\left\|x - \frac{y + y'}{2}\right\|^2
@@ -28,7 +28,7 @@ $\exists! y \in V$ such that $d = \|x - y\| = \min_{z \in V} \|x - z\|$.
 ---
 
 **Step 3 (Characterization of $y$):**
-Call $y$ from Step 2 as $P_V x$, that is, $y = P_V x$.
+Call $y$ from *Step 2* as $P_V x$, that is, $y = P_V x$.
 We show that $y$ is the unique $y \in V$ such that $x - y \in V^\perp$.
 First we show that $x - y \in V^\perp$, that is, $(x - y, v) = 0, \forall v \in V$.
 

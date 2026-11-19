@@ -24,7 +24,7 @@ $$
 $$
 u(0) = u(1) = 0
 $$
-3.  Volterra Integral Equation:
+3.  **Volterra Integral Equation**:
 $$
 \lambda u(x) - \int_a^b K(x,y)u(y)dy = f(x)
 $$
