@@ -20,19 +20,15 @@ $$
 >   
 > 
 > 
-$$
-G(T) = \{(x, Tx) \in X \times Y \mid x \in D(T)\}
-$$
-
+>$$
+> G(T) = \{(x, Tx) \in X \times Y \mid x \in D(T)\}
+> $$
 > 
 > Because $X \times Y$ is equipped with the product topology, the condition that $G(T)$ is a closed set is most commonly verified using sequences. An operator $T$ has a closed graph (and is often simply called a closed operator) if and only if for every sequence $(x_n)$ in $D(T)$, the following holds true:
 > 
 >   
 > 
 > - If $x_n \to x$ in $X$ and $Tx_n \to y$ in $Y$, then $x \in D(T)$ and $Tx = y$.
->     
->       
->     
 
 > [!note] Bolzano-Weierstrass Theorem
 > 
@@ -113,8 +109,6 @@ ____
 >       
 >     
 
-^512394
-
 > [!note] Bounded Inverse Theorem (Inverse Mapping Theorem)
 > 
 > Let $X$ and $Y$ be Banach spaces (complete normed vector spaces). If $T: X \rightarrow Y$ is a bounded (continuous) linear operator that is bijective (one-to-one and onto), then its inverse operator $T^{-1}: Y \rightarrow X$ is also a bounded (continuous) linear operator.
@@ -122,11 +116,9 @@ ____
 >   
 
 > [!note] Riesz's Theorem on the Compactness of the Unit Ball,
-
-$$
-\text{The closed unit ball } B_X \text{ is compact} \iff \dim(X) < \infty
-$$
-
+>$$
+> \text{The closed unit ball } B_X \text{ is compact} \iff \dim(X) < \infty
+> $$
 > **Given:**
 > - $X$ is a normed vector space over $\mathbb{R}$ or $\mathbb{C}$.
 > - $B_X = \{x \in X \mid \Vert{}x\Vert{} \le 1\}$ is the closed unit ball in $X$.
@@ -178,32 +170,31 @@ We handle the proof in two separate cases based on which operator is compact.
 2. **Apply the bounded operator $L_1$:** Because $L_1: X \to Y$ is a bounded linear operator, it maps bounded sets to bounded sets. Therefore, the image set $L_1(B)$ is a **bounded subset** of the intermediate Banach space $Y$.
 3. **Apply the compact operator $L_2$:** By definition, a compact operator maps any bounded subset of its domain to a relatively compact set. Since $L_1(B)$ is bounded in $Y$ and $L_2: Y \to Z$ is compact, the image set:
     
-$$
-(L_2 \circ L_1)(B) = L_2(L_1(B))
-$$
-
+	$$
+	(L_2 \circ L_1)(B) = L_2(L_1(B))
+	$$
     is **relatively compact** in $Z$.
 4. **Conclusion for Case 1:** Since every bounded set $B \subset X$ is mapped to a relatively compact set in $Z$, the composition $L_2 \circ L_1$ is a compact linear operator.
 ### **Case 2: $L_1$ is compact and $L_2$ is bounded (continuous)**
 1. **Take a bounded set:** Let $B \subset X$ be an arbitrary bounded subset.
 2. **Apply the compact operator $L_1$:** Because $L_1: X \to Y$ is a compact operator, the image of $B$ has a compact closure. That is, the set:
     
-$$
-S = \overline{L_1(B)}
-$$
+	$$
+	S = \overline{L_1(B)}
+	$$
 
     is a **compact set** in $Y$.
 3. **Apply the continuous operator $L_2$:** We know from topology and functional analysis that continuous functions map compact sets to compact sets. Because $L_2: Y \to Z$ is bounded, it is continuous. Therefore, applying $L_2$ to our compact set $S$ yields a compact set in $Z$:
     
-$$
-L_2(S) = L_2\left(\overline{L_1(B)}\right) \text{ is compact in } Z
-$$
+	$$
+	L_2(S) = L_2\left(\overline{L_1(B)}\right) \text{ is compact in } Z
+	$$
 
 4. **Relate back to the composition:** Notice that the image of our original bounded set under the composition is:
     
-$$
-(L_2 \circ L_1)(B) = L_2(L_1(B)) \subseteq L_2\left(\overline{L_1(B)}\right)
-$$
+	$$
+	(L_2 \circ L_1)(B) = L_2(L_1(B)) \subseteq L_2\left(\overline{L_1(B)}\right)
+	$$
 
     Since $(L_2 \circ L_1)(B)$ is a subset of the compact set $L_2\left(\overline{L_1(B)}\right)$, its closure is also compact (as a closed subset of a compact metric space is compact). Thus, $(L_2 \circ L_1)(B)$ is **relatively compact** in $Z$.
 5. **Conclusion for Case 2:** The composition $L_2 \circ L_1$ maps bounded sets to relatively compact sets, making it a compact linear operator.
@@ -355,79 +346,79 @@ $$
 1. **$L_n$ is a compact operator:** For any $x \in l_p$, $L_n(x)$ lies in the subspace spanned by the first $n$ standard basis vectors $\{e_1, e_2, \dots, e_n\}$. Thus, the range of $L_n$, denoted $\text{Range}(L_n)$, is at most $n$-dimensional. A fundamental theorem in functional analysis states that any bounded linear operator with a finite-dimensional range (a finite-rank operator) is compact. Since $L_n$ is clearly bounded (bounded by $\max_{1\le k\le n}\vert{}\lambda_k\vert{}$), $L_n$ is a compact operator for every $n$.
 2. **$L$ is the uniform limit of $L_n$:** We now examine the operator $L - L_n$. For any $x \in l_p$, we have:
     
-$$
-(L - L_n)(x) = (0, \dots, 0, \lambda_{n+1}x_{n+1}, \lambda_{n+2}x_{n+2}, \dots)
-$$
+	$$
+	(L - L_n)(x) = (0, \dots, 0, \lambda_{n+1}x_{n+1}, \lambda_{n+2}x_{n+2}, \dots)
+	$$
 
     Let us compute the $l_p$-norm of $(L - L_n)(x)$:
     
-$$
-\Vert{} (L - L_n)(x) \Vert{}_p^p = \sum_{k=n+1}^\infty \vert{}\lambda_k x_k\vert{}^p = \sum_{k=n+1}^\infty \vert{}\lambda_k\vert{}^p \vert{}x_k\vert{}^p
-$$
+	$$
+	\Vert{} (L - L_n)(x) \Vert{}_p^p = \sum_{k=n+1}^\infty \vert{}\lambda_k x_k\vert{}^p = \sum_{k=n+1}^\infty \vert{}\lambda_k\vert{}^p \vert{}x_k\vert{}^p
+	$$
 
     We can bound the scalar multipliers by their supremum over the tail:
     
-$$
-\sum_{k=n+1}^\infty \vert{}\lambda_k\vert{}^p \vert{}x_k\vert{}^p \le \left( \sup_{k \ge n+1} \vert{}\lambda_k\vert{}^p \right) \sum_{k=n+1}^\infty \vert{}x_k\vert{}^p \le \left( \sup_{k \ge n+1} \vert{}\lambda_k\vert{} \right)^p \Vert{}x\Vert{}_p^p
-$$
+	$$
+	\sum_{k=n+1}^\infty \vert{}\lambda_k\vert{}^p \vert{}x_k\vert{}^p \le \left( \sup_{k \ge n+1} \vert{}\lambda_k\vert{}^p \right) \sum_{k=n+1}^\infty \vert{}x_k\vert{}^p \le \left( \sup_{k \ge n+1} \vert{}\lambda_k\vert{} \right)^p \Vert{}x\Vert{}_p^p
+	$$
 
     Taking the $p$-th root of both sides gives:
     
-$$
-\Vert{} (L - L_n)(x) \Vert{}_p \le \left( \sup_{k \ge n+1} \vert{}\lambda_k\vert{} \right) \Vert{}x\Vert{}_p
-$$
+	$$
+	\Vert{} (L - L_n)(x) \Vert{}_p \le \left( \sup_{k \ge n+1} \vert{}\lambda_k\vert{} \right) \Vert{}x\Vert{}_p
+	$$
 
     By definition of the operator norm, this implies:
     
-$$
-\Vert{} L - L_n \Vert{} \le \sup_{k \ge n+1} \vert{}\lambda_k\vert{}
-$$
+	$$
+	\Vert{} L - L_n \Vert{} \le \sup_{k \ge n+1} \vert{}\lambda_k\vert{}
+	$$
 
     Since we assumed $\lim_{k\to\infty}\lambda_k = 0$, the supremum of the tail sequence must also tend to $0$ as $n \to \infty$. Thus:
     
-$$
-\lim_{n\to\infty} \Vert{} L - L_n \Vert{} = 0
-$$
+	$$
+	\lim_{n\to\infty} \Vert{} L - L_n \Vert{} = 0
+	$$
 
 3. **Conclusion for Part 1:** We have shown that $L_n$ is a sequence of compact operators that converges to $L$ in the operator norm topology. Because the set of compact operators on a Banach space forms a closed ideal (in the operator norm), the uniform limit of compact operators is compact. Therefore, $L$ is a compact operator.
 **Part 2: If $L$ is compact, then $\lim_{k\to\infty}\lambda_k = 0$.**
 **Proof:** We will prove this by contraposition. Assume that $\lim_{k\to\infty}\lambda_k \neq 0$. We must show that $L$ is not compact.
 4. **Constructing a problematic sequence:** Since the sequence $(\lambda_k)$ does not converge to $0$, there exists an $\epsilon > 0$ and a subsequence $(\lambda_{k_l})_{l=1}^\infty$ such that:
     
-$$
-\vert{}\lambda_{k_l}\vert{} \ge \epsilon \quad \text{for all } l \ge 1
-$$
+	$$
+	\vert{}\lambda_{k_l}\vert{} \ge \epsilon \quad \text{for all } l \ge 1
+	$$
 
     Consider the standard unit basis vectors in $l_p$ corresponding to this subsequence: $(e_{k_l})_{l=1}^\infty$. Because $e_{k_l}$ has a $1$ in the $k_l$-th position and $0$ elsewhere, we have $\Vert{}e_{k_l}\Vert{}_p = 1$ for all $l$. Thus, $(e_{k_l})_{l=1}^\infty$ is a bounded sequence in $l_p$.
 5. **Analyzing the image of the sequence:** Let us look at the image of this sequence under $L$:
     
-$$
-y_l = L(e_{k_l}) = \lambda_{k_l} e_{k_l}
-$$
+	$$
+	y_l = L(e_{k_l}) = \lambda_{k_l} e_{k_l}
+	$$
 
     If $L$ were a compact operator, the sequence $(y_l)$ would necessarily contain a convergent subsequence. In any metric space, a convergent sequence must be a Cauchy sequence. Let us calculate the distance between any two distinct terms $y_l$ and $y_m$ (with $l \neq m$):
     
-$$
-\Vert{} y_l - y_m \Vert{}_p^p = \Vert{} \lambda_{k_l} e_{k_l} - \lambda_{k_m} e_{k_m} \Vert{}_p^p
-$$
+	$$
+	\Vert{} y_l - y_m \Vert{}_p^p = \Vert{} \lambda_{k_l} e_{k_l} - \lambda_{k_m} e_{k_m} \Vert{}_p^p
+	$$
 
     Since $e_{k_l}$ and $e_{k_m}$ are distinct standard basis vectors (they have their non-zero entries in different coordinates), the norm decomposes simply as:
     
-$$
-\Vert{} \lambda_{k_l} e_{k_l} - \lambda_{k_m} e_{k_m} \Vert{}_p^p = \vert{}\lambda_{k_l}\vert{}^p + \vert{}\lambda_{k_m}\vert{}^p
-$$
+	$$
+	\Vert{} \lambda_{k_l} e_{k_l} - \lambda_{k_m} e_{k_m} \Vert{}_p^p = \vert{}\lambda_{k_l}\vert{}^p + \vert{}\lambda_{k_m}\vert{}^p
+	$$
 
     Using our assumption that $\vert{}\lambda_{k_l}\vert{} \ge \epsilon$ and $\vert{}\lambda_{k_m}\vert{} \ge \epsilon$:
     
-$$
-\Vert{} y_l - y_m \Vert{}_p^p \ge \epsilon^p + \epsilon^p = 2\epsilon^p
-$$
+	$$
+	\Vert{} y_l - y_m \Vert{}_p^p \ge \epsilon^p + \epsilon^p = 2\epsilon^p
+	$$
 
     Taking the $p$-th root yields:
     
-$$
-\Vert{} y_l - y_m \Vert{}_p \ge 2^{1/p}\epsilon > 0
-$$
+	$$
+	\Vert{} y_l - y_m \Vert{}_p \ge 2^{1/p}\epsilon > 0
+	$$
 
 6. **Conclusion for Part 2:** The distance between _any_ two distinct elements of the sequence $(y_l)$ is bounded below by a strictly positive constant $2^{1/p}\epsilon$. Consequently, $(y_l)$ cannot have any Cauchy subsequence. If it has no Cauchy subsequence, it cannot have a convergent subsequence.
     We have found a bounded sequence $(e_{k_l})$ in $l_p$ whose image under $L$ has no convergent subsequence. This violates the definition of a compact operator. Thus, $L$ is not compact.
