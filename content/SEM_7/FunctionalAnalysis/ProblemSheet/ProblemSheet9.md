@@ -23,49 +23,29 @@ $$
 > 
 > Let $X$ be a Banach space, let $K \in \mathcal{K}(X)$ be a compact linear operator, and consider $T = I - K$ (with adjoint $T^* = I^* - K^* \in \mathcal{L}(X^*)$).
 > 
->   
-> 
 > **General Properties (Always True for $T = I - K$):**
 > 
->   
-> 
 > - $\operatorname{Range}(I - K)$ is closed in $X$, and $\operatorname{Range}(I - K) = (\operatorname{Ker}(I - K^*))^\perp$.
->     
 > - $\operatorname{Range}(I - K^*)$ is closed in $X^*$, and $\operatorname{Range}(I - K^*) = (\operatorname{Ker}(I - K))^\perp$.
->     
 > - $\dim \operatorname{Ker}(I - K) = \dim \operatorname{Ker}(I - K^*) < \infty$.
->     
 > 
 > **The Alternative (Exactly One of the Following Two Cases Holds):**
 > 
 > 1. **Trivial Kernel / Invertible Case ($\dim = 0$):**
->     
->     
-$$
-\operatorname{Ker}(I - K) = \{0\} \iff \operatorname{Ker}(I - K^*) = \{0\} \iff \operatorname{Range}(I - K) = X \iff \operatorname{Range}(I - K^*) = X^*
-$$
-
->     
+>     $$
+>     \operatorname{Ker}(I - K) = \{0\} \iff \operatorname{Ker}(I - K^*) = \{0\} \iff \operatorname{Range}(I - K) = X \iff \operatorname{Range}(I - K^*) = X^*
+>     $$
 >     In this case, $I - K$ is bijective and $(I - K)^{-1} \in \mathcal{L}(X)$ exists as a bounded linear operator. That is, for every $y \in X$, the equation $(I - K)x = y$ has a unique solution $x \in X$.
 >     
 > 2. **Non-trivial Kernel / Resonance Case ($1 \le \dim < \infty$):**
->     
->     
-$$
-\dim \operatorname{Ker}(I - K) = \dim \operatorname{Ker}(I - K^*) = n \in \mathbb{N} \quad (n \ge 1)
-$$
-
->     
+>     $$
+>     \dim \operatorname{Ker}(I - K) = \dim \operatorname{Ker}(I - K^*) = n \in \mathbb{N} \quad (n \ge 1)
+>     $$
 >     In this case, $I - K$ is neither injective nor surjective, and the inhomogeneous equation $(I - K)x = y$ has a solution $x \in X$ **if and only if** $y$ satisfies the $n$ compatibility conditions:
->     
->     
-$$
-\phi(y) = 0 \quad \text{for all } \phi \in \operatorname{Ker}(I - K^*)
-$$
-
->     
+>     $$
+>     \phi(y) = 0 \quad \text{for all } \phi \in \operatorname{Ker}(I - K^*)
+>     $$
 >     (In a Hilbert space $H$, this reads $\langle y, z \rangle = 0$ for all $z \in \operatorname{Ker}(I - K^*)$.)
-
 **(i) Bounded Linear Operators on $L^2(0, \infty)$ with $L_1 L_2 = I$ and $L_2 L_1 \neq I$**
 
 Define $L_1, L_2 : L^2(0, \infty) \to L^2(0, \infty)$ as the unit left-shift and unit right-shift (with zero extension) operators:
@@ -350,36 +330,27 @@ $$
 >
 > Let $(K, d)$ be a **compact metric space** (for example, the closed interval $[0, 1]$), and let $C(K)$ be the Banach space of continuous scalar-valued functions $f : K \to \mathbb{R}$ (or $\mathbb{C}$) equipped with the supremum (uniform) norm:
 >
-> 
-$$
+> $$
 > \|f\|_\infty = \sup_{x \in K} |f(x)|.
->
-$$
-
+> $$
 >
 > A subset $\mathcal{F} \subset C(K)$ is **relatively compact** (meaning its closure $\overline{\mathcal{F}}$ is compact in $C(K)$, or equivalently, **every sequence in $\mathcal{F}$ has a uniformly convergent subsequence** in $C(K)$) **if and only if** $\mathcal{F}$ satisfies the following two conditions:
 >
 > 1. **Uniform Boundedness (Pointwise Boundedness):**
 >    There exists a constant $M > 0$ such that
 >
-> 
-$$
+> $$
 > |f(x)| \le M \quad \text{for all } f \in \mathcal{F} \text{ and all } x \in K.
->
-$$
-
+> $$
 >
 > *(Equivalently, $\sup_{f \in \mathcal{F}} \|f\|_\infty \le M < \infty$.)*
 >
 > 2. **Equicontinuity:**
 >    For every $\varepsilon > 0$, there exists $\delta > 0$ (depending **only** on $\varepsilon$, and **independent** of both $f \in \mathcal{F}$ and $x, y \in K$) such that for all $x, y \in K$ and all $f \in \mathcal{F}$:
 >
-> 
-$$
+> $$
 > d(x, y) < \delta \implies |f(x) - f(y)| < \varepsilon.
->
-$$
-
+> $$
 >
 > ---
 >
@@ -390,18 +361,16 @@ $$
 > - **Uniformly bounded:** $\sup_{n \in \mathbb{N}} \|g_n\|_\infty < \infty$, and
 > - **Equicontinuous:** $\forall \varepsilon > 0, \exists \delta > 0$ such that $|x - y| < \delta \implies |g_n(x) - g_n(y)| < \varepsilon$ for all $n \in \mathbb{N}$,
 >
-> then there exists a subsequence $(g_{n_k})_{k=1}^\infty$ and a continuous function $g \in C([0, 1])$ such that $\|g_{n_k} - g\|_\infty \to 0$ as $k \to \infty$ (and consequently $\|g_{n_k} - g\|_{L^2(0,1)} \to 0$ as well).>then there exists a subsequence $(g_{n_k})_{k=1}^\infty$ and a continuous function $g \in C([0, 1])$ such that $\|g_{n_k} - g\|_\infty \to 0$ as $k \to \infty$ (and consequently $\|g_{n_k} - g\|_{L^2(0,1)} \to 0$ as well).
-
+> then there exists a subsequence $(g_{n_k})_{k=1}^\infty$ and a continuous function $g \in C([0, 1])$ such that $\|g_{n_k} - g\|_\infty \to 0$ as $k \to \infty$ (and consequently $\|g_{n_k} - g\|_{L^2(0,1)} \to 0$ as well).
 
 >[!note] **Definition (Equicontinuity)**
 Let $(X, d_X)$ and $(Y, d_Y)$ be metric spaces (for instance, $X = [0, 1]$ with $d_X(x_1, x_2) = |x_1 - x_2|$ and $Y = \mathbb{C}$ or $\mathbb{R}$ with $d_Y(y_1, y_2) = |y_1 - y_2|$), and let $\mathcal{F}$ be a family of functions $f : X \to Y$.
 **1. Equicontinuity at a Point $x_0 \in X$**
 The family $\mathcal{F}$ is equicontinuous at $x_0 \in X$ if for every $\varepsilon > 0$, there exists $\delta > 0$ (depending on $\varepsilon$ and $x_0$, but independent of $f \in \mathcal{F}$) such that for all $x \in X$ and all $f \in \mathcal{F}$:
 >
-$$
->d_X(x, x_0) < \delta \implies d_Y(f(x), f(x_0)) < \varepsilon.
->
-$$
+>$$
+> d_X(x, x_0) < \delta \implies d_Y(f(x), f(x_0)) < \varepsilon.
+> $$
 
 
 **(i) Proof that $L$ is Bounded, Self-Adjoint, and Compact**
